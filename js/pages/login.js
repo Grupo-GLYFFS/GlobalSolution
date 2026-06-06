@@ -1,9 +1,9 @@
-// js/login.js
+// js/pages/login.js
 // Lógica de alternância de formulários de login/cadastro e exibição de estados (erro/sucesso)
 // Depende: Nenhum
 
 // Oculta todas as seções e abas de autenticação
-function ocultarTudo() {
+export function ocultarTudo() {
   document.getElementById('auth-tabs').classList.add('hidden');
   document.getElementById('auth-tab-content').classList.add('hidden');
   document.getElementById('state-error-email').classList.add('hidden');
@@ -12,7 +12,7 @@ function ocultarTudo() {
 }
 
 // Exibe a mensagem de erro específica com base no tipo
-function exibirErro(tipoErro) {
+export function exibirErro(tipoErro) {
   ocultarTudo();
   if (tipoErro === 'email') {
     document.getElementById('state-error-email').classList.remove('hidden');
@@ -22,13 +22,13 @@ function exibirErro(tipoErro) {
 }
 
 // Exibe a tela de sucesso após o cadastro
-function exibirSucesso() {
+export function exibirSucesso() {
   ocultarTudo();
   document.getElementById('state-success').classList.remove('hidden');
 }
 
 // Redefine a interface para a aba de login padrão
-function voltarParaLogin() {
+export function voltarParaLogin() {
   ocultarTudo();
   document.getElementById('auth-tabs').classList.remove('hidden');
   document.getElementById('auth-tab-content').classList.remove('hidden');
@@ -36,9 +36,15 @@ function voltarParaLogin() {
 }
 
 // Redefine a interface para a aba de criação de conta
-function voltarParaCadastro() {
+export function voltarParaCadastro() {
   ocultarTudo();
   document.getElementById('auth-tabs').classList.remove('hidden');
   document.getElementById('auth-tab-content').classList.remove('hidden');
   document.getElementById('tab-signup').click();
 }
+
+// Exporta as funções para o escopo global para compatibilidade com onclick inline no HTML
+window.exibirErro = exibirErro;
+window.exibirSucesso = exibirSucesso;
+window.voltarParaLogin = voltarParaLogin;
+window.voltarParaCadastro = voltarParaCadastro;
