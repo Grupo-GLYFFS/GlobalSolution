@@ -1,4 +1,4 @@
-﻿*,
+*,
 
 *::before,
 
@@ -92,7 +92,7 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar {
 
-  height: 6px;
+  height: 8px;
 
 }
 

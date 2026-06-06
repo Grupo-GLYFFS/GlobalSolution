@@ -1,4 +1,4 @@
-﻿function changeMainImage(src, btn) {
+function changeMainImage(src, btn) {
 
   document.getElementById('main-preview-img').src = src;
 

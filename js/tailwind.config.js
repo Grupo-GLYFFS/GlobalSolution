@@ -1,4 +1,4 @@
-﻿tailwind.config = {
+tailwind.config = {
 
   theme: {
 
@@ -22,6 +22,18 @@
 
         'container': '1536px',
 
+      },
+
+      borderRadius: {
+        'none': '0px',
+        'sm': '0.25rem',
+        DEFAULT: '0.25rem',
+        'md': '0.25rem',
+        'lg': '0.25rem',
+        'xl': '0.25rem',
+        '2xl': '0.25rem',
+        '3xl': '0.25rem',
+        'full': '9999px',
       },
 
       colors: {
