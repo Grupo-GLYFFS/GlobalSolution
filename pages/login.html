@@ -53,7 +53,7 @@
     <div id="auth-tab-content">
       <div id="state-login" class="hidden animate-fade-in" role="tabpanel" aria-labelledby="tab-login">
 
-      <form onsubmit="event.preventDefault(); showError('password');">
+      <form onsubmit="event.preventDefault(); exibirErro('password');">
 
         <div class="mb-5">
 
@@ -91,7 +91,7 @@
 
       <div id="state-signup" class="hidden animate-fade-in" role="tabpanel" aria-labelledby="tab-signup">
 
-        <form onsubmit="event.preventDefault(); showSuccess();">
+        <form onsubmit="event.preventDefault(); exibirSucesso();">
 
         <div class="mb-4">
 
@@ -132,7 +132,7 @@
 
     <div id="state-error-email" class="hidden animate-fade-in">
 
-      <form onsubmit="event.preventDefault(); resetToLogin();">
+      <form onsubmit="event.preventDefault(); voltarParaLogin();">
 
         <div class="mb-5">
 
@@ -140,7 +140,7 @@
 
           <input type="email" value="unknown@email.com" class="w-full bg-red-500/10 border border-red-500 text-white rounded-xl px-4 py-3 focus:border-red-500 focus:ring-1 focus:ring-red-500 outline-none transition-all">
 
-          <p class="mt-2 text-xs text-red-400 font-medium">No account found with this email. <a href="#" onclick="resetToSignup()" class="text-white hover:underline">Sign up?</a></p>
+          <p class="mt-2 text-xs text-red-400 font-medium">No account found with this email. <a href="#" onclick="voltarParaCadastro()" class="text-white hover:underline">Sign up?</a></p>
 
         </div>
 
@@ -166,7 +166,7 @@
 
     <div id="state-error-password" class="hidden animate-fade-in">
 
-      <form onsubmit="event.preventDefault(); resetToLogin();">
+      <form onsubmit="event.preventDefault(); voltarParaLogin();">
 
         <div class="mb-5">
 
@@ -224,11 +224,11 @@
 
     <div class="text-xs uppercase font-bold text-white/50 absolute -top-3 left-4 bg-black px-2 rounded-full border border-white/10 tracking-caps">Dev States</div>
 
-    <button onclick="showError('email')" class="px-3 py-2 text-xs font-bold text-white bg-red-500/20 hover:bg-red-500/40 rounded-lg border border-red-500/30 transition-colors tracking-heading">Err: Email</button>
+    <button onclick="exibirErro('email')" class="px-3 py-2 text-xs font-bold text-white bg-red-500/20 hover:bg-red-500/40 rounded-lg border border-red-500/30 transition-colors tracking-heading">Err: Email</button>
 
-    <button onclick="showError('password')" class="px-3 py-2 text-xs font-bold text-white bg-red-500/20 hover:bg-red-500/40 rounded-lg border border-red-500/30 transition-colors tracking-heading">Err: Pass</button>
+    <button onclick="exibirErro('password')" class="px-3 py-2 text-xs font-bold text-white bg-red-500/20 hover:bg-red-500/40 rounded-lg border border-red-500/30 transition-colors tracking-heading">Err: Pass</button>
 
-    <button onclick="showSuccess()" class="px-3 py-2 text-xs font-bold text-white bg-emerald-500/20 hover:bg-emerald-500/40 rounded-lg border border-emerald-500/30 transition-colors tracking-heading">Success</button>
+    <button onclick="exibirSucesso()" class="px-3 py-2 text-xs font-bold text-white bg-emerald-500/20 hover:bg-emerald-500/40 rounded-lg border border-emerald-500/30 transition-colors tracking-heading">Success</button>
 
   </div>
 

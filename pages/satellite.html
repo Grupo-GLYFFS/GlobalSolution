@@ -554,13 +554,13 @@
 
                   <div class="grid grid-cols-4 gap-4">
 
-                    <button onclick="changeMainImage('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&h=600&fit=crop', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 hover:border-gray-900 focus:outline-none transition-colors bg-gray-100 ring-2 ring-gray-900 opacity-100"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=200&h=200&fit=crop" class="w-full h-full object-cover"></button>
+                    <button onclick="alterarImagemPrincipal('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&h=600&fit=crop', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 hover:border-gray-900 focus:outline-none transition-colors bg-gray-100 ring-2 ring-gray-900 opacity-100"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=200&h=200&fit=crop" class="w-full h-full object-cover"></button>
 
-                    <button onclick="changeMainImage('https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=800&h=600&fit=crop', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 hover:border-gray-900 focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100"><img src="https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=200&h=200&fit=crop" class="w-full h-full object-cover"></button>
+                    <button onclick="alterarImagemPrincipal('https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=800&h=600&fit=crop', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 hover:border-gray-900 focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100"><img src="https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?q=80&w=200&h=200&fit=crop" class="w-full h-full object-cover"></button>
 
-                    <button onclick="changeMainImage('https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=800&h=600&fit=crop', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 hover:border-gray-900 focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100"><img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=200&h=200&fit=crop" class="w-full h-full object-cover"></button>
+                    <button onclick="alterarImagemPrincipal('https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=800&h=600&fit=crop', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 hover:border-gray-900 focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100"><img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=200&h=200&fit=crop" class="w-full h-full object-cover"></button>
 
-                    <button onclick="changeMainImage('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=800&h=600&fit=crop', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 hover:border-gray-900 focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100"><img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=200&h=200&fit=crop" class="w-full h-full object-cover"></button>
+                    <button onclick="alterarImagemPrincipal('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=800&h=600&fit=crop', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 hover:border-gray-900 focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100"><img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=200&h=200&fit=crop" class="w-full h-full object-cover"></button>
 
                   </div>
 
@@ -930,7 +930,7 @@
 
         <div class="flex gap-2">
 
-          <button id="slider-prev" disabled onclick="scrollSlider(-1)" class="flex items-center justify-center h-10 w-10 cursor-pointer focus:outline-none bg-white border border-gray-200 rounded-full shadow-sm hover:bg-gray-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+          <button id="slider-prev" disabled onclick="rolarCarrossel(-1)" class="flex items-center justify-center h-10 w-10 cursor-pointer focus:outline-none bg-white border border-gray-200 rounded-full shadow-sm hover:bg-gray-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
 
             <svg class="w-4 h-4 text-gray-900" fill="none" viewBox="0 0 6 10" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 1 1 5l4 4" />
@@ -938,7 +938,7 @@
 
           </button>
 
-          <button id="slider-next" onclick="scrollSlider(1)" class="flex items-center justify-center h-10 w-10 cursor-pointer focus:outline-none bg-white border border-gray-200 rounded-full shadow-sm hover:bg-gray-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+          <button id="slider-next" onclick="rolarCarrossel(1)" class="flex items-center justify-center h-10 w-10 cursor-pointer focus:outline-none bg-white border border-gray-200 rounded-full shadow-sm hover:bg-gray-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
 
             <svg class="w-4 h-4 text-gray-900" fill="none" viewBox="0 0 6 10" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="m1 9 4-4-4-4" />

@@ -1,60 +1,47 @@
-function changeMainImage(src, btn) {
+// js/satellite.js
+// Lógica para galeria de imagens e carrossel de satélites similares
+// Depende: Nenhum
 
-  document.getElementById('main-preview-img').src = src;
+// Altera a imagem principal exibida na galeria do satélite
+function alterarImagemPrincipal(caminhoImagem, botaoClicado) {
+  document.getElementById('main-preview-img').src = caminhoImagem;
 
-  const btns = document.querySelectorAll('.gallery-thumb');
+  const botoesMiniatura = document.querySelectorAll('.gallery-thumb');
 
-  btns.forEach(b => {
-
-    b.classList.remove('ring-2', 'ring-gray-900', 'opacity-100');
-
-    b.classList.add('opacity-70');
-
+  botoesMiniatura.forEach(botaoCorrente => {
+    botaoCorrente.classList.remove('ring-2', 'ring-gray-900', 'opacity-100');
+    botaoCorrente.classList.add('opacity-70');
   });
 
-  btn.classList.add('ring-2', 'ring-gray-900', 'opacity-100');
-
-  btn.classList.remove('opacity-70');
-
+  botaoClicado.classList.add('ring-2', 'ring-gray-900', 'opacity-100');
+  botaoClicado.classList.remove('opacity-70');
 }
 
-function scrollSlider(direction) {
+// Rola o carrossel de satélites similares para a esquerda ou direita
+function rolarCarrossel(direcaoRolagem) {
+  const carrosselSimilares = document.getElementById('similar-scroll');
 
-  const slider = document.getElementById('similar-scroll');
-
-  if (slider) {
-
-    const amount = direction * slider.clientWidth;
-
-    slider.scrollBy({ left: amount, behavior: 'smooth' });
-
+  if (carrosselSimilares) {
+    const quantidadeRolagem = direcaoRolagem * carrosselSimilares.clientWidth;
+    carrosselSimilares.scrollBy({ left: quantidadeRolagem, behavior: 'smooth' });
   }
-
 }
 
+// Configura os botões de navegação e limites do carrossel ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
+  const carrosselSimilares = document.getElementById('similar-scroll');
+  const botaoAnterior = document.getElementById('slider-prev');
+  const botaoProximo = document.getElementById('slider-next');
 
-  const slider = document.getElementById('similar-scroll');
-
-  const btnPrev = document.getElementById('slider-prev');
-
-  const btnNext = document.getElementById('slider-next');
-
-  if (slider && btnPrev && btnNext) {
-
-    const updateButtons = () => {
-
-      btnPrev.disabled = slider.scrollLeft <= 10; btnNext.disabled = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10;
-
+  if (carrosselSimilares && botaoAnterior && botaoProximo) {
+    // Atualiza o estado habilitado/desabilitado dos botões baseado na rolagem atual
+    const atualizarBotoesNavegacao = () => {
+      botaoAnterior.disabled = carrosselSimilares.scrollLeft <= 10; 
+      botaoProximo.disabled = carrosselSimilares.scrollLeft + carrosselSimilares.clientWidth >= carrosselSimilares.scrollWidth - 10;
     };
 
-    slider.addEventListener('scroll', updateButtons);
-
-    window.addEventListener('resize', updateButtons);
-
-    setTimeout(updateButtons, 150);
-
+    carrosselSimilares.addEventListener('scroll', atualizarBotoesNavegacao);
+    window.addEventListener('resize', atualizarBotoesNavegacao);
+    setTimeout(atualizarBotoesNavegacao, 150);
   }
-
 });
-

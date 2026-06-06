@@ -50,7 +50,7 @@
 
         <div class="flex items-center w-full max-w-lg bg-gray-100 p-2 rounded-xl border border-gray-200/50">
 
-          <button id="nav-step-1" onclick="showStep(1)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-900 bg-white shadow-sm tracking-heading">
+          <button id="nav-step-1" onclick="exibirEtapa(1)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-900 bg-white shadow-sm tracking-heading">
 
             <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-blue-100 text-blue-600">1</span>
 
@@ -58,7 +58,7 @@
 
           </button>
 
-          <button id="nav-step-2" onclick="showStep(2)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 hover:text-gray-900 tracking-heading">
+          <button id="nav-step-2" onclick="exibirEtapa(2)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 hover:text-gray-900 tracking-heading">
 
             <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-gray-200 text-gray-500">2</span>
 
@@ -66,7 +66,7 @@
 
           </button>
 
-          <button id="nav-step-3" onclick="showStep(3)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 hover:text-gray-900 tracking-heading">
+          <button id="nav-step-3" onclick="exibirEtapa(3)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 hover:text-gray-900 tracking-heading">
 
             <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-gray-200 text-gray-500">3</span>
 
@@ -112,7 +112,7 @@
 
       <p class="text-gray-500 mb-8 leading-normal">You need a DataOrbit account to checkout.</p>
 
-      <button onclick="showStep(1)" class="w-full py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors tracking-heading">Log In / Sign Up</button>
+      <button onclick="exibirEtapa(1)" class="w-full py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors tracking-heading">Log In / Sign Up</button>
 
     </div>
 
@@ -314,7 +314,7 @@
 
           </div>
 
-          <button onclick="showStep(2)" class="w-full mt-8 py-4 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-gray-800 transition-colors flex justify-center items-center gap-2 tracking-heading">
+          <button onclick="exibirEtapa(2)" class="w-full mt-8 py-4 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-gray-800 transition-colors flex justify-center items-center gap-2 tracking-heading">
 
             Continue to Payment
 
@@ -528,13 +528,13 @@
 
           </div>
 
-          <button onclick="showStep(3)" class="w-full mt-8 py-4 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-emerald-600 transition-colors flex justify-center items-center gap-2 tracking-heading">
+          <button onclick="exibirEtapa(3)" class="w-full mt-8 py-4 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-emerald-600 transition-colors flex justify-center items-center gap-2 tracking-heading">
 
             Confirm Payment
 
           </button>
 
-          <a href="#" onclick="showStep(1); return false;" class="block text-center mt-4 text-xs font-bold text-gray-500 hover:text-gray-900 transition-colors tracking-heading">&larr; Back to Plan</a>
+          <a href="#" onclick="exibirEtapa(1); return false;" class="block text-center mt-4 text-xs font-bold text-gray-500 hover:text-gray-900 transition-colors tracking-heading">&larr; Back to Plan</a>
 
         </div>
 
