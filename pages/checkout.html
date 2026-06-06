@@ -32,9 +32,9 @@
 
 <body class="font-sans text-gray-900 bg-white leading-none antialiased">
 
-  <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
 
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center">
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 h-20 flex items-center">
 
       <div class="flex-1 flex justify-start">
 
@@ -48,27 +48,27 @@
 
       <div class="flex-1 flex justify-center hidden md:flex">
 
-        <div class="flex items-center w-full max-w-lg bg-gray-100 p-1.5 rounded-xl border border-gray-200/50">
+        <div class="flex items-center w-full max-w-lg bg-gray-100 p-2 rounded-xl border border-gray-200/50">
 
-          <button id="nav-step-1" onclick="showStep(1)" class="flex-1 justify-center px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 text-gray-900 bg-white shadow-sm">
+          <button id="nav-step-1" onclick="exibirEtapa(1)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-900 bg-white shadow-sm tracking-heading">
 
-            <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] bg-blue-100 text-blue-600">1</span>
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-blue-100 text-blue-600">1</span>
 
             Plan
 
           </button>
 
-          <button id="nav-step-2" onclick="showStep(2)" class="flex-1 justify-center px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 text-gray-500 hover:text-gray-900">
+          <button id="nav-step-2" onclick="exibirEtapa(2)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 hover:text-gray-900 tracking-heading">
 
-            <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] bg-gray-200 text-gray-500">2</span>
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-gray-200 text-gray-500">2</span>
 
             Payment
 
           </button>
 
-          <button id="nav-step-3" onclick="showStep(3)" class="flex-1 justify-center px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 text-gray-500 hover:text-gray-900">
+          <button id="nav-step-3" onclick="exibirEtapa(3)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 hover:text-gray-900 tracking-heading">
 
-            <span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] bg-gray-200 text-gray-500">3</span>
+            <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-gray-200 text-gray-500">3</span>
 
             Confirmation
 
@@ -82,7 +82,7 @@
 
         <div class="flex items-center gap-3">
 
-          <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">
+          <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-xs tracking-heading">
 
             JD
 
@@ -110,9 +110,9 @@
 
       <h2 class="text-2xl font-bold text-gray-900 tracking-heading mb-2">Sign in to continue</h2>
 
-      <p class="text-gray-500 mb-8 leading-relaxed">You need a DataOrbit account to checkout.</p>
+      <p class="text-gray-500 mb-8 leading-normal">You need a DataOrbit account to checkout.</p>
 
-      <button onclick="showStep(1)" class="w-full py-3.5 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors">Log In / Sign Up</button>
+      <button onclick="exibirEtapa(1)" class="w-full py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors tracking-heading">Log In / Sign Up</button>
 
     </div>
 
@@ -124,7 +124,7 @@
 
       <div class="w-full lg:w-7/12">
 
-        <h2 class="text-3xl font-bold tracking-heading text-gray-900 mb-8">Customize your Plan</h2>
+        <h2 class="text-4xl font-bold tracking-heading text-gray-900 mb-8">Customize your Plan</h2>
 
         <div class="flex items-center gap-6 p-6 border border-gray-200 rounded-2xl mb-10 bg-gray-50">
 
@@ -134,37 +134,37 @@
 
             <div class="flex items-center gap-2 mb-1">
 
-              <span class="px-2.5 py-0.5 text-[10px] font-bold tracking-caps uppercase text-white bg-gray-900 rounded">Imagery</span>
+              <span class="px-3 py-1 text-xs font-bold tracking-caps uppercase text-white bg-gray-900 rounded">Imagery</span>
 
             </div>
 
-            <h3 class="text-xl font-bold text-gray-900">OrbitRent Dove-PSB</h3>
+            <h3 class="text-xl font-bold text-gray-900 tracking-heading">OrbitRent Dove-PSB</h3>
 
-            <p class="text-sm text-gray-500 mt-0.5">Operated by Planet Labs</p>
+            <p class="text-xs text-gray-500 mt-1">Operated by Planet Labs</p>
 
           </div>
 
         </div>
 
-        <h4 class="text-lg font-bold text-gray-900 mb-4">Select Access Option</h4>
+        <h4 class="text-xl font-bold text-gray-900 mb-4 tracking-heading">Select Access Option</h4>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
 
           <label class="block border-2 border-blue-600 rounded-xl p-5 cursor-pointer bg-blue-50/30 relative">
 
-            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-caps uppercase shadow-sm whitespace-nowrap">Most Popular</div>
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-3 py-1 rounded text-xs font-bold tracking-caps uppercase shadow-sm whitespace-nowrap">Most Popular</div>
 
             <div class="flex items-center gap-3 mb-2">
 
               <input type="radio" name="plan_s1" checked class="w-4 h-4 text-blue-600 focus:ring-blue-600 border-gray-300">
 
-              <span class="text-base font-bold text-gray-900">Per km&sup2;</span>
+              <span class="text-base font-bold text-gray-900 tracking-heading">Per km&sup2;</span>
 
             </div>
 
-            <p class="text-sm text-gray-500 mb-4">For large scale monitoring.</p>
+            <p class="text-xs text-gray-500 mb-4">For large scale monitoring.</p>
 
-            <div class="text-2xl font-bold tracking-heading text-gray-900">R$ 15<span class="text-sm font-normal text-gray-500">/km&sup2;</span></div>
+            <div class="text-2xl font-bold tracking-heading text-gray-900">R$ 15<span class="text-xs font-normal text-gray-500">/km&sup2;</span></div>
 
           </label>
 
@@ -174,13 +174,13 @@
 
               <input type="radio" name="plan_s1" class="w-4 h-4 text-blue-600 focus:ring-blue-600 border-gray-300">
 
-              <span class="text-base font-bold text-gray-900">Per Image</span>
+              <span class="text-base font-bold text-gray-900 tracking-heading">Per Image</span>
 
             </div>
 
-            <p class="text-sm text-gray-500 mb-4">For localized studies.</p>
+            <p class="text-xs text-gray-500 mb-4">For localized studies.</p>
 
-            <div class="text-2xl font-bold tracking-heading text-gray-900">R$ 50<span class="text-sm font-normal text-gray-500">/img</span></div>
+            <div class="text-2xl font-bold tracking-heading text-gray-900">R$ 50<span class="text-xs font-normal text-gray-500">/img</span></div>
 
           </label>
 
@@ -190,11 +190,11 @@
 
               <input type="radio" name="plan_s1" class="w-4 h-4 text-blue-600 focus:ring-blue-600 border-gray-300">
 
-              <span class="text-base font-bold text-gray-900">Monthly</span>
+              <span class="text-base font-bold text-gray-900 tracking-heading">Monthly</span>
 
             </div>
 
-            <p class="text-sm text-gray-500 mb-4">Unlimited API access.</p>
+            <p class="text-xs text-gray-500 mb-4">Unlimited API access.</p>
 
             <div class="text-2xl font-bold tracking-heading text-gray-900">Custom</div>
 
@@ -202,7 +202,7 @@
 
         </div>
 
-        <h4 class="text-lg font-bold text-gray-900 mb-4">Access Period</h4>
+        <h4 class="text-xl font-bold text-gray-900 mb-4 tracking-heading">Access Period</h4>
 
         <div class="grid grid-cols-4 gap-3 mb-10">
 
@@ -210,7 +210,7 @@
 
             <input type="radio" name="period_s1" class="hidden">
 
-            <span class="block text-sm font-bold text-gray-900">1 Hour</span>
+            <span class="block text-base font-bold text-gray-900 tracking-heading">1 Hour</span>
 
           </label>
 
@@ -218,7 +218,7 @@
 
             <input type="radio" name="period_s1" class="hidden">
 
-            <span class="block text-sm font-bold text-gray-900">1 Day</span>
+            <span class="block text-base font-bold text-gray-900 tracking-heading">1 Day</span>
 
           </label>
 
@@ -226,7 +226,7 @@
 
             <input type="radio" name="period_s1" checked class="hidden">
 
-            <span class="block text-sm font-bold text-gray-900">1 Week</span>
+            <span class="block text-base font-bold text-gray-900 tracking-heading">1 Week</span>
 
           </label>
 
@@ -234,13 +234,13 @@
 
             <input type="radio" name="period_s1" class="hidden">
 
-            <span class="block text-sm font-bold text-gray-900">1 Month</span>
+            <span class="block text-base font-bold text-gray-900 tracking-heading">1 Month</span>
 
           </label>
 
         </div>
 
-        <h4 class="text-lg font-bold text-gray-900 mb-4">Integration Type</h4>
+        <h4 class="text-xl font-bold text-gray-900 mb-4 tracking-heading">Integration Type</h4>
 
         <div class="grid grid-cols-3 gap-3">
 
@@ -248,7 +248,7 @@
 
             <input type="radio" name="integ_s1" checked class="w-4 h-4 text-gray-900 focus:ring-gray-900 border-gray-300">
 
-            <span class="text-sm font-bold text-gray-900">REST API</span>
+            <span class="text-base font-bold text-gray-900 tracking-heading">REST API</span>
 
           </label>
 
@@ -256,7 +256,7 @@
 
             <input type="radio" name="integ_s1" class="w-4 h-4 text-gray-900 focus:ring-gray-900 border-gray-300">
 
-            <span class="text-sm font-bold text-gray-900">Direct Download</span>
+            <span class="text-base font-bold text-gray-900 tracking-heading">Direct Download</span>
 
           </label>
 
@@ -264,7 +264,7 @@
 
             <input type="radio" name="integ_s1" class="w-4 h-4 text-gray-900 focus:ring-gray-900 border-gray-300">
 
-            <span class="text-sm font-bold text-gray-900">Webhook</span>
+            <span class="text-base font-bold text-gray-900 tracking-heading">Webhook</span>
 
           </label>
 
@@ -284,7 +284,7 @@
 
               <span class="text-gray-500">Satellite</span>
 
-              <span class="font-bold text-gray-900 text-right">OrbitRent Dove-PSB</span>
+              <span class="font-bold text-gray-900 text-right tracking-heading">OrbitRent Dove-PSB</span>
 
             </div>
 
@@ -292,7 +292,7 @@
 
               <span class="text-gray-500">Plan</span>
 
-              <span class="font-bold text-gray-900 text-right">Per km&sup2;</span>
+              <span class="font-bold text-gray-900 text-right tracking-heading">Per km&sup2;</span>
 
             </div>
 
@@ -300,7 +300,7 @@
 
               <span class="text-gray-500">Access Period</span>
 
-              <span class="font-bold text-gray-900 text-right">1 Week</span>
+              <span class="font-bold text-gray-900 text-right tracking-heading">1 Week</span>
 
             </div>
 
@@ -308,13 +308,13 @@
 
           <div class="py-6 border-b border-gray-100 flex justify-between items-center">
 
-            <span class="text-gray-900 font-bold">Estimated Total</span>
+            <span class="text-gray-900 font-bold tracking-heading">Estimated Total</span>
 
-            <span class="text-3xl font-bold tracking-heading text-gray-900">R$ 15,00</span>
+            <span class="text-4xl font-bold tracking-heading text-gray-900">R$ 15,00</span>
 
           </div>
 
-          <button onclick="showStep(2)" class="w-full mt-8 py-4 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-gray-800 transition-colors flex justify-center items-center gap-2">
+          <button onclick="exibirEtapa(2)" class="w-full mt-8 py-4 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-gray-800 transition-colors flex justify-center items-center gap-2 tracking-heading">
 
             Continue to Payment
 
@@ -338,17 +338,17 @@
 
       <div class="w-full lg:w-7/12">
 
-        <h2 class="text-3xl font-bold tracking-heading text-gray-900 mb-8">Payment Details</h2>
+        <h2 class="text-4xl font-bold tracking-heading text-gray-900 mb-8">Payment Details</h2>
 
         <div class="mb-10">
 
-          <h4 class="text-lg font-bold text-gray-900 mb-4">Billing Information</h4>
+          <h4 class="text-xl font-bold text-gray-900 mb-4 tracking-heading">Billing Information</h4>
 
           <div class="grid grid-cols-2 gap-4">
 
             <div class="col-span-2">
 
-              <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <label class="block text-xs font-medium text-gray-700 mb-1">Full Name</label>
 
               <input type="text" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-gray-900 focus:border-gray-900 outline-none" value="John Doe">
 
@@ -356,7 +356,7 @@
 
             <div class="col-span-2 md:col-span-1">
 
-              <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <label class="block text-xs font-medium text-gray-700 mb-1">Email Address</label>
 
               <input type="email" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-gray-900 focus:border-gray-900 outline-none" value="john@example.com">
 
@@ -364,7 +364,7 @@
 
             <div class="col-span-2 md:col-span-1">
 
-              <label class="block text-sm font-medium text-gray-700 mb-1">CPF / CNPJ</label>
+              <label class="block text-xs font-medium text-gray-700 mb-1">CPF / CNPJ</label>
 
               <input type="text" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-gray-900 focus:border-gray-900 outline-none" placeholder="000.000.000-00">
 
@@ -372,7 +372,7 @@
 
             <div class="col-span-2">
 
-              <label class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+              <label class="block text-xs font-medium text-gray-700 mb-1">Country</label>
 
               <select class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-gray-900 focus:border-gray-900 outline-none">
 
@@ -392,11 +392,11 @@
 
         <div>
 
-          <h4 class="text-lg font-bold text-gray-900 mb-4">Payment Method</h4>
+          <h4 class="text-xl font-bold text-gray-900 mb-4 tracking-heading">Payment Method</h4>
 
           <div class="flex border-b border-gray-200 mb-6">
 
-            <button class="px-6 py-3 border-b-2 border-gray-900 text-gray-900 font-bold">Credit Card</button>
+            <button class="px-6 py-3 border-b-2 border-gray-900 text-gray-900 font-bold tracking-heading">Credit Card</button>
 
             <button class="px-6 py-3 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium">PIX</button>
 
@@ -410,7 +410,7 @@
 
               <div class="col-span-2">
 
-                <label class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Card Number</label>
 
                 <div class="relative">
 
@@ -426,7 +426,7 @@
 
               <div class="col-span-2">
 
-                <label class="block text-sm font-medium text-gray-700 mb-1">Name on Card</label>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Name on Card</label>
 
                 <input type="text" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-gray-900 focus:border-gray-900 outline-none" placeholder="JOHN DOE">
 
@@ -434,7 +434,7 @@
 
               <div class="col-span-1">
 
-                <label class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                <label class="block text-xs font-medium text-gray-700 mb-1">Expiry Date</label>
 
                 <input type="text" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-gray-900 focus:border-gray-900 outline-none" placeholder="MM/YY">
 
@@ -442,7 +442,7 @@
 
               <div class="col-span-1">
 
-                <label class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                <label class="block text-xs font-medium text-gray-700 mb-1">CVV</label>
 
                 <input type="text" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-gray-900 focus:border-gray-900 outline-none" placeholder="123">
 
@@ -458,7 +458,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
 
-            <span class="text-sm font-medium">Your payment is encrypted and 100% secure.</span>
+            <span class="text-xs font-medium">Your payment is encrypted and 100% secure.</span>
 
           </div>
 
@@ -478,7 +478,7 @@
 
               <span class="text-gray-500">Satellite</span>
 
-              <span class="font-bold text-gray-900 text-right">OrbitRent Dove-PSB</span>
+              <span class="font-bold text-gray-900 text-right tracking-heading">OrbitRent Dove-PSB</span>
 
             </div>
 
@@ -486,7 +486,7 @@
 
               <span class="text-gray-500">Plan</span>
 
-              <span class="font-bold text-gray-900 text-right">Per km&sup2;</span>
+              <span class="font-bold text-gray-900 text-right tracking-heading">Per km&sup2;</span>
 
             </div>
 
@@ -494,7 +494,7 @@
 
               <span class="text-gray-500">Access Period</span>
 
-              <span class="font-bold text-gray-900 text-right">1 Week</span>
+              <span class="font-bold text-gray-900 text-right tracking-heading">1 Week</span>
 
             </div>
 
@@ -502,19 +502,19 @@
 
           <div class="py-6 border-b border-gray-100 space-y-3">
 
-            <div class="flex justify-between text-gray-500 text-sm">
+            <div class="flex justify-between text-gray-500 text-xs">
 
               <span>Subtotal</span>
 
-              <span class="font-bold text-gray-900">R$ 15,00</span>
+              <span class="font-bold text-gray-900 tracking-heading">R$ 15,00</span>
 
             </div>
 
-            <div class="flex justify-between text-gray-500 text-sm">
+            <div class="flex justify-between text-gray-500 text-xs">
 
               <span>Taxes (10%)</span>
 
-              <span class="font-bold text-gray-900">R$ 1,50</span>
+              <span class="font-bold text-gray-900 tracking-heading">R$ 1,50</span>
 
             </div>
 
@@ -522,19 +522,19 @@
 
           <div class="pt-6 flex justify-between items-center">
 
-            <span class="text-gray-900 font-bold">Total</span>
+            <span class="text-gray-900 font-bold tracking-heading">Total</span>
 
-            <span class="text-3xl font-bold tracking-heading text-gray-900">R$ 16,50</span>
+            <span class="text-4xl font-bold tracking-heading text-gray-900">R$ 16,50</span>
 
           </div>
 
-          <button onclick="showStep(3)" class="w-full mt-8 py-4 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-emerald-600 transition-colors flex justify-center items-center gap-2">
+          <button onclick="exibirEtapa(3)" class="w-full mt-8 py-4 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-emerald-600 transition-colors flex justify-center items-center gap-2 tracking-heading">
 
             Confirm Payment
 
           </button>
 
-          <a href="#" onclick="showStep(1); return false;" class="block text-center mt-4 text-sm font-bold text-gray-500 hover:text-gray-900 transition-colors">&larr; Back to Plan</a>
+          <a href="#" onclick="exibirEtapa(1); return false;" class="block text-center mt-4 text-xs font-bold text-gray-500 hover:text-gray-900 transition-colors tracking-heading">&larr; Back to Plan</a>
 
         </div>
 
@@ -562,11 +562,11 @@
 
       </div>
 
-      <p class="text-gray-500 mb-10 text-lg">Your transaction was successful. Credentials have been sent to your email.</p>
+      <p class="text-gray-500 mb-10 text-xl">Your transaction was successful. Credentials have been sent to your email.</p>
 
       <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-left mb-10">
 
-        <h3 class="text-lg font-bold text-gray-900 border-b border-gray-100 pb-4 mb-4">Receipt Details</h3>
+        <h3 class="text-xl font-bold text-gray-900 border-b border-gray-100 pb-4 mb-4 tracking-heading">Receipt Details</h3>
 
         <div class="grid grid-cols-2 gap-6">
 
@@ -608,9 +608,9 @@
 
           <div>
 
-            <p class="text-[10px] font-bold tracking-caps uppercase text-gray-400 mb-1">Your API Key</p>
+            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 mb-1">Your API Key</p>
 
-            <p class="text-white font-mono text-sm tracking-wider">sk_live_928374982374928374</p>
+            <p class="text-white font-mono text-xs tracking-wider">sk_live_928374982374928374</p>
 
           </div>
 
@@ -628,9 +628,9 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 
-        <button class="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors">View API Documentation</button>
+        <button class="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors tracking-heading">View API Documentation</button>
 
-        <button class="w-full sm:w-auto px-8 py-4 bg-white border border-gray-200 text-gray-900 font-bold rounded-xl hover:bg-gray-50 transition-colors">Explore more Satellites</button>
+        <button class="w-full sm:w-auto px-8 py-4 bg-white border border-gray-200 text-gray-900 font-bold rounded-xl hover:bg-gray-50 transition-colors tracking-heading">Explore more Satellites</button>
 
       </div>
 
@@ -676,7 +676,7 @@
 
             <h4 class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Theme</h4>
 
-            <div class="inline-flex items-center bg-gray-800 rounded-lg p-1 gap-0.5">
+            <div class="inline-flex items-center bg-gray-800 rounded-lg p-1 gap-1">
 
               <button class="theme-toggle-btn active p-2 rounded-md" title="System">
 
@@ -752,12 +752,12 @@
 
   </footer>
 
-  <script src="../js/checkout.js"></script>
   
-  <script src="../js/app.js"></script>
+  
+  <script type="module" src="../js/pages/checkout.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-
+  
 </body>
 
 </html>

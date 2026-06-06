@@ -1,166 +1,103 @@
-﻿*,
-
+/* --- Configurações Globais --- */
+*,
 *::before,
-
 *::after {
-
   box-sizing: border-box;
-
 }
 
 html {
-
   scroll-behavior: smooth;
-
 }
 
 body {
-
   font-family: 'DM Sans', sans-serif;
-
   -webkit-font-smoothing: antialiased;
-
   -moz-osx-font-smoothing: grayscale;
-
 }
 
+/* --- Mapa de Satélite --- */
 .satellite-popup::before {
-
   content: '';
-
   position: absolute;
-
   left: -8px;
-
   top: 24px;
-
   width: 16px;
-
   height: 16px;
-
   background: white;
-
   border-left: 1px solid #e5e5e5;
-
   border-bottom: 1px solid #e5e5e5;
-
   transform: rotate(45deg);
-
 }
 
+/* --- Células Bento --- */
 .bento-cell {
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-
 }
 
 .bento-cell:hover {
-
   transform: translateY(-2px);
-
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-
 }
 
+/* --- Card de Satélite --- */
 .satellite-card {
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-
 }
 
 .satellite-card:hover {
-
   transform: translateY(-4px);
-
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-
 }
 
+/* --- Botão de Tema --- */
 .theme-toggle-btn {
-
   transition: background-color 0.15s ease;
-
 }
 
 .theme-toggle-btn.active {
-
   background-color: #171717;
-
   color: white;
-
 }
 
+/* --- Barra de Rolagem Customizada --- */
 .custom-scrollbar::-webkit-scrollbar {
-
-  height: 6px;
-
+  height: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-
   background: #f3f4f6;
-
   border-radius: 4px;
-
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-
   background: #d1d5db;
-
   border-radius: 4px;
-
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-
   background: #9ca3af;
-
 }
 
-#category-scroll::-webkit-scrollbar { display: none; }
+#category-scroll::-webkit-scrollbar {
+  display: none;
+}
 
-#similar-scroll::-webkit-scrollbar { display: none; }
+#similar-scroll::-webkit-scrollbar {
+  display: none;
+}
 
+/* --- Animações --- */
 .animate-fade-in {
-
   animation: fadeIn 0.3s ease-in-out;
-
 }
 
 @keyframes fadeIn {
-
-  from { opacity: 0; transform: translateY(5px); }
-
-  to { opacity: 1; transform: translateY(0); }
-
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-    .animate-fade-in {
-
-      animation: fadeIn 0.3s ease-in-out;
-
-    }
-
-    @keyframes fadeIn {
-
-      from {
-
-        opacity: 0;
-
-        transform: translateY(5px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-      }
-
-    }
-
-            #similar-scroll::-webkit-scrollbar { display: none; }
-
