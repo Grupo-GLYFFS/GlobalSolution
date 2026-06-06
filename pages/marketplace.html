@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Marketplace • DataOrbit</title>
+
+  <meta name="description" content="Access real-time satellite data on demand. Browse 3,200+ satellites, choose your coverage, and integrate via API. No infrastructure needed.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="../js/tailwind.config.js"></script>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <link rel="icon" type="image/png" href="../assets/favicon/favicon-light.png" media="(prefers-color-scheme: light)">
+
+  <link rel="icon" type="image/png" href="../assets/favicon/favicon-dark.png" media="(prefers-color-scheme: dark)">
+  
+</head>
+
+<body class="font-sans text-gray-900 bg-gray-50 leading-none antialiased">
+
+  <nav id="navbar" class="sticky top-0 z-50 bg-white border-b border-gray-200">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 flex items-center h-20">
+
+      <div class="flex-1">
+
+        <a href="/" id="nav-logo" class="inline-block">
+
+          <img src="../assets/logo/dataorbit-logo-3.png" alt="DataOrbit" class="h-12">
+
+        </a>
+
+      </div>
+
+      <div class="hidden lg:flex items-center gap-2">
+
+        <button id="categoriesDropdownBtn" data-dropdown-toggle="categoriesDropdownMenu" class="h-12 flex items-center gap-2 px-5 text-base font-medium text-gray-800 border border-gray-300 bg-white rounded-lg hover:bg-gray-50 transition-colors">
+
+          Categories
+
+          <svg class="w-4 h-4 text-gray-400 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+
+        </button>
+
+        <div id="categoriesDropdownMenu" class="z-50 hidden bg-white shadow-xl border-t border-gray-200 !w-full !left-0 !top-20 !transform-none">
+
+          <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-8">
+
+            <div class="flex justify-between items-center mb-6">
+
+              <h3 class="text-xs font-bold tracking-caps uppercase text-gray-400 m-0">Browse Categories</h3>
+
+              <div class="flex items-center gap-3">
+
+                <div class="flex items-center gap-1.5 mr-2 hidden md:flex" id="category-dots">
+
+                  <div class="w-1.5 h-1.5 rounded-full bg-gray-900 transition-colors"></div>
+
+                  <div class="w-1.5 h-1.5 rounded-full bg-gray-200 transition-colors"></div>
+
+                </div>
+
+                <button id="cat-prev" class="p-2 rounded-full border border-gray-200 hover:bg-gray-50 transition-colors focus:outline-none disabled:opacity-30 disabled:cursor-not-allowed">
+
+                  <svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+
+                </button>
+
+                <button id="cat-next" class="p-2 rounded-full border border-gray-200 hover:bg-gray-50 transition-colors focus:outline-none disabled:opacity-30 disabled:cursor-not-allowed">
+
+                  <svg class="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+
+                </button>
+
+              </div>
+
+            </div>
+
+            <div id="category-scroll" class="flex items-start gap-6 overflow-x-auto pb-4 scroll-smooth drag-scroll cursor-pointer select-none snap-x snap-mandatory" style="scrollbar-width: none;">
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400&h=300&fit=crop" alt="Imagery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Imagery</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">Optical, SAR, and hyperspectral data.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1561484930-998b6a7b22e8?q=80&w=400&h=300&fit=crop" alt="Climate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Climate</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">Weather patterns and GHG tracking.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&h=300&fit=crop" alt="Connectivity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Connectivity</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">IoT network and broadband links.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&h=300&fit=crop" alt="Analytics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Analytics</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">Derived intelligence and mapping.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&h=300&fit=crop" alt="Telemetry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Telemetry</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">Raw sensor outputs and GNSS data.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1494412552100-42e4e7a74ec6?q=80&w=400&h=300&fit=crop" alt="Maritime" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Maritime</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">Vessel tracking and AIS overlays.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=400&h=300&fit=crop" alt="Agriculture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Agriculture</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">Crop health and NDVI models.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=400&h=300&fit=crop" alt="Urban Planning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Urban</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">Infrastructure and night lights.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=400&h=300&fit=crop" alt="Forestry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Forestry</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">Deforestation and biomass.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 mb-3 relative border border-gray-100">
+
+                  <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=400&h=300&fit=crop" alt="Energy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-sm font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Energy</h4>
+
+                <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">Solar irradiance and pipelines.</p>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <input type="text" id="nav-search" placeholder="Search satellites, providers, data types..." class="h-12 w-64 xl:w-[450px] px-4 text-base bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 placeholder-gray-400">
+
+        <button id="nav-search-btn" class="h-12 w-12 flex-shrink-0 flex items-center justify-center bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+
+        </button>
+
+      </div>
+
+      <div class="flex lg:hidden flex-1 justify-end">
+
+        <button data-collapse-toggle="mobile-menu" type="button" class="text-gray-900 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+
+        </button>
+
+      </div>
+
+      <div class="flex-1 hidden lg:flex items-center justify-end gap-3">
+
+        <button id="nav-login-btn" class="h-12 px-6 text-base font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+
+          Log in
+
+        </button>
+
+        <button id="nav-signup-btn" class="h-12 px-6 text-base font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
+
+          Sign up
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="hidden lg:hidden w-full" id="mobile-menu">
+
+      <div class="px-6 pt-2 pb-6 space-y-2 bg-white border-t border-gray-200 shadow-xl">
+
+        <div class="mb-4 pt-2">
+
+          <input type="text" placeholder="Search satellites..." class="w-full h-12 px-4 text-base bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500">
+
+        </div>
+
+        <a href="#" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50 border border-gray-200 text-center">Categories</a>
+
+        <a href="#" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50 border border-gray-200 text-center">Log in</a>
+
+        <a href="#" class="block px-4 py-3 text-base font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 text-center">Sign up</a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <section class="bg-gray-900 py-16">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24">
+
+      <h1 class="text-5xl font-bold tracking-heading text-white leading-tight">Satellite Catalog</h1>
+
+      <p class="text-xl text-gray-400 mt-4 max-w-2xl leading-relaxed">Browse verified satellite data from leading providers. Filter by resolution, revisit time, and availability to find exactly what you need.</p>
+
+    </div>
+
+  </section>
+
+  <section class="sticky top-20 z-40 bg-white border-b border-gray-200 shadow-sm">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24">
+
+      <div class="flex items-center justify-between py-4">
+
+        <div class="xl:hidden">
+
+          <button data-drawer-target="filter-drawer" data-drawer-show="filter-drawer" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
+
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+
+            Filters
+
+          </button>
+
+        </div>
+
+        <div class="hidden xl:flex items-center gap-3">
+
+          <button data-dropdown-toggle="filter-category" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
+
+            Category
+
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+
+          </button>
+
+          <div id="filter-category" class="z-50 hidden bg-white rounded-xl shadow-lg border border-gray-200 w-56">
+
+            <ul class="p-2 space-y-1 text-base text-gray-700">
+
+              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Imagery</label></li>
+
+              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Weather</label></li>
+
+            </ul>
+
+          </div>
+
+          <button data-dropdown-toggle="filter-provider" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
+
+            Provider
+
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+
+          </button>
+
+          <div id="filter-provider" class="z-50 hidden bg-white rounded-xl shadow-lg border border-gray-200 w-56">
+
+            <ul class="p-2 space-y-1 text-base text-gray-700">
+
+              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Planet Labs</label></li>
+
+            </ul>
+
+          </div>
+
+          <button data-dropdown-toggle="filter-resolution" class="flex items-center gap-2 px-4 py-2 border border-gray-900 bg-gray-100 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-200">
+
+            Resolution
+
+            <span class="flex items-center justify-center w-5 h-5 ml-1 text-xs text-white bg-gray-900 rounded-full">1</span> <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+
+          </button>
+
+          <div id="filter-resolution" class="z-50 hidden bg-white rounded-xl shadow-lg border border-gray-200 w-56">
+
+            <ul class="p-2 space-y-1 text-base text-gray-700">
+
+              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Sub-1m</label></li>
+
+              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> 1–10m</label></li>
+
+            </ul>
+
+          </div>
+
+          <button class="px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-900">More filters +</button>
+
+        </div>
+
+        <div>
+
+          <button data-dropdown-toggle="sort-dropdown" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-lg">
+
+            Sort by:
+
+            <span class="text-gray-500 font-normal">Relevance</span> <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+
+          </button>
+
+          <div id="sort-dropdown" class="z-50 hidden bg-white rounded-xl shadow-lg border border-gray-200 w-48">
+
+            <ul class="p-2 space-y-1 text-base text-gray-700">
+
+              <li><a href="#" class="block px-3 py-2 bg-gray-50 rounded-lg font-medium">Relevance</a></li>
+
+              <li><a href="#" class="block px-3 py-2 hover:bg-gray-50 rounded-lg">Price (low to high)</a></li>
+
+              <li><a href="#" class="block px-3 py-2 hover:bg-gray-50 rounded-lg">Price (high to low)</a></li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="flex items-center justify-between py-3 border-t border-gray-100">
+
+        <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-1">
+
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-200 rounded-full whitespace-nowrap">
+
+            Category: Imagery
+
+            <button class="text-gray-400 hover:text-gray-900">
+
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+
+            </button>
+
+          </span>
+
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 text-sm font-medium text-gray-900 bg-gray-100 border border-gray-200 rounded-full whitespace-nowrap">
+
+            Resolution: Sub-1m
+
+            <button class="text-gray-400 hover:text-gray-900">
+
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+
+            </button>
+
+          </span>
+
+        </div>
+
+        <button class="text-sm font-medium text-gray-500 hover:text-gray-900 whitespace-nowrap ml-4">Clear all</button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="py-12">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24">
+
+      <div class="mb-6">
+
+        <h2 class="text-xl font-bold tracking-heading text-gray-900">20 satellites found</h2>
+
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 1</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 2</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 3</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 4</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 5</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 6</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 7</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 8</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 9</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 10</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 11</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 12</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 13</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 14</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 15</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 16</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 17</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 18</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 19</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-gray-100 flex items-center justify-center">
+
+            <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22V12h6v10" />
+            </svg>
+
+          </div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none">Sat-O 20</h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center gap-0.5">
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+                <svg class="w-4 h-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <button class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">Get access</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mt-16 flex flex-col items-center justify-center gap-4">
+
+        <div class="w-8 h-8 border-4 border-gray-200 border-t-gray-900 rounded-full animate-spin"></div>
+
+        <span class="text-base text-gray-500 font-medium">Loading more satellites...</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <div id="filter-drawer" class="fixed top-0 left-0 z-50 h-screen p-6 overflow-y-auto transition-transform -translate-x-full bg-white w-80 shadow-2xl" tabindex="-1">
+
+    <div class="flex items-center justify-between mb-6">
+
+      <h5 class="text-xl font-bold tracking-heading text-gray-900">Filters</h5>
+
+      <button type="button" data-drawer-hide="filter-drawer" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex items-center justify-center">
+
+        <svg class="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 14 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+        </svg>
+
+      </button>
+
+    </div>
+
+    <div class="space-y-6">
+
+      <div>
+
+        <h6 class="text-sm font-bold tracking-caps uppercase text-gray-400 mb-3">Category</h6>
+
+        <div class="space-y-3">
+
+          <label class="flex items-center gap-3"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> <span class="text-base text-gray-700">Imagery</span></label>
+
+          <label class="flex items-center gap-3"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> <span class="text-base text-gray-700">Weather</span></label>
+
+        </div>
+
+      </div>
+
+      <div class="pt-6 border-t border-gray-100">
+
+        <h6 class="text-sm font-bold tracking-caps uppercase text-gray-400 mb-3">Provider</h6>
+
+        <div class="space-y-3">
+
+          <label class="flex items-center gap-3"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> <span class="text-base text-gray-700">Planet Labs</span></label>
+
+          <label class="flex items-center gap-3"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> <span class="text-base text-gray-700">ESA</span></label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-gray-200 flex gap-3">
+
+      <button class="flex-1 px-4 py-3 bg-gray-100 text-gray-900 rounded-lg font-medium hover:bg-gray-200">Clear</button>
+
+      <button class="flex-1 px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800" data-drawer-hide="filter-drawer">Apply</button>
+
+    </div>
+
+  </div>
+
+  <footer id="footer" class="bg-gray-900">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-24 pb-8">
+
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-0">
+
+        <div>
+
+          <img src="../assets/logo/dataorbit-logo-3.png" alt="DataOrbit" class="h-12 brightness-0 invert">
+
+          <p class="text-base text-gray-500 mt-4 leading-normal max-w-xs">Satellite data marketplace for enterprises and developers.</p>
+
+        </div>
+
+        <div>
+
+          <h4 class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4">Navigation</h4>
+
+          <ul class="space-y-3">
+
+            <li><a href="#" class="text-base text-gray-300 hover:text-white transition-colors">Home</a></li>
+
+            <li><a href="#" class="text-base text-gray-300 hover:text-white transition-colors">Marketplace</a></li>
+
+            <li><a href="#" class="text-base text-gray-300 hover:text-white transition-colors">Login</a></li>
+
+            <li><a href="#" class="text-base text-gray-300 hover:text-white transition-colors">Checkout</a></li>
+
+          </ul>
+
+        </div>
+
+        <div class="space-y-6">
+
+          <div>
+
+            <h4 class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Theme</h4>
+
+            <div class="inline-flex items-center bg-gray-800 rounded-lg p-1 gap-0.5">
+
+              <button class="theme-toggle-btn active p-2 rounded-md" title="System">
+
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+
+              </button>
+
+              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:text-gray-300" title="Light mode">
+
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+
+              </button>
+
+              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:text-gray-300" title="Dark mode">
+
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+
+              </button>
+
+            </div>
+
+          </div>
+
+          <div>
+
+            <h4 class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Language</h4>
+
+            <button id="languageDropdownBtn" data-dropdown-toggle="languageDropdownMenu" data-dropdown-placement="top-start" class="flex items-center gap-2 px-3 py-2 text-base text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+
+              <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+
+              English
+
+              <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+
+            </button>
+
+            <div id="languageDropdownMenu" class="z-10 hidden bg-gray-800 rounded-lg shadow-lg border border-gray-700 w-40">
+
+              <ul class="py-1 text-base text-gray-300">
+
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700 font-medium">English</a></li>
+
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Português</a></li>
+
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Español</a></li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-800">
+
+        <p class="text-xs text-gray-500">&copy; 2026 DataOrbit. All rights reserved.</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="../js/app.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+</body>
+
+</html>
+
