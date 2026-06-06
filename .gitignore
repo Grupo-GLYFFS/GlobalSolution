@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Ignorar arquivos do Gemini e diretrizes
+/scripts-gemini/
+/diretrizes/
