@@ -38,9 +38,9 @@
 
   <section id="hero" class="bg-gray-950 min-h-[calc(100vh-80px)] flex items-center py-12 lg:py-0">
 
-    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 w-full flex flex-col lg:flex-row items-center gap-16">
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 w-full flex flex-col lg:flex-row items-center gap-16 min-h-[calc(100vh-80px)]">
 
-      <div class="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start">
+      <div class="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start justify-center">
 
         <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4">Platform</div>
 
@@ -62,13 +62,13 @@
 
       </div>
 
-      <div class="w-full lg:w-1/2 relative mt-8 lg:mt-0 aspect-square">
-        <canvas id="globe-canvas" class="w-full h-full absolute inset-0 cursor-grab active:cursor-grabbing"></canvas>
-        <div id="sat-popup" class="fixed bg-gray-900 border border-gray-800 rounded-xl shadow-2xl p-5 w-64 z-50 pointer-events-auto text-white" style="display: none; transform: translate(-50%, -100%);"></div>
+      <div class="w-full lg:w-1/2 flex items-center justify-center lg:justify-end relative mt-8 lg:mt-0">
+        <div class="w-full max-h-[60vh] lg:max-h-[80vh] aspect-square relative mx-auto lg:mx-0 lg:ml-auto">
+          <canvas id="globe-canvas" class="w-full h-full absolute inset-0 cursor-grab active:cursor-grabbing"></canvas>
+          <div id="sat-popup" class="absolute bottom-4 left-4 bg-white border border-gray-200 rounded-xl shadow-2xl w-72 z-50 pointer-events-auto text-gray-900 overflow-hidden" style="display: none;"></div>
+        </div>
       </div>
-
     </div>
-
   </section>
   <section id="metrics" class="border-b border-gray-200">
 
@@ -655,9 +655,9 @@
 
   <div id="footer-placeholder" data-basepath="."></div>
 
-    <!-- Three.js e OrbitControls (Globo 3D) -->
+    <!-- Three.js e TrackballControls (Globo 3D livre) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/TrackballControls.js"></script>
   <script src="./javascript/components/globe.js"></script>
   
   <script src="./javascript/components/navbar.js"></script>
@@ -675,6 +675,8 @@
 </body>
 
 </html>
+
+
 
 
 
