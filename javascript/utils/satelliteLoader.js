@@ -1,4 +1,4 @@
-﻿window.renderSatellites = function renderSatellites(containerId, satellitesList = window.satellites, basePath = '.', extraClasses = '') {
+window.renderSatellites = function renderSatellites(containerId, satellitesList = window.satellites, basePath = '.', extraClasses = '') {
   const container = document.getElementById(containerId);
   if (!container) return;
 
@@ -12,6 +12,9 @@
   } else {
     container.innerHTML = cardsHtml;
   }
+  
+  // Prevent browser scroll anchoring from jumping to the old promo card
+  container.scrollLeft = 0;
 }
 
 

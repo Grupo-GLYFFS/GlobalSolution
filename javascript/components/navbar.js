@@ -1,4 +1,4 @@
-﻿window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
+window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
   return `
   <nav id="navbar" class="sticky top-0 z-50 bg-white border-b border-gray-200">
 
@@ -24,7 +24,7 @@
 
         </button>
 
-        <div id="categoriesDropdownMenu" class="z-50 hidden bg-white shadow-xl border-t border-gray-200 !w-full !left-0 !top-20 !transform-none">
+        <div id="categoriesDropdownMenu" class="z-50 hidden absolute bg-white shadow-xl border-t border-gray-200 !w-full !left-0 !top-20 !transform-none">
 
           <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-8">
 

@@ -1,4 +1,4 @@
-﻿window.injectComponents = function injectComponents() {
+window.injectComponents = function injectComponents() {
   const navbarPlaceholder = document.getElementById('navbar-placeholder');
   if (navbarPlaceholder) {
     const basePath = navbarPlaceholder.dataset.basepath || '.';
@@ -11,10 +11,10 @@
     footerPlaceholder.outerHTML = window.getFooterHtml(basePath);
   }
 
-  // Re-initialize Flowbite if present
-  if (window.initFlowbite) {
+  // Initialize Custom UI Components
+  if (window.UIComponents) {
     setTimeout(() => {
-      window.initFlowbite();
+      window.UIComponents.init();
     }, 50);
   }
 }

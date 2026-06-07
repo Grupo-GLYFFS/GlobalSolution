@@ -1,4 +1,4 @@
-﻿window.getFooterHtml = function getFooterHtml(basePath = '.') {
+window.getFooterHtml = function getFooterHtml(basePath = '.') {
   return `
   <footer id="footer" class="bg-gray-900">
 
@@ -68,7 +68,7 @@
 
             <h4 class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Language</h4>
 
-            <button id="languageDropdownBtn" data-dropdown-toggle="languageDropdownMenu" data-dropdown-placement="top-start" class="flex items-center gap-2 px-3 py-2 text-base text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+            <div class="relative inline-block"><button id="languageDropdownBtn" data-dropdown-toggle="languageDropdownMenu" data-dropdown-placement="top-start" class="flex items-center gap-2 px-3 py-2 text-base text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
 
               <span class="material-symbols-outlined text-[16px]">language</span>
 
@@ -78,9 +78,9 @@
 
             </button>
 
-            <div id="languageDropdownMenu" class="z-10 hidden bg-gray-800 rounded-lg shadow-lg border border-gray-700 w-40">
+            <div id="languageDropdownMenu" class="z-10 hidden absolute bottom-full left-0 mb-2 bg-gray-800 rounded-lg shadow-lg border border-gray-700 w-40">
 
-              <ul class="py-1 text-base text-gray-300">
+              <ul class="text-base text-gray-300">
 
                 <li><a href="#" class="block px-4 py-2 hover:bg-gray-700 font-medium">English</a></li>
 
@@ -89,7 +89,7 @@
                 <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Español</a></li>
 
               </ul>
-
+            </div>
             </div>
 
           </div>
@@ -109,5 +109,6 @@
   </footer>
 `;
 }
+
 
 

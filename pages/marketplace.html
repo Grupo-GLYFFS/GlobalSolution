@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -67,93 +67,77 @@
         </div>
 
         <div class="hidden xl:flex items-center gap-3">
+            <div class="relative inline-block">
+              <button data-dropdown-toggle="filter-category" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
 
-          <button data-dropdown-toggle="filter-category" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
+                Category
 
-            Category
+                <span class="material-symbols-outlined text-[20px]">expand_more</span>
 
-            <span class="material-symbols-outlined text-[20px]">expand_more</span>
+              </button>
 
-          </button>
+              <div id="filter-category" class="z-50 hidden absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-56">
 
-          <div id="filter-category" class="z-50 hidden bg-white rounded-xl shadow-lg border border-gray-200 w-56">
+                <ul class="text-base text-gray-700">
 
-            <ul class="p-2 space-y-1 text-base text-gray-700">
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Imagery</label></li>
 
-              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Imagery</label></li>
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Weather</label></li>
 
-              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Weather</label></li>
+                </ul>
 
-            </ul>
+              </div>
+            </div>
 
-          </div>
+            <div class="relative inline-block">
+              <button data-dropdown-toggle="filter-provider" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
 
-          <button data-dropdown-toggle="filter-provider" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
+                Provider
 
-            Provider
+                <span class="material-symbols-outlined text-[20px]">expand_more</span>
 
-            <span class="material-symbols-outlined text-[20px]">expand_more</span>
+              </button>
 
-          </button>
+              <div id="filter-provider" class="z-50 hidden absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-56">
 
-          <div id="filter-provider" class="z-50 hidden bg-white rounded-xl shadow-lg border border-gray-200 w-56">
+                <ul class="text-base text-gray-700">
 
-            <ul class="p-2 space-y-1 text-base text-gray-700">
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Planet Labs</label></li>
 
-              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Planet Labs</label></li>
+                </ul>
 
-            </ul>
+              </div>
+            </div>
 
-          </div>
-
-          <button data-dropdown-toggle="filter-resolution" class="flex items-center gap-2 px-4 py-2 border border-gray-900 bg-gray-100 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-200">
-
-            Resolution
-
-            <span class="flex items-center justify-center w-5 h-5 ml-1 text-xs text-white bg-gray-900 rounded-full">1</span> <span class="material-symbols-outlined text-[20px]">expand_more</span>
-
-          </button>
-
-          <div id="filter-resolution" class="z-50 hidden bg-white rounded-xl shadow-lg border border-gray-200 w-56">
-
-            <ul class="p-2 space-y-1 text-base text-gray-700">
-
-              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Sub-1m</label></li>
-
-              <li><label class="flex items-center gap-3 px-3 py-2 hover:bg-gray-50 rounded-lg cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> 1–10m</label></li>
-
-            </ul>
-
-          </div>
+            <div class="relative inline-block">
+              <button data-dropdown-toggle="filter-resolution" class="flex items-center gap-2 px-4 py-2 border border-gray-900 bg-gray-100 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-200">
+                Resolution
+                <span class="flex items-center justify-center w-5 h-5 ml-1 text-xs text-white bg-gray-900 rounded-full">1</span> <span class="material-symbols-outlined text-[20px]">expand_more</span>
+              </button>
+              <div id="filter-resolution" class="z-50 hidden absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-56">
+                <ul class="text-base text-gray-700">
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Sub-1m</label></li>
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> 1–10m</label></li>
+                </ul>
+              </div>
+            </div>
 
           <button class="px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-900">More filters +</button>
 
         </div>
 
-        <div>
-
+        <div class="relative inline-block">
           <button data-dropdown-toggle="sort-dropdown" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-
             Sort by: Relevance
-
             <span class="material-symbols-outlined text-[20px]">expand_more</span>
-
           </button>
-
-          <div id="sort-dropdown" class="z-50 hidden bg-white rounded-xl shadow-lg border border-gray-200 w-48">
-
-            <ul class="p-2 space-y-1 text-base text-gray-700">
-
-              <li><a href="#" class="block px-3 py-2 bg-gray-50 rounded-lg font-medium">Relevance</a></li>
-
-              <li><a href="#" class="block px-3 py-2 hover:bg-gray-50 rounded-lg">Price (low to high)</a></li>
-
-              <li><a href="#" class="block px-3 py-2 hover:bg-gray-50 rounded-lg">Price (high to low)</a></li>
-
+          <div id="sort-dropdown" class="z-50 hidden absolute top-full right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-48">
+            <ul class="text-base text-gray-700">
+              <li><a href="#" class="block px-4 py-2 bg-gray-50 font-medium">Relevance</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Price (low to high)</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Price (high to low)</a></li>
             </ul>
-
           </div>
-
         </div>
 
       </div>
@@ -281,11 +265,12 @@
   <script src="../javascript/utils/satelliteLoader.js"></script>
   <script src="../javascript/pages/marketplace.js"></script>
   
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script src="../javascript/utils/ui-components.js"></script>
   
 </body>
 
 </html>
+
 
 
 

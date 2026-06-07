@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -148,29 +148,22 @@
 
         </div>
 
-        <button id="sortDropdownBtn" data-dropdown-toggle="sortDropdownMenu" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-
-          Sort by: Relevance
-
-          <span class="material-symbols-outlined text-[20px]">expand_more</span>
-
-        </button>
-
-        <div id="sortDropdownMenu" class="z-10 hidden bg-white rounded-lg shadow-lg border border-gray-200 w-48">
-
-          <ul class="py-1 text-base text-gray-700">
+        <div class="relative inline-block">
+          <button id="sortDropdownBtn" data-dropdown-toggle="sortDropdownMenu" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+            Sort by: Relevance
+            <span class="material-symbols-outlined text-[20px]">expand_more</span>
+          </button>
+          <div id="sortDropdownMenu" class="z-10 hidden absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-48">
+            <ul class="text-base text-gray-700">
 
             <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Relevance</a></li>
-
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Price: Low to High</a></li>
-
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Price: High to Low</a></li>
-
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Rating</a></li>
-
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Newest</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Price: Low to High</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Price: High to Low</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Rating</a></li>
           </ul>
-
         </div>
+      </div>
 
       </div>
 
