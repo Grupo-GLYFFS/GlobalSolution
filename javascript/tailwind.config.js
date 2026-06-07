@@ -31,7 +31,7 @@ tailwind.config = {
         '3xl': '0.25rem',
         'full': '9999px',
       },
-      // Paleta de cores baseada em tons de cinza do Tailwind
+      // Paleta estrita contendo apenas as cores efetivamente usadas no projeto
       colors: {
         gray: {
           50: '#fafafa',
@@ -46,6 +46,33 @@ tailwind.config = {
           900: '#171717',
           950: '#0a0a0a',
         },
+        blue: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          900: '#1e3a8a',
+        },
+        emerald: {
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+        },
+        red: {
+          400: '#f87171',
+          500: '#ef4444',
+        },
+        purple: {
+          300: '#d8b4fe',
+        }
       },
     },
   },
