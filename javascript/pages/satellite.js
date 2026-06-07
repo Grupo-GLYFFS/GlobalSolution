@@ -8,11 +8,11 @@ function alterarImagemPrincipal(caminhoImagem, botaoClicado) {
 
   const botoesMiniatura = document.querySelectorAll('.gallery-thumb');
   botoesMiniatura.forEach(botaoCorrente => {
-    botaoCorrente.classList.remove('ring-2', 'ring-gray-900', 'opacity-100');
+    botaoCorrente.classList.remove('ring-2', 'ring-black', 'opacity-100');
     botaoCorrente.classList.add('opacity-70');
   });
 
-  botaoClicado.classList.add('ring-2', 'ring-gray-900', 'opacity-100');
+  botaoClicado.classList.add('ring-2', 'ring-black', 'opacity-100');
   botaoClicado.classList.remove('opacity-70');
 }
 
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 
 
 

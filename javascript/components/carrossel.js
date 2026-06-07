@@ -21,11 +21,11 @@ window.inicializarCarrossel = function inicializarCarrossel(idCarrossel, idBotao
 
         pontosIndicadores.forEach((pontoCorrente, indiceAtual) => {
           if (indiceAtual === indiceAtivoDoPonto) {
-            pontoCorrente.classList.remove('bg-gray-200');
-            pontoCorrente.classList.add('bg-gray-900');
+            pontoCorrente.classList.remove('bg-gray-100');
+            pontoCorrente.classList.add('bg-black');
           } else {
-            pontoCorrente.classList.remove('bg-gray-900');
-            pontoCorrente.classList.add('bg-gray-200');
+            pontoCorrente.classList.remove('bg-black');
+            pontoCorrente.classList.add('bg-gray-100');
           }
         });
       }
@@ -50,3 +50,4 @@ window.inicializarCarrossel = function inicializarCarrossel(idCarrossel, idBotao
   }
   return null;
 }
+

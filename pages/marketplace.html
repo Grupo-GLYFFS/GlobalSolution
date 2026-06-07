@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 
@@ -32,11 +32,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
-<body class="font-sans text-gray-900 bg-gray-50 leading-none antialiased">
+<body class="font-sans text-black bg-gray-100 leading-none antialiased">
 
   <div id="navbar-placeholder" data-basepath=".."></div>
 
-  <section class="bg-gray-900 py-16">
+  <section class="bg-black py-16">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24">
 
@@ -56,7 +56,7 @@
 
         <div class="xl:hidden">
 
-          <button data-drawer-target="filter-drawer" data-drawer-show="filter-drawer" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
+          <button data-drawer-target="filter-drawer" data-drawer-show="filter-drawer" class="flex items-center gap-2 px-4 py-2 border border-gray-400 rounded-lg text-base font-medium text-black hover:bg-gray-100">
 
             <span class="material-symbols-outlined text-[16px]">tune</span>
 
@@ -68,7 +68,7 @@
 
         <div class="hidden xl:flex items-center gap-3">
             <div class="relative inline-block">
-              <button data-dropdown-toggle="filter-category" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
+              <button data-dropdown-toggle="filter-category" class="flex items-center gap-2 px-4 py-2 border border-gray-400 rounded-lg text-base font-medium text-black hover:bg-gray-100">
 
                 Category
 
@@ -78,11 +78,11 @@
 
               <div id="filter-category" class="z-50 hidden absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-56">
 
-                <ul class="text-base text-gray-700">
+                <ul class="text-base text-gray-800">
 
-                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Imagery</label></li>
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-black bg-gray-100 border-gray-400 rounded focus:ring-black"> Imagery</label></li>
 
-                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Weather</label></li>
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-black bg-gray-100 border-gray-400 rounded focus:ring-black"> Weather</label></li>
 
                 </ul>
 
@@ -90,7 +90,7 @@
             </div>
 
             <div class="relative inline-block">
-              <button data-dropdown-toggle="filter-provider" class="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-50">
+              <button data-dropdown-toggle="filter-provider" class="flex items-center gap-2 px-4 py-2 border border-gray-400 rounded-lg text-base font-medium text-black hover:bg-gray-100">
 
                 Provider
 
@@ -100,9 +100,9 @@
 
               <div id="filter-provider" class="z-50 hidden absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-56">
 
-                <ul class="text-base text-gray-700">
+                <ul class="text-base text-gray-800">
 
-                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Planet Labs</label></li>
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-black bg-gray-100 border-gray-400 rounded focus:ring-black"> Planet Labs</label></li>
 
                 </ul>
 
@@ -110,61 +110,61 @@
             </div>
 
             <div class="relative inline-block">
-              <button data-dropdown-toggle="filter-resolution" class="flex items-center gap-2 px-4 py-2 border border-gray-900 bg-gray-100 rounded-lg text-base font-medium text-gray-900 hover:bg-gray-200">
+              <button data-dropdown-toggle="filter-resolution" class="flex items-center gap-2 px-4 py-2 border border-black bg-gray-100 rounded-lg text-base font-medium text-black hover:bg-gray-100">
                 Resolution
-                <span class="flex items-center justify-center w-5 h-5 ml-1 text-xs text-white bg-gray-900 rounded-full">1</span> <span class="material-symbols-outlined text-[20px]">expand_more</span>
+                <span class="flex items-center justify-center w-5 h-5 ml-1 text-xs text-white bg-black rounded-full">1</span> <span class="material-symbols-outlined text-[20px]">expand_more</span>
               </button>
               <div id="filter-resolution" class="z-50 hidden absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-56">
-                <ul class="text-base text-gray-700">
-                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> Sub-1m</label></li>
-                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> 1–10m</label></li>
+                <ul class="text-base text-gray-800">
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 text-black bg-gray-100 border-gray-400 rounded focus:ring-black"> Sub-1m</label></li>
+                  <li><label class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-black bg-gray-100 border-gray-400 rounded focus:ring-black"> 1–10m</label></li>
                 </ul>
               </div>
             </div>
 
-          <button class="px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-900">More filters +</button>
+          <button class="px-4 py-2 text-base font-medium text-gray-500 hover:text-black">More filters +</button>
 
         </div>
 
         <div class="relative inline-block">
-          <button data-dropdown-toggle="sort-dropdown" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+          <button data-dropdown-toggle="sort-dropdown" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-black bg-white border border-gray-400 rounded-lg hover:bg-gray-100 transition-colors">
             Sort by: Relevance
             <span class="material-symbols-outlined text-[20px]">expand_more</span>
           </button>
           <div id="sort-dropdown" class="z-50 hidden absolute top-full right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-48">
-            <ul class="text-base text-gray-700">
-              <li><a href="#" class="block px-4 py-2 bg-gray-50 font-medium">Relevance</a></li>
-              <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Price (low to high)</a></li>
-              <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Price (high to low)</a></li>
+            <ul class="text-base text-gray-800">
+              <li><a href="#" class="block px-4 py-2 bg-gray-100 font-medium">Relevance</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Price (low to high)</a></li>
+              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Price (high to low)</a></li>
             </ul>
           </div>
         </div>
 
       </div>
 
-      <div class="flex items-center justify-between py-3 border-t border-gray-100">
+      <div class="flex items-center justify-between py-3 border-t border-gray-200">
 
         <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-1">
 
-          <span class="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium text-gray-900 bg-gray-100 border border-gray-200 rounded whitespace-nowrap">
+          <span class="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium text-black bg-gray-100 border border-gray-200 rounded whitespace-nowrap">
 
             Category: Imagery
 
-            <button class="text-gray-400 hover:text-gray-900 flex items-center justify-center"><span class="material-symbols-outlined text-[12px]">close</span></button>
+            <button class="text-gray-400 hover:text-black flex items-center justify-center"><span class="material-symbols-outlined text-[12px]">close</span></button>
 
           </span>
 
-          <span class="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium text-gray-900 bg-gray-100 border border-gray-200 rounded whitespace-nowrap">
+          <span class="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium text-black bg-gray-100 border border-gray-200 rounded whitespace-nowrap">
 
             Resolution: Sub-1m
 
-            <button class="text-gray-400 hover:text-gray-900 flex items-center justify-center"><span class="material-symbols-outlined text-[12px]">close</span></button>
+            <button class="text-gray-400 hover:text-black flex items-center justify-center"><span class="material-symbols-outlined text-[12px]">close</span></button>
 
           </span>
 
         </div>
 
-        <button class="text-xs font-medium text-gray-500 hover:text-gray-900 whitespace-nowrap ml-4">Clear all</button>
+        <button class="text-xs font-medium text-gray-500 hover:text-black whitespace-nowrap ml-4">Clear all</button>
 
       </div>
 
@@ -178,7 +178,7 @@
 
       <div class="mb-6">
 
-        <h2 class="text-xl font-bold tracking-heading text-gray-900">20 satellites found</h2>
+        <h2 class="text-xl font-bold tracking-heading text-black">20 satellites found</h2>
 
       </div>
 
@@ -187,7 +187,7 @@
 
       <div class="mt-16 flex flex-col items-center justify-center gap-4">
 
-        <div class="w-8 h-8 border-4 border-gray-200 border-t-gray-900 rounded-full animate-spin"></div>
+        <div class="w-8 h-8 border-4 border-gray-200 border-t-black rounded-full animate-spin"></div>
 
         <span class="text-base text-gray-500 font-medium">Loading more satellites...</span>
 
@@ -201,9 +201,9 @@
 
     <div class="flex items-center justify-between mb-6">
 
-      <h5 class="text-xl font-bold tracking-heading text-gray-900">Filters</h5>
+      <h5 class="text-xl font-bold tracking-heading text-black">Filters</h5>
 
-      <button type="button" data-drawer-hide="filter-drawer" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-xs w-8 h-8 flex items-center justify-center">
+      <button type="button" data-drawer-hide="filter-drawer" class="text-gray-400 bg-transparent hover:bg-gray-100 hover:text-black rounded-lg text-xs w-8 h-8 flex items-center justify-center">
 
         <span class="material-symbols-outlined text-[16px]">close</span>
 
@@ -219,23 +219,23 @@
 
         <div class="space-y-3">
 
-          <label class="flex items-center gap-3"><input type="checkbox" checked class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> <span class="text-base text-gray-700">Imagery</span></label>
+          <label class="flex items-center gap-3"><input type="checkbox" checked class="w-4 h-4 text-black bg-gray-100 border-gray-400 rounded focus:ring-black"> <span class="text-base text-gray-800">Imagery</span></label>
 
-          <label class="flex items-center gap-3"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> <span class="text-base text-gray-700">Weather</span></label>
+          <label class="flex items-center gap-3"><input type="checkbox" class="w-4 h-4 text-black bg-gray-100 border-gray-400 rounded focus:ring-black"> <span class="text-base text-gray-800">Weather</span></label>
 
         </div>
 
       </div>
 
-      <div class="pt-6 border-t border-gray-100">
+      <div class="pt-6 border-t border-gray-200">
 
         <h6 class="text-xs font-bold tracking-caps uppercase text-gray-400 mb-3">Provider</h6>
 
         <div class="space-y-3">
 
-          <label class="flex items-center gap-3"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> <span class="text-base text-gray-700">Planet Labs</span></label>
+          <label class="flex items-center gap-3"><input type="checkbox" class="w-4 h-4 text-black bg-gray-100 border-gray-400 rounded focus:ring-black"> <span class="text-base text-gray-800">Planet Labs</span></label>
 
-          <label class="flex items-center gap-3"><input type="checkbox" class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-gray-900"> <span class="text-base text-gray-700">ESA</span></label>
+          <label class="flex items-center gap-3"><input type="checkbox" class="w-4 h-4 text-black bg-gray-100 border-gray-400 rounded focus:ring-black"> <span class="text-base text-gray-800">ESA</span></label>
 
         </div>
 
@@ -245,9 +245,9 @@
 
     <div class="mt-8 pt-6 border-t border-gray-200 flex gap-3">
 
-      <button class="flex-1 px-4 py-3 bg-gray-100 text-gray-900 rounded-lg font-medium hover:bg-gray-200">Clear</button>
+      <button class="flex-1 px-4 py-3 bg-gray-100 text-black rounded-lg font-medium hover:bg-gray-100">Clear</button>
 
-      <button class="flex-1 px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800" data-drawer-hide="filter-drawer">Apply</button>
+      <button class="flex-1 px-4 py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-800" data-drawer-hide="filter-drawer">Apply</button>
 
     </div>
 
@@ -270,6 +270,13 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
 
 
 

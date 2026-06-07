@@ -61,3 +61,4 @@ window.inicializarArrasteRolagem = function inicializarArrasteRolagem() {
     });
   });
 }
+
