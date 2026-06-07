@@ -1,0 +1,1522 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Home • DataOrbit</title>
+
+  <meta name="description" content="Access real-time satellite data on demand. Browse 3,200+ satellites, choose your coverage, and integrate via API. No infrastructure needed.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="./javascript/tailwind.config.js"></script>
+
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-light.png" media="(prefers-color-scheme: light)">
+
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-dark.png" media="(prefers-color-scheme: dark)">
+  
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body class="font-sans text-gray-900 bg-white leading-none antialiased">
+
+  <nav id="navbar" class="sticky top-0 z-50 bg-white border-b border-gray-200">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 flex items-center h-20">
+
+      <div class="flex-1">
+
+        <a href="index.html" id="nav-logo" class="inline-block">
+
+          <img src="./assets/logo/dataorbit-logo-3.png" alt="DataOrbit" class="h-12">
+
+        </a>
+
+      </div>
+
+      <div class="hidden lg:flex items-center gap-2">
+
+        <button id="categoriesDropdownBtn" data-dropdown-toggle="categoriesDropdownMenu" class="h-12 flex items-center gap-1 px-5 text-base font-medium text-gray-800 border border-gray-300 bg-white rounded-lg hover:bg-gray-50 transition-colors">
+
+          Categories
+
+          <span class="material-symbols-outlined text-[20px] text-gray-400 ml-1">expand_more</span>
+
+        </button>
+
+        <div id="categoriesDropdownMenu" class="z-50 hidden bg-white shadow-xl border-t border-gray-200 !w-full !left-0 !top-20 !transform-none">
+
+          <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-8">
+
+            <div class="flex justify-between items-center mb-6">
+
+              <h3 class="text-xs font-bold tracking-caps uppercase text-gray-400 m-0">Browse Categories</h3>
+
+              <div class="flex items-center gap-3">
+
+                <div class="flex items-center gap-2 mr-2 hidden md:flex" id="category-dots">
+
+                  <div class="w-2 h-2 rounded-full bg-gray-900 transition-colors"></div>
+
+                  <div class="w-2 h-2 rounded-full bg-gray-200 transition-colors"></div>
+
+                </div>
+
+                <button id="cat-prev" class="w-10 h-10 flex items-center justify-center p-0 rounded-full border border-gray-200 hover:bg-gray-50 transition-colors focus:outline-none disabled:opacity-30 disabled:cursor-not-allowed">
+
+                  <span class="material-symbols-outlined text-[20px] text-gray-900">chevron_left</span>
+
+                </button>
+
+                <button id="cat-next" class="w-10 h-10 flex items-center justify-center p-0 rounded-full border border-gray-200 hover:bg-gray-50 transition-colors focus:outline-none disabled:opacity-30 disabled:cursor-not-allowed">
+
+                  <span class="material-symbols-outlined text-[20px] text-gray-900">chevron_right</span>
+
+                </button>
+
+              </div>
+
+            </div>
+
+            <div id="category-scroll" class="flex items-start gap-6 overflow-x-auto pb-4 scroll-smooth drag-scroll cursor-pointer select-none snap-x snap-mandatory" style="scrollbar-width: none;">
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Imagery" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Imagery</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">Optical, SAR, and hyperspectral data.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Climate" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Climate</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">Weather patterns and GHG tracking.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Connectivity" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Connectivity</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">IoT network and broadband links.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Analytics" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Analytics</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">Derived intelligence and mapping.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Telemetry" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Telemetry</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">Raw sensor outputs and GNSS data.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Maritime" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Maritime</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">Vessel tracking and AIS overlays.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Agriculture" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Agriculture</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">Crop health and NDVI models.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Urban Planning" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Urban</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">Infrastructure and night lights.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Forestry" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Forestry</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">Deforestation and biomass.</p>
+
+              </a>
+
+              <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
+
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-100">
+
+                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Energy" class="w-full h-full object-cover">
+
+                  <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+
+                </div>
+
+                <h4 class="text-base font-bold tracking-heading text-gray-900 group-hover:text-black transition-colors">Energy</h4>
+
+                <p class="text-xs text-gray-500 mt-1 leading-normal">Solar irradiance and pipelines.</p>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <input type="text" id="nav-search" placeholder="Search satellites, providers, data types..." class="h-12 w-64 xl:w-[448px] px-4 text-base bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 placeholder-gray-400">
+
+        <button id="nav-search-btn" class="h-12 w-12 flex-shrink-0 flex items-center justify-center bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+
+          <span class="material-symbols-outlined text-[20px]">search</span>
+
+        </button>
+
+      </div>
+
+      <div class="flex lg:hidden flex-1 justify-end">
+
+        <button data-collapse-toggle="mobile-menu" type="button" class="text-gray-900 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+
+        </button>
+
+      </div>
+
+      <div class="flex-1 hidden lg:flex items-center justify-end gap-3">
+
+        <a href="pages/login.html" id="nav-login-btn" class="h-12 px-6 text-base font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors inline-flex items-center justify-center">Log in</a>
+
+        <a href="pages/login.html" id="nav-signup-btn" class="h-12 px-6 text-base font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors inline-flex items-center justify-center">Sign up</a>
+
+      </div>
+
+    </div>
+
+    <div class="hidden lg:hidden w-full" id="mobile-menu">
+
+      <div class="px-6 pt-2 pb-6 space-y-2 bg-white border-t border-gray-200 shadow-xl">
+
+        <div class="mb-4 pt-2">
+
+          <input type="text" placeholder="Search satellites..." class="w-full h-12 px-4 text-base bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500">
+
+        </div>
+
+        <a href="#" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50 border border-gray-200 text-center">Categories</a>
+
+        <a href="#" class="block px-4 py-3 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-50 border border-gray-200 text-center">Log in</a>
+
+        <a href="#" class="block px-4 py-3 text-base font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-800 text-center">Sign up</a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <section id="hero" class="bg-gray-950 min-h-[calc(100vh-80px)] flex items-center py-12 lg:py-0">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 w-full flex flex-col lg:flex-row items-center gap-16">
+
+      <div class="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start">
+
+        <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4">Platform</div>
+
+        <h1 class="text-7xl font-bold tracking-heading leading-none text-white">
+
+          Satellite data,<br>on demand.
+
+        </h1>
+
+        <p class="mt-6 text-xl text-gray-400 leading-normal max-w-lg mx-auto lg:mx-0">
+
+          Browse thousands of satellites from verified providers. Choose your coverage area, data format, and delivery
+
+          method, then integrate via API in minutes.
+
+        </p>
+
+        <a href="pages/marketplace.html" id="hero-cta" class="mt-8 px-8 py-4 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Explore catalog</a>
+
+      </div>
+
+      <div class="w-full lg:w-1/2 relative mt-8 lg:mt-0">
+
+        <div id="globe-placeholder" class="aspect-square bg-gray-900 rounded-2xl border-2 border-dashed border-gray-700 flex flex-col items-center justify-center">
+
+          <span class="material-symbols-outlined text-[64px] text-gray-600 mb-4">language</span>
+
+          <span class="text-base text-gray-500 font-medium">3D Globe · Coming Soon</span>
+
+          <span class="text-xs text-gray-600 mt-1">Interactive Three.js visualization</span>
+
+        </div>
+
+        <div id="satellite-popup" class="satellite-popup absolute -right-4 top-16 bg-white rounded-xl shadow-2xl p-5 w-64 border border-gray-100 z-10">
+
+          <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Satellite Details</div>
+
+          <h3 class="text-base font-bold tracking-heading text-gray-900 leading-none"><a href="pages/satellite.html" class="hover:underline">OrbitRent Dove-PSB</a></h3>
+
+          <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+          <div class="mt-4 space-y-2">
+
+            <div class="flex justify-between text-base">
+
+              <span class="text-gray-400">Resolution</span>
+
+              <span class="font-medium text-gray-700">3.0 m</span>
+
+            </div>
+
+            <div class="flex justify-between text-base">
+
+              <span class="text-gray-400">Revisit</span>
+
+              <span class="font-medium text-gray-700">Daily</span>
+
+            </div>
+
+            <div class="flex justify-between text-base">
+
+              <span class="text-gray-400">Bands</span>
+
+              <span class="font-medium text-gray-700">8 spectral</span>
+
+            </div>
+
+            <div class="flex justify-between text-base">
+
+              <span class="text-gray-400">Format</span>
+
+              <span class="font-medium text-gray-700">GeoTIFF</span>
+
+            </div>
+
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-gray-100">
+
+            <div class="flex items-baseline gap-1">
+
+              <span class="text-xl font-bold tracking-heading text-gray-900">R$ 15.00</span>
+
+              <span class="text-base text-gray-400">/ km²</span>
+
+            </div>
+
+          </div>
+
+          <a href="pages/satellite.html" class="mt-4 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="metrics" class="border-b border-gray-200">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-12">
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div class="text-center px-4">
+
+          <div class="text-4xl font-bold tracking-heading text-gray-900 leading-none">3,200+</div>
+
+          <div class="text-base text-gray-500 mt-3 leading-normal">Satellites indexed</div>
+
+        </div>
+
+        <div class="text-center px-4">
+
+          <div class="text-4xl font-bold tracking-heading text-gray-900 leading-none">14</div>
+
+          <div class="text-base text-gray-500 mt-3 leading-normal">Data formats</div>
+
+        </div>
+
+        <div class="text-center px-4">
+
+          <div class="text-4xl font-bold tracking-heading text-gray-900 leading-none">&lt; 24h</div>
+
+          <div class="text-base text-gray-500 mt-3 leading-normal">Average revisit time</div>
+
+        </div>
+
+        <div class="text-center px-4">
+
+          <div class="text-4xl font-bold tracking-heading text-gray-900 leading-none">$0.01</div>
+
+          <div class="text-base text-gray-500 mt-3 leading-normal">Starting unit price</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="marketplace-preview" class="bg-white">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-20 pb-24">
+
+      <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-4 mb-8">
+
+        <div>
+
+          <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Marketplace</div>
+
+          <h2 class="text-5xl font-bold tracking-heading text-gray-900 leading-none">Explore what's in orbit</h2>
+
+          <p class="text-base text-gray-500 mt-3 leading-normal">Real satellite data products from leading providers,
+
+            ready for integration.</p>
+
+        </div>
+
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 mb-8">
+
+        <div class="flex items-center flex-wrap gap-2">
+
+          <button class="px-4 py-2 text-base font-medium text-white bg-gray-900 rounded-lg">All</button>
+
+          <button class="px-4 py-2 text-base font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Imagery</button>
+
+          <button class="px-4 py-2 text-base font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Climate</button>
+
+          <button class="px-4 py-2 text-base font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Connectivity</button>
+
+        </div>
+
+        <button id="sortDropdownBtn" data-dropdown-toggle="sortDropdownMenu" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+
+          Sort by: Relevance
+
+          <span class="material-symbols-outlined text-[20px]">expand_more</span>
+
+        </button>
+
+        <div id="sortDropdownMenu" class="z-10 hidden bg-white rounded-lg shadow-lg border border-gray-200 w-48">
+
+          <ul class="py-1 text-base text-gray-700">
+
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Relevance</a></li>
+
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Price: Low to High</a></li>
+
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Price: High to Low</a></li>
+
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50">Rating</a></li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-black overflow-hidden"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Satellite View" class="w-full h-full object-cover"></div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none"><a href="pages/satellite.html" class="hover:underline">OrbitRent Dove-PSB</a></h3>
+
+            <p class="text-base text-gray-500 mt-1">Planet Labs</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center">
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.8 (127)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>3.0 m</span><span class="text-gray-300">·</span><span>Daily</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 15.00</span>
+
+                <span class="text-xs text-gray-400">/ km²</span>
+
+              </div>
+
+            </div>
+
+            <a href="pages/satellite.html" class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-black overflow-hidden"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Satellite View" class="w-full h-full object-cover"></div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none"><a href="pages/satellite.html" class="hover:underline">OrbitRent Legion-VHR</a></h3>
+
+            <p class="text-base text-gray-500 mt-1">Maxar Technologies</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center">
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.9 (84)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>30 cm Pan</span><span class="text-gray-300">·</span><span>15x/day</span><span class="text-gray-300">·</span><span>Level 3D</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 450.00</span>
+
+                <span class="text-xs text-gray-400">/ capture</span>
+
+              </div>
+
+            </div>
+
+            <a href="pages/satellite.html" class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-black overflow-hidden"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Satellite View" class="w-full h-full object-cover"></div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Climate</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none"><a href="pages/satellite.html" class="hover:underline">OrbitRent Stratos-RO</a></h3>
+
+            <p class="text-base text-gray-500 mt-1">Spire Global</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center">
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.6 (203)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>100 m vertical</span><span class="text-gray-300">·</span><span>24/7</span><span class="text-gray-300">·</span><span>NetCDF4</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 95.00</span>
+
+                <span class="text-xs text-gray-400">/ hour</span>
+
+              </div>
+
+            </div>
+
+            <a href="pages/satellite.html" class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-black overflow-hidden"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Satellite View" class="w-full h-full object-cover"></div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Climate</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none"><a href="pages/satellite.html" class="hover:underline">OrbitRent OceanWatch-S3
+
+            </a></h3>
+
+            <p class="text-base text-gray-500 mt-1">ESA</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center">
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.7 (156)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>300 m Radar</span><span class="text-gray-300">·</span><span>2 days</span><span class="text-gray-300">·</span><span>NetCDF L2</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 180.00</span>
+
+                <span class="text-xs text-gray-400">/ day</span>
+
+              </div>
+
+            </div>
+
+            <a href="pages/satellite.html" class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-black overflow-hidden"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Satellite View" class="w-full h-full object-cover"></div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Connectivity</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none"><a href="pages/satellite.html" class="hover:underline">OrbitRent BEE-IoT</a></h3>
+
+            <p class="text-base text-gray-500 mt-1">Swarm Technologies</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center">
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.5 (312)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>200 bytes</span><span class="text-gray-300">·</span><span>15-60 min</span><span class="text-gray-300">·</span><span>JSON</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 0.05</span>
+
+                <span class="text-xs text-gray-400">/ message</span>
+
+              </div>
+
+            </div>
+
+            <a href="pages/satellite.html" class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-black overflow-hidden"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Satellite View" class="w-full h-full object-cover"></div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Connectivity</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none"><a href="pages/satellite.html" class="hover:underline">OrbitRent Link-Cell</a></h3>
+
+            <p class="text-base text-gray-500 mt-1">SpaceX Starlink</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center">
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.9 (89)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>LTE-M</span><span class="text-gray-300">·</span><span>Real-time</span><span class="text-gray-300">·</span><span>TCP/UDP</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 2.50</span>
+
+                <span class="text-xs text-gray-400">/ MB</span>
+
+              </div>
+
+            </div>
+
+            <a href="pages/satellite.html" class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-white border border-gray-200 rounded-xl overflow-hidden">
+
+          <div class="h-40 bg-black overflow-hidden"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Satellite View" class="w-full h-full object-cover"></div>
+
+          <div class="p-4">
+
+            <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">Imagery</div>
+
+            <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none"><a href="pages/satellite.html" class="hover:underline">OrbitRent TerraSync-SAR
+
+            </a></h3>
+
+            <p class="text-base text-gray-500 mt-1">ICEYE</p>
+
+            <div class="flex items-center gap-2 mt-2">
+
+              <div class="flex items-center">
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-900">star</span>
+
+                <span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+
+              </div>
+
+              <span class="text-xs text-gray-400">4.7 (142)</span>
+
+            </div>
+
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
+
+              <span>1 m SAR</span><span class="text-gray-300">·</span><span>&lt; 20h</span><span class="text-gray-300">·</span><span>GeoTIFF</span>
+
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-gray-100">
+
+              <div class="flex items-baseline gap-1">
+
+                <span class="text-xl font-bold tracking-heading">R$ 280.00</span>
+
+                <span class="text-xs text-gray-400">/ capture</span>
+
+              </div>
+
+            </div>
+
+            <a href="pages/satellite.html" class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+
+          </div>
+
+        </div>
+
+        <div class="satellite-card bg-gray-900 text-white rounded-xl overflow-hidden flex flex-col items-center justify-center p-8 text-center">
+
+          <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
+
+            <span class="material-symbols-outlined text-[32px] text-white">satellite_alt</span>
+
+          </div>
+
+          <h3 class="text-xl font-bold tracking-heading leading-none">View full catalog</h3>
+
+          <p class="text-base text-gray-400 mt-3 leading-normal">Browse all 3,200+ satellites from verified providers
+
+            worldwide.</p>
+
+          <a href="pages/marketplace.html" class="mt-6 w-full py-2 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-colors block text-center">Go to marketplace</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="benefits" class="bg-gray-50">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-32">
+
+      <div class="mb-12">
+
+        <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Benefits</div>
+
+        <h2 class="text-5xl font-bold tracking-heading text-gray-900 leading-none">Why DataOrbit</h2>
+
+        <p class="text-base text-gray-500 mt-3 leading-normal">Everything you need to access satellite data at scale,
+
+          without the complexity.</p>
+
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+
+          <div class="flex items-start justify-between">
+
+            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+
+              <span class="material-symbols-outlined text-[24px] text-white">code</span>
+
+            </div>
+
+            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">01</span>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">API-first access</h3>
+
+            <p class="text-base text-gray-500 mt-2 leading-normal">Integrate satellite data directly into your pipeline
+
+              with our REST API. Retrieve imagery, telemetry, and climate data programmatically.</p>
+
+          </div>
+
+          <div class="mt-4 bg-gray-50 rounded-lg p-3 font-mono text-xs text-gray-500">
+
+            GET /api/v1/satellites/{id}/data
+
+          </div>
+
+        </div>
+
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+
+          <div class="flex items-start justify-between">
+
+            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+
+              <span class="material-symbols-outlined text-[24px] text-white">verified</span>
+
+            </div>
+
+            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">02</span>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">Verified providers</h3>
+
+            <p class="text-base text-gray-500 mt-2 leading-normal">Planet Labs, ESA, SpaceX, and more. Real satellite
+
+              networks delivering verified data products. Never simulated, never estimated.</p>
+
+          </div>
+
+          <div class="mt-4 flex items-center gap-3">
+
+            <div class="text-[32px] font-bold tracking-heading text-gray-900">120+</div>
+
+            <div class="text-xs text-gray-400 leading-normal">providers<br>worldwide</div>
+
+          </div>
+
+        </div>
+
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+
+          <div class="flex items-start justify-between">
+
+            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+
+              <span class="material-symbols-outlined text-[24px] text-white">integration_instructions</span>
+
+            </div>
+
+            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">03</span>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">Easy integration</h3>
+
+            <p class="text-base text-gray-500 mt-2 leading-normal">Ready-made SDKs and comprehensive documentation get
+
+              you up and running quickly. Drop our snippets directly into your codebase.</p>
+
+          </div>
+
+          <div class="mt-4 flex flex-wrap items-center gap-2">
+
+            <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-50 rounded-full border border-gray-100">Python</span>
+
+            <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-50 rounded-full border border-gray-100">Node.js</span>
+
+            <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-50 rounded-full border border-gray-100">cURL</span>
+
+            <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-50 rounded-full border border-gray-100">Go</span>
+
+          </div>
+
+        </div>
+
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+
+          <div class="flex items-start justify-between">
+
+            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+
+              <span class="material-symbols-outlined text-[24px] text-white">cloud</span>
+
+            </div>
+
+            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">04</span>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">No infrastructure needed</h3>
+
+            <p class="text-base text-gray-500 mt-2 leading-normal">Skip the ground station. We handle reception,
+
+              processing, storage, and distribution so you can focus entirely on analysis.</p>
+
+          </div>
+
+          <div class="mt-4 flex items-center gap-3">
+
+            <div class="text-[32px] font-bold tracking-heading text-gray-900">99.99%</div>
+
+            <div class="text-xs text-gray-400 leading-normal">guaranteed<br>uptime SLA</div>
+
+          </div>
+
+        </div>
+
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+
+          <div class="flex items-start justify-between">
+
+            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+
+              <span class="material-symbols-outlined text-[24px] text-white">dns</span>
+
+            </div>
+
+            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">05</span>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">Built for scale</h3>
+
+            <p class="text-base text-gray-500 mt-2 leading-normal">Our infrastructure automatically scales to meet your
+
+              demands, whether you're pulling a single image or petabytes of historical data.</p>
+
+          </div>
+
+          <div class="mt-4 flex items-center gap-3">
+
+            <div class="text-[32px] font-bold tracking-heading text-gray-900">100 PB+</div>
+
+            <div class="text-xs text-gray-400 leading-normal">data readily<br>available</div>
+
+          </div>
+
+        </div>
+
+        <div class="bg-gray-900 rounded-2xl p-10 flex flex-col justify-between min-h-[320px] text-white">
+
+          <div class="flex items-start justify-between">
+
+            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+
+              <span class="material-symbols-outlined text-[24px] text-white">language</span>
+
+            </div>
+
+            <span class="text-6xl font-bold text-gray-700 tracking-heading leading-none">06</span>
+
+          </div>
+
+          <div>
+
+            <h3 class="text-xl font-bold tracking-heading leading-tight">Global coverage</h3>
+
+            <p class="text-base text-gray-400 mt-2 leading-normal">From the busiest cities to the most remote oceans.
+
+              Continuous monitoring spanning every continent and every time zone.</p>
+
+          </div>
+
+          <div class="mt-4 flex items-center gap-3">
+
+            <div class="text-[32px] font-bold tracking-heading">100%</div>
+
+            <div class="text-xs text-gray-500 leading-normal">Earth surface<br>covered</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="how-it-works" class="bg-white">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-32 pb-64">
+
+      <div class="mb-12">
+
+        <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Process</div>
+
+        <h2 class="text-5xl font-bold tracking-heading text-gray-900 leading-none">How it works</h2>
+
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
+
+          <div class="text-7xl font-bold text-gray-200 tracking-heading leading-none mb-6">01</div>
+
+          <div class="bg-gray-50 rounded-xl p-4 mb-8 flex-1">
+
+            <div class="flex items-center gap-2 mb-3">
+
+              <div class="flex-1 h-7 bg-white border border-gray-200 rounded px-2 flex items-center">
+
+                <span class="text-xs text-gray-400">Search satellites...</span>
+
+              </div>
+
+              <div class="w-7 h-7 bg-gray-900 rounded flex items-center justify-center flex-shrink-0">
+
+                <span class="material-symbols-outlined text-[12px] text-white">search</span>
+
+              </div>
+
+            </div>
+
+            <div class="flex items-center gap-2 mb-4">
+
+              <span class="px-2 py-1 text-xs font-medium bg-gray-900 text-white rounded">All</span>
+
+              <span class="px-2 py-1 text-xs font-medium text-gray-500 bg-white border border-gray-200 rounded">Imagery</span>
+
+              <span class="px-2 py-1 text-xs font-medium text-gray-500 bg-white border border-gray-200 rounded">Climate</span>
+
+            </div>
+
+            <div class="space-y-2">
+
+              <div class="flex items-center justify-between">
+
+                <div class="h-2 w-32 bg-gray-200 rounded-full"></div><span class="text-xs text-gray-500 font-medium">R$15</span>
+
+              </div>
+
+              <div class="flex items-center justify-between">
+
+                <div class="h-2 w-28 bg-gray-200 rounded-full"></div><span class="text-xs text-gray-500 font-medium">R$450</span>
+
+              </div>
+
+              <div class="flex items-center justify-between">
+
+                <div class="h-2 w-36 bg-gray-200 rounded-full"></div><span class="text-xs text-gray-500 font-medium">R$95</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-none">Explore</h3>
+
+          <p class="text-base text-gray-500 mt-3 leading-normal">Browse 3,200+ satellites. Filter by data type,
+
+            resolution, coverage area, and price.</p>
+
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
+
+          <div class="text-7xl font-bold text-gray-200 tracking-heading leading-none mb-6">02</div>
+
+          <div class="bg-gray-50 rounded-xl p-4 mb-8 flex-1">
+
+            <div class="text-xs font-semibold text-gray-700 mb-3">Configure access</div>
+
+            <div class="mb-3">
+
+              <div class="text-xs text-gray-400 uppercase tracking-caps mb-1">Geographic area</div>
+
+              <div class="h-7 bg-white border border-gray-200 rounded px-2 flex items-center">
+
+                <span class="text-xs text-gray-500">-23.5, -46.6 &nbsp;·&nbsp; -20.0, -43.0</span>
+
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 mb-3">
+
+              <div>
+
+                <div class="text-xs text-gray-400 uppercase tracking-caps mb-1">Start date</div>
+
+                <div class="h-7 bg-white border border-gray-200 rounded px-2 flex items-center">
+
+                  <span class="text-xs text-gray-500">2026-06-01</span>
+
+                </div>
+
+              </div>
+
+              <div>
+
+                <div class="text-xs text-gray-400 uppercase tracking-caps mb-1">End date</div>
+
+                <div class="h-7 bg-white border border-gray-200 rounded px-2 flex items-center">
+
+                  <span class="text-xs text-gray-500">2026-06-30</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div>
+
+              <div class="text-xs text-gray-400 uppercase tracking-caps mb-2">Max resolution</div>
+
+              <div class="h-2 bg-gray-200 rounded-full">
+
+                <div class="h-2 w-3/4 bg-gray-900 rounded-full relative">
+
+                  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-900 rounded-full border-2 border-white">
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-none">Configure</h3>
+
+          <p class="text-base text-gray-500 mt-3 leading-normal">Set your parameters: geographic area, time window, and
+
+            data delivery format.</p>
+
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
+
+          <div class="text-7xl font-bold text-gray-200 tracking-heading leading-none mb-6">03</div>
+
+          <div class="bg-gray-900 rounded-xl p-4 mb-8 flex-1 font-mono">
+
+            <div class="flex items-center gap-2 mb-3">
+
+              <div class="w-2 h-2 rounded-full bg-gray-600"></div>
+
+              <div class="w-2 h-2 rounded-full bg-gray-600"></div>
+
+              <div class="w-2 h-2 rounded-full bg-gray-600"></div>
+
+            </div>
+
+            <div class="text-xs text-gray-300 space-y-1 leading-normal">
+
+              <div><span class="text-white">$</span> dataorbit pull \</div>
+
+              <div class="pl-4 text-gray-500">--id dove-psb \</div>
+
+              <div class="pl-4 text-gray-500">--format geotiff \</div>
+
+              <div class="pl-4 text-gray-500">--tile -23.5,-46.6 \</div>
+
+              <div class="pl-4 text-gray-500">--date 2026-06-01</div>
+
+              <div class="mt-3 text-gray-500">&gt; 200 OK · 312 results · 4ms</div>
+
+            </div>
+
+          </div>
+
+          <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-none">Access</h3>
+
+          <p class="text-base text-gray-500 mt-3 leading-normal">Receive data via API, webhook, or direct download.
+
+            Your pipeline stays the same.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="cta" class="bg-gray-950">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-32 text-center">
+
+      <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4">Get Started</div>
+
+      <h2 class="text-6xl font-bold tracking-heading text-white leading-tight">Ready to access<br>satellite data?</h2>
+
+      <p class="text-base text-gray-400 mt-4 leading-normal max-w-lg mx-auto">Join hundreds of companies already using DataOrbit to power their geospatial intelligence, climate monitoring, and IoT infrastructure.</p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full sm:w-auto">
+
+        <a href="pages/login.html" id="cta-signup" class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Create account</a>
+
+        <a href="pages/marketplace.html" id="cta-explore" class="inline-block text-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white border border-gray-600 rounded-lg hover:border-gray-400 transition-colors">Explore catalog</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer id="footer" class="bg-gray-900">
+
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-24 pb-8">
+
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-0">
+
+        <div>
+
+          <a href="index.html" class="inline-block">
+<img src="./assets/logo/dataorbit-logo-3.png" alt="DataOrbit" class="h-12 brightness-0 invert">
+</a>
+
+          <p class="text-base text-gray-500 mt-4 leading-normal max-w-xs">Satellite data marketplace for enterprises and developers.</p>
+
+        </div>
+
+        <div>
+
+          <h4 class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4">Navigation</h4>
+
+          <ul class="space-y-3">
+
+            <li><a href="index.html" class="text-base text-gray-300 hover:text-white transition-colors">Home</a></li>
+
+            <li><a href="pages/marketplace.html" class="text-base text-gray-300 hover:text-white transition-colors">Marketplace</a></li>
+
+            <li><a href="pages/login.html" class="text-base text-gray-300 hover:text-white transition-colors">Login</a></li>
+
+            <li><a href="pages/checkout.html" class="text-base text-gray-300 hover:text-white transition-colors">Checkout</a></li>
+
+          </ul>
+
+        </div>
+
+        <div class="space-y-6">
+
+          <div>
+
+            <h4 class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Theme</h4>
+
+            <div class="inline-flex items-center bg-gray-800 rounded-lg p-1 gap-1">
+
+              <button class="theme-toggle-btn active p-2 rounded-md inline-flex items-center justify-center" title="System">
+
+                <span class="material-symbols-outlined text-[16px]">desktop_windows</span>
+
+              </button>
+
+              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:text-gray-300 inline-flex items-center justify-center" title="Light mode">
+
+                <span class="material-symbols-outlined text-[16px]">light_mode</span>
+
+              </button>
+
+              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:text-gray-300 inline-flex items-center justify-center" title="Dark mode">
+
+                <span class="material-symbols-outlined text-[16px]">dark_mode</span>
+
+              </button>
+
+            </div>
+
+          </div>
+
+          <div>
+
+            <h4 class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Language</h4>
+
+            <button id="languageDropdownBtn" data-dropdown-toggle="languageDropdownMenu" data-dropdown-placement="top-start" class="flex items-center gap-2 px-3 py-2 text-base text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+
+              <span class="material-symbols-outlined text-[16px]">language</span>
+
+              English
+
+              <span class="material-symbols-outlined text-[12px]">expand_more</span>
+
+            </button>
+
+            <div id="languageDropdownMenu" class="z-10 hidden bg-gray-800 rounded-lg shadow-lg border border-gray-700 w-40">
+
+              <ul class="py-1 text-base text-gray-300">
+
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700 font-medium">English</a></li>
+
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Português</a></li>
+
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Español</a></li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-800">
+
+        <p class="text-xs text-gray-500">&copy; 2026 DataOrbit. All rights reserved.</p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script type="module" src="./javascript/pages/home.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
