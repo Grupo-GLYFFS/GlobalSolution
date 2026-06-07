@@ -1,4 +1,4 @@
-window.UIComponents = {
+﻿window.UIComponents = {
   init() {
     this.initDropdowns();
     this.initDrawers();
@@ -130,7 +130,7 @@ window.UIComponents = {
     if (!document.getElementById('ui-backdrop')) {
       const backdrop = document.createElement('div');
       backdrop.id = 'ui-backdrop';
-      backdrop.className = 'fixed inset-0 bg-gray-900/50 z-40 transition-opacity';
+      backdrop.className = 'fixed inset-0 bg-black/50 z-40 transition-opacity';
       document.body.appendChild(backdrop);
       
       backdrop.addEventListener('click', () => {
@@ -154,3 +154,4 @@ if (document.readyState === 'loading') {
 } else {
   window.UIComponents.init();
 }
+

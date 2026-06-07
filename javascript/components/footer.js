@@ -1,6 +1,6 @@
-window.getFooterHtml = function getFooterHtml(basePath = '.') {
+﻿window.getFooterHtml = function getFooterHtml(basePath = '.') {
   return `
-  <footer id="footer" class="bg-gray-900">
+  <footer id="footer" class="bg-black">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-24 pb-8">
 
@@ -22,13 +22,13 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
 
           <ul class="space-y-3">
 
-            <li><a href="${basePath}/index.html" class="text-base text-gray-300 hover:text-white transition-colors">Home</a></li>
+            <li><a href="${basePath}/index.html" class="text-base text-gray-400 hover:text-white transition-colors">Home</a></li>
 
-            <li><a href="${basePath}/pages/marketplace.html" class="text-base text-gray-300 hover:text-white transition-colors">Marketplace</a></li>
+            <li><a href="${basePath}/pages/marketplace.html" class="text-base text-gray-400 hover:text-white transition-colors">Marketplace</a></li>
 
-            <li><a href="${basePath}/pages/login.html" class="text-base text-gray-300 hover:text-white transition-colors">Login</a></li>
+            <li><a href="${basePath}/pages/login.html" class="text-base text-gray-400 hover:text-white transition-colors">Login</a></li>
 
-            <li><a href="${basePath}/pages/checkout.html" class="text-base text-gray-300 hover:text-white transition-colors">Checkout</a></li>
+            <li><a href="${basePath}/pages/checkout.html" class="text-base text-gray-400 hover:text-white transition-colors">Checkout</a></li>
 
           </ul>
 
@@ -48,13 +48,13 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
 
               </button>
 
-              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:text-gray-300 inline-flex items-center justify-center" title="Light mode">
+              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:bg-gray-700 hover:text-white inline-flex items-center justify-center" title="Light mode">
 
                 <span class="material-symbols-outlined text-[16px]">light_mode</span>
 
               </button>
 
-              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:text-gray-300 inline-flex items-center justify-center" title="Dark mode">
+              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:bg-gray-700 hover:text-white inline-flex items-center justify-center" title="Dark mode">
 
                 <span class="material-symbols-outlined text-[16px]">dark_mode</span>
 
@@ -68,7 +68,7 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
 
             <h4 class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Language</h4>
 
-            <div class="relative inline-block"><button id="languageDropdownBtn" data-dropdown-toggle="languageDropdownMenu" data-dropdown-placement="top-start" class="flex items-center gap-2 px-3 py-2 text-base text-gray-300 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+            <div class="relative inline-block"><button id="languageDropdownBtn" data-dropdown-toggle="languageDropdownMenu" data-dropdown-placement="bottom-start" class="flex items-center gap-2 px-3 py-2 text-base text-white bg-gray-800 rounded-lg hover:bg-gray-700 hover:text-white transition-colors">
 
               <span class="material-symbols-outlined text-[16px]">language</span>
 
@@ -78,15 +78,15 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
 
             </button>
 
-            <div id="languageDropdownMenu" class="z-10 hidden absolute bottom-full left-0 mb-2 bg-gray-800 rounded-lg shadow-lg border border-gray-700 w-40">
+            <div id="languageDropdownMenu" class="z-10 hidden absolute top-full left-0 mt-2 bg-gray-800 rounded-lg shadow-lg border border-gray-800 w-40">
 
-              <ul class="text-base text-gray-300">
+              <ul class="text-base text-gray-400">
 
-                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700 font-medium">English</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700 hover:text-white font-medium">English</a></li>
 
-                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Português</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700 hover:text-white">Português</a></li>
 
-                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Español</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-700 hover:text-white">Español</a></li>
 
               </ul>
             </div>
@@ -98,7 +98,7 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
 
       </div>
 
-      <div class="mt-12 pt-8 border-t border-gray-800">
+      <div class="mt-24 pt-8 border-t border-gray-800">
 
         <p class="text-xs text-gray-500">&copy; 2026 DataOrbit. All rights reserved.</p>
 
@@ -109,6 +109,15 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
   </footer>
 `;
 }
+
+
+
+
+
+
+
+
+
 
 
 

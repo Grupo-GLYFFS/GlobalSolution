@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 
@@ -32,11 +32,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
-<body class="font-sans text-gray-900 bg-white leading-none antialiased">
+<body class="font-sans text-black bg-white leading-none antialiased">
 
   <div id="navbar-placeholder" data-basepath="."></div>
 
-  <section id="hero" class="bg-gray-950 min-h-[calc(100vh-80px)] flex items-center py-12 lg:py-0">
+  <section id="hero" class="bg-black min-h-[calc(100vh-80px)] flex items-center py-12 lg:py-0">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 w-full flex flex-col lg:flex-row items-center gap-16 min-h-[calc(100vh-80px)]">
 
@@ -58,27 +58,27 @@
 
         </p>
 
-        <a href="pages/marketplace.html" id="hero-cta" class="mt-8 px-8 py-4 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Explore catalog</a>
+        <a href="pages/marketplace.html" id="hero-cta" class="mt-8 px-8 py-4 text-base font-semibold text-black bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Explore catalog</a>
 
       </div>
 
       <div class="w-full lg:w-1/2 flex items-center justify-center lg:justify-end relative mt-8 lg:mt-0">
         <div class="w-full max-h-[60vh] lg:max-h-[80vh] aspect-square relative mx-auto lg:mx-0 lg:ml-auto">
           <canvas id="globe-canvas" class="w-full h-full absolute inset-0 cursor-grab active:cursor-grabbing"></canvas>
-          <div id="sat-popup" class="absolute bottom-4 left-4 bg-white border border-gray-200 rounded-xl shadow-2xl w-72 z-50 pointer-events-auto text-gray-900 overflow-hidden" style="display: none;"></div>
+          <div id="sat-popup" class="absolute bottom-4 left-4 bg-white border border-gray-200 rounded-xl shadow-2xl w-72 z-50 pointer-events-auto text-black overflow-hidden" style="display: none;"></div>
         </div>
       </div>
     </div>
   </section>
-  <section id="metrics" class="border-b border-gray-200">
+  <section id="metrics">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-12">
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-200">
 
         <div class="text-center px-4">
 
-          <div class="text-4xl font-bold tracking-heading text-gray-900 leading-none">3,200+</div>
+          <div class="text-4xl font-bold tracking-heading text-black leading-none">3,200+</div>
 
           <div class="text-base text-gray-500 mt-3 leading-normal">Satellites indexed</div>
 
@@ -86,7 +86,7 @@
 
         <div class="text-center px-4">
 
-          <div class="text-4xl font-bold tracking-heading text-gray-900 leading-none">14</div>
+          <div class="text-4xl font-bold tracking-heading text-black leading-none">14</div>
 
           <div class="text-base text-gray-500 mt-3 leading-normal">Data formats</div>
 
@@ -94,7 +94,7 @@
 
         <div class="text-center px-4">
 
-          <div class="text-4xl font-bold tracking-heading text-gray-900 leading-none">&lt; 24h</div>
+          <div class="text-4xl font-bold tracking-heading text-black leading-none">&lt; 24h</div>
 
           <div class="text-base text-gray-500 mt-3 leading-normal">Average revisit time</div>
 
@@ -102,19 +102,15 @@
 
         <div class="text-center px-4">
 
-          <div class="text-4xl font-bold tracking-heading text-gray-900 leading-none">$0.01</div>
+          <div class="text-4xl font-bold tracking-heading text-black leading-none">$0.01</div>
 
           <div class="text-base text-gray-500 mt-3 leading-normal">Starting unit price</div>
-
         </div>
-
       </div>
-
-    </div>
-
+      </div>
   </section>
 
-  <section id="marketplace-preview" class="bg-white">
+  <section id="marketplace-preview" class="bg-gray-100">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-20 pb-24">
 
@@ -124,7 +120,7 @@
 
           <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Marketplace</div>
 
-          <h2 class="text-5xl font-bold tracking-heading text-gray-900 leading-none">Explore what's in orbit</h2>
+          <h2 class="text-5xl font-bold tracking-heading text-black leading-none">Explore what's in orbit</h2>
 
           <p class="text-base text-gray-500 mt-3 leading-normal">Real satellite data products from leading providers,
 
@@ -138,29 +134,29 @@
 
         <div class="flex items-center flex-wrap gap-2">
 
-          <button class="px-4 py-2 text-base font-medium text-white bg-gray-900 rounded-lg">All</button>
+          <button class="px-4 py-2 text-base font-medium text-white bg-black rounded-lg hover:bg-gray-800 transition-colors">All</button>
 
-          <button class="px-4 py-2 text-base font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Imagery</button>
+          <button class="px-4 py-2 text-base font-medium text-gray-800 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">Imagery</button>
 
-          <button class="px-4 py-2 text-base font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Climate</button>
+          <button class="px-4 py-2 text-base font-medium text-gray-800 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">Climate</button>
 
-          <button class="px-4 py-2 text-base font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Connectivity</button>
+          <button class="px-4 py-2 text-base font-medium text-gray-800 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">Connectivity</button>
 
         </div>
 
         <div class="relative inline-block">
-          <button id="sortDropdownBtn" data-dropdown-toggle="sortDropdownMenu" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+          <button id="sortDropdownBtn" data-dropdown-toggle="sortDropdownMenu" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-black bg-white border border-gray-400 rounded-lg hover:bg-gray-100 transition-colors">
             Sort by: Relevance
             <span class="material-symbols-outlined text-[20px]">expand_more</span>
           </button>
           <div id="sortDropdownMenu" class="z-10 hidden absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 w-48">
-            <ul class="text-base text-gray-700">
+            <ul class="text-base text-gray-800">
 
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Relevance</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Newest</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Price: Low to High</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Price: High to Low</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-50 font-medium">Rating</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 font-medium">Relevance</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 font-medium">Newest</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 font-medium">Price: Low to High</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 font-medium">Price: High to Low</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 font-medium">Rating</a></li>
           </ul>
         </div>
       </div>
@@ -168,7 +164,7 @@
       </div>
 
       <div id="satellite-cards-container" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-        <div class="satellite-card promo-card bg-gray-900 text-white rounded-xl overflow-hidden flex flex-col items-center justify-center p-8 text-center">
+        <div class="satellite-card promo-card bg-black text-white rounded-xl overflow-hidden flex flex-col items-center justify-center p-8 text-center">
 
           <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
 
@@ -182,7 +178,7 @@
 
             worldwide.</p>
 
-          <a href="pages/marketplace.html" class="mt-6 w-full py-2 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-colors block text-center">Go to marketplace</a>
+          <a href="pages/marketplace.html" class="mt-6 w-full py-2 text-base font-semibold text-black bg-white border border-gray-200 rounded-lg hover:bg-gray-200 transition-colors block text-center">Go to marketplace</a>
 
         </div>
 
@@ -192,7 +188,7 @@
 
   </section>
 
-  <section id="benefits" class="bg-gray-50">
+  <section id="benefits" class="bg-gray-100">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-32">
 
@@ -200,7 +196,7 @@
 
         <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Benefits</div>
 
-        <h2 class="text-5xl font-bold tracking-heading text-gray-900 leading-none">Why DataOrbit</h2>
+        <h2 class="text-5xl font-bold tracking-heading text-black leading-none">Why DataOrbit</h2>
 
         <p class="text-base text-gray-500 mt-3 leading-normal">Everything you need to access satellite data at scale,
 
@@ -210,23 +206,23 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-200">
 
           <div class="flex items-start justify-between">
 
-            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+            <div class="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
 
               <span class="material-symbols-outlined text-[24px] text-white">code</span>
 
             </div>
 
-            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">01</span>
+            <span class="text-6xl font-bold text-gray-100 tracking-heading leading-none">01</span>
 
           </div>
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">API-first access</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black leading-tight">API-first access</h3>
 
             <p class="text-base text-gray-500 mt-2 leading-normal">Integrate satellite data directly into your pipeline
 
@@ -234,7 +230,7 @@
 
           </div>
 
-          <div class="mt-4 bg-gray-50 rounded-lg p-3 font-mono text-xs text-gray-500">
+          <div class="mt-4 bg-gray-100 rounded-lg p-3 font-mono text-xs text-gray-500">
 
             GET /api/v1/satellites/{id}/data
 
@@ -242,23 +238,23 @@
 
         </div>
 
-        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-200">
 
           <div class="flex items-start justify-between">
 
-            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+            <div class="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
 
               <span class="material-symbols-outlined text-[24px] text-white">verified</span>
 
             </div>
 
-            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">02</span>
+            <span class="text-6xl font-bold text-gray-100 tracking-heading leading-none">02</span>
 
           </div>
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">Verified providers</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black leading-tight">Verified providers</h3>
 
             <p class="text-base text-gray-500 mt-2 leading-normal">Planet Labs, ESA, SpaceX, and more. Real satellite
 
@@ -268,7 +264,7 @@
 
           <div class="mt-4 flex items-center gap-3">
 
-            <div class="text-[32px] font-bold tracking-heading text-gray-900">120+</div>
+            <div class="text-[32px] font-bold tracking-heading text-black">120+</div>
 
             <div class="text-xs text-gray-400 leading-normal">providers<br>worldwide</div>
 
@@ -276,23 +272,23 @@
 
         </div>
 
-        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-200">
 
           <div class="flex items-start justify-between">
 
-            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+            <div class="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
 
               <span class="material-symbols-outlined text-[24px] text-white">integration_instructions</span>
 
             </div>
 
-            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">03</span>
+            <span class="text-6xl font-bold text-gray-100 tracking-heading leading-none">03</span>
 
           </div>
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">Easy integration</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black leading-tight">Easy integration</h3>
 
             <p class="text-base text-gray-500 mt-2 leading-normal">Ready-made SDKs and comprehensive documentation get
 
@@ -302,35 +298,35 @@
 
           <div class="mt-4 flex flex-wrap items-center gap-2">
 
-            <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-50 rounded-full border border-gray-100">Python</span>
+            <span class="px-3 py-1 text-xs font-medium text-gray-500 bg-gray-100 rounded-full border border-gray-200">Python</span>
 
-            <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-50 rounded-full border border-gray-100">Node.js</span>
+            <span class="px-3 py-1 text-xs font-medium text-gray-500 bg-gray-100 rounded-full border border-gray-200">Node.js</span>
 
-            <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-50 rounded-full border border-gray-100">cURL</span>
+            <span class="px-3 py-1 text-xs font-medium text-gray-500 bg-gray-100 rounded-full border border-gray-200">cURL</span>
 
-            <span class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-50 rounded-full border border-gray-100">Go</span>
+            <span class="px-3 py-1 text-xs font-medium text-gray-500 bg-gray-100 rounded-full border border-gray-200">Go</span>
 
           </div>
 
         </div>
 
-        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-200">
 
           <div class="flex items-start justify-between">
 
-            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+            <div class="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
 
               <span class="material-symbols-outlined text-[24px] text-white">cloud</span>
 
             </div>
 
-            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">04</span>
+            <span class="text-6xl font-bold text-gray-100 tracking-heading leading-none">04</span>
 
           </div>
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">No infrastructure needed</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black leading-tight">No infrastructure needed</h3>
 
             <p class="text-base text-gray-500 mt-2 leading-normal">Skip the ground station. We handle reception,
 
@@ -340,7 +336,7 @@
 
           <div class="mt-4 flex items-center gap-3">
 
-            <div class="text-[32px] font-bold tracking-heading text-gray-900">99.99%</div>
+            <div class="text-[32px] font-bold tracking-heading text-black">99.99%</div>
 
             <div class="text-xs text-gray-400 leading-normal">guaranteed<br>uptime SLA</div>
 
@@ -348,23 +344,23 @@
 
         </div>
 
-        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-100">
+        <div class="bg-white rounded-2xl p-10 flex flex-col justify-between min-h-[320px] shadow-sm border border-gray-200">
 
           <div class="flex items-start justify-between">
 
-            <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+            <div class="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
 
               <span class="material-symbols-outlined text-[24px] text-white">dns</span>
 
             </div>
 
-            <span class="text-6xl font-bold text-gray-200 tracking-heading leading-none">05</span>
+            <span class="text-6xl font-bold text-gray-100 tracking-heading leading-none">05</span>
 
           </div>
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-tight">Built for scale</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black leading-tight">Built for scale</h3>
 
             <p class="text-base text-gray-500 mt-2 leading-normal">Our infrastructure automatically scales to meet your
 
@@ -374,7 +370,7 @@
 
           <div class="mt-4 flex items-center gap-3">
 
-            <div class="text-[32px] font-bold tracking-heading text-gray-900">100 PB+</div>
+            <div class="text-[32px] font-bold tracking-heading text-black">100 PB+</div>
 
             <div class="text-xs text-gray-400 leading-normal">data readily<br>available</div>
 
@@ -382,7 +378,7 @@
 
         </div>
 
-        <div class="bg-gray-900 rounded-2xl p-10 flex flex-col justify-between min-h-[320px] text-white">
+        <div class="bg-black rounded-2xl p-10 flex flex-col justify-between min-h-[320px] text-white">
 
           <div class="flex items-start justify-between">
 
@@ -392,7 +388,7 @@
 
             </div>
 
-            <span class="text-6xl font-bold text-gray-700 tracking-heading leading-none">06</span>
+            <span class="text-6xl font-bold text-gray-800 tracking-heading leading-none">06</span>
 
           </div>
 
@@ -430,7 +426,7 @@
 
         <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Process</div>
 
-        <h2 class="text-5xl font-bold tracking-heading text-gray-900 leading-none">How it works</h2>
+        <h2 class="text-5xl font-bold tracking-heading text-black leading-none">How it works</h2>
 
       </div>
 
@@ -438,9 +434,9 @@
 
         <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
 
-          <div class="text-7xl font-bold text-gray-200 tracking-heading leading-none mb-6">01</div>
+          <div class="text-7xl font-bold text-gray-100 tracking-heading leading-none mb-6">01</div>
 
-          <div class="bg-gray-50 rounded-xl p-4 mb-8 flex-1">
+          <div class="bg-gray-100 rounded-xl p-4 mb-8 flex-1">
 
             <div class="flex items-center gap-2 mb-3">
 
@@ -450,7 +446,7 @@
 
               </div>
 
-              <div class="w-7 h-7 bg-gray-900 rounded flex items-center justify-center flex-shrink-0">
+              <div class="w-7 h-7 bg-black rounded flex items-center justify-center flex-shrink-0">
 
                 <span class="material-symbols-outlined text-[12px] text-white">search</span>
 
@@ -460,7 +456,7 @@
 
             <div class="flex items-center gap-2 mb-4">
 
-              <span class="px-2 py-1 text-xs font-medium bg-gray-900 text-white rounded">All</span>
+              <span class="px-2 py-1 text-xs font-medium bg-black text-white rounded">All</span>
 
               <span class="px-2 py-1 text-xs font-medium text-gray-500 bg-white border border-gray-200 rounded">Imagery</span>
 
@@ -472,19 +468,19 @@
 
               <div class="flex items-center justify-between">
 
-                <div class="h-2 w-32 bg-gray-200 rounded-full"></div><span class="text-xs text-gray-500 font-medium">R$15</span>
+                <div class="h-2 w-32 bg-gray-100 rounded-full"></div><span class="text-xs text-gray-500 font-medium">R$15</span>
 
               </div>
 
               <div class="flex items-center justify-between">
 
-                <div class="h-2 w-28 bg-gray-200 rounded-full"></div><span class="text-xs text-gray-500 font-medium">R$450</span>
+                <div class="h-2 w-28 bg-gray-100 rounded-full"></div><span class="text-xs text-gray-500 font-medium">R$450</span>
 
               </div>
 
               <div class="flex items-center justify-between">
 
-                <div class="h-2 w-36 bg-gray-200 rounded-full"></div><span class="text-xs text-gray-500 font-medium">R$95</span>
+                <div class="h-2 w-36 bg-gray-100 rounded-full"></div><span class="text-xs text-gray-500 font-medium">R$95</span>
 
               </div>
 
@@ -492,7 +488,7 @@
 
           </div>
 
-          <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-none">Explore</h3>
+          <h3 class="text-xl font-bold tracking-heading text-black leading-none">Explore</h3>
 
           <p class="text-base text-gray-500 mt-3 leading-normal">Browse 3,200+ satellites. Filter by data type,
 
@@ -502,11 +498,11 @@
 
         <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
 
-          <div class="text-7xl font-bold text-gray-200 tracking-heading leading-none mb-6">02</div>
+          <div class="text-7xl font-bold text-gray-100 tracking-heading leading-none mb-6">02</div>
 
-          <div class="bg-gray-50 rounded-xl p-4 mb-8 flex-1">
+          <div class="bg-gray-100 rounded-xl p-4 mb-8 flex-1">
 
-            <div class="text-xs font-semibold text-gray-700 mb-3">Configure access</div>
+            <div class="text-xs font-semibold text-gray-800 mb-3">Configure access</div>
 
             <div class="mb-3">
 
@@ -552,11 +548,11 @@
 
               <div class="text-xs text-gray-400 uppercase tracking-caps mb-2">Max resolution</div>
 
-              <div class="h-2 bg-gray-200 rounded-full">
+              <div class="h-2 bg-gray-100 rounded-full">
 
-                <div class="h-2 w-3/4 bg-gray-900 rounded-full relative">
+                <div class="h-2 w-3/4 bg-black rounded-full relative">
 
-                  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-900 rounded-full border-2 border-white">
+                  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-black rounded-full border-2 border-white">
 
                   </div>
 
@@ -568,7 +564,7 @@
 
           </div>
 
-          <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-none">Configure</h3>
+          <h3 class="text-xl font-bold tracking-heading text-black leading-none">Configure</h3>
 
           <p class="text-base text-gray-500 mt-3 leading-normal">Set your parameters: geographic area, time window, and
 
@@ -578,21 +574,21 @@
 
         <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
 
-          <div class="text-7xl font-bold text-gray-200 tracking-heading leading-none mb-6">03</div>
+          <div class="text-7xl font-bold text-gray-100 tracking-heading leading-none mb-6">03</div>
 
-          <div class="bg-gray-900 rounded-xl p-4 mb-8 flex-1 font-mono">
+          <div class="bg-black rounded-xl p-4 mb-8 flex-1 font-mono">
 
             <div class="flex items-center gap-2 mb-3">
 
-              <div class="w-2 h-2 rounded-full bg-gray-600"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-500"></div>
 
-              <div class="w-2 h-2 rounded-full bg-gray-600"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-500"></div>
 
-              <div class="w-2 h-2 rounded-full bg-gray-600"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-500"></div>
 
             </div>
 
-            <div class="text-xs text-gray-300 space-y-1 leading-normal">
+            <div class="text-xs text-gray-400 space-y-1 leading-normal">
 
               <div><span class="text-white">$</span> dataorbit pull \</div>
 
@@ -610,7 +606,7 @@
 
           </div>
 
-          <h3 class="text-xl font-bold tracking-heading text-gray-900 leading-none">Access</h3>
+          <h3 class="text-xl font-bold tracking-heading text-black leading-none">Access</h3>
 
           <p class="text-base text-gray-500 mt-3 leading-normal">Receive data via API, webhook, or direct download.
 
@@ -624,9 +620,9 @@
 
   </section>
 
-  <section id="cta" class="bg-gray-950">
+  <section id="cta" class="bg-black">
 
-    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-32 text-center">
+    <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-32 pb-0 text-center">
 
       <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4">Get Started</div>
 
@@ -636,12 +632,13 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full sm:w-auto">
 
-        <a href="pages/login.html" id="cta-signup" class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Create account</a>
+        <a href="pages/login.html" id="cta-signup" class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-black bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Create account</a>
 
-        <a href="pages/marketplace.html" id="cta-explore" class="inline-block text-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white border border-gray-600 rounded-lg hover:border-gray-400 transition-colors">Explore catalog</a>
+        <a href="pages/marketplace.html" id="cta-explore" class="inline-block text-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white border border-gray-500 rounded-lg hover:bg-gray-800 transition-colors">Explore catalog</a>
 
       </div>
 
+    <div class="border-t border-gray-800 w-full mt-32"></div>
     </div>
 
   </section>
@@ -668,6 +665,17 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

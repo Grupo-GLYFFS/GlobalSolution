@@ -1,4 +1,4 @@
-window.injectComponents = function injectComponents() {
+﻿window.injectComponents = function injectComponents() {
   const navbarPlaceholder = document.getElementById('navbar-placeholder');
   if (navbarPlaceholder) {
     const basePath = navbarPlaceholder.dataset.basepath || '.';
@@ -18,5 +18,6 @@ window.injectComponents = function injectComponents() {
     }, 50);
   }
 }
+
 
 

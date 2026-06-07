@@ -1,4 +1,4 @@
-window.init3DGlobe = function(canvasId = 'globe-canvas', popupId = 'sat-popup', basePath = '.') {
+﻿window.init3DGlobe = function(canvasId = 'globe-canvas', popupId = 'sat-popup', basePath = '.') {
 
 // =============================================================================
 // SEÇÃO 1 — CONFIGURAÇÕES GERAIS
@@ -142,7 +142,7 @@ function exibirPopupComDadosDoSatelite(dadosDoSatelite) {
   const ratingStars = Math.floor(dadosDoSatelite.rating || 5);
   let starsHtml = '';
   for (let i = 0; i < 5; i++) {
-    const starClass = i < ratingStars ? 'text-gray-900' : 'text-gray-300';
+    const starClass = i < ratingStars ? 'text-black' : 'text-gray-400';
     starsHtml += `<span class="material-symbols-outlined text-[16px] ${starClass}">star</span>`;
   }
 
@@ -152,10 +152,10 @@ function exibirPopupComDadosDoSatelite(dadosDoSatelite) {
       <div class="flex justify-between items-start">
         <div>
           <div class="text-xs font-medium text-gray-400 uppercase tracking-caps">${dadosDoSatelite.category || "Imagery"}</div>
-          <h3 class="text-base font-bold tracking-heading text-gray-900 mt-1 leading-none"><a href="${basePath}/pages/satellite.html?id=${dadosDoSatelite.id}" class="hover:underline">${dadosDoSatelite.name}</a></h3>
+          <h3 class="text-base font-bold tracking-heading text-black mt-1 leading-none"><a href="${basePath}/pages/satellite.html?id=${dadosDoSatelite.id}" class="hover:underline">${dadosDoSatelite.name}</a></h3>
           <p class="text-base text-gray-500 mt-1">${dadosDoSatelite.provider}</p>
         </div>
-        <button onclick="window.fecharPopupGlobo()" class="text-gray-400 hover:text-gray-900 transition-colors">
+        <button onclick="window.fecharPopupGlobo()" class="text-gray-400 hover:text-black transition-colors">
           <span class="material-symbols-outlined text-[20px]">close</span>
         </button>
       </div>
@@ -166,13 +166,13 @@ function exibirPopupComDadosDoSatelite(dadosDoSatelite) {
         <span class="text-xs text-gray-400">${(dadosDoSatelite.rating || 5.0).toFixed(1)} (${dadosDoSatelite.reviews || 0})</span>
       </div>
       <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
-        <span>${dadosDoSatelite.resolution || "N/A"}</span><span class="text-gray-300">•</span><span>${dadosDoSatelite.revisit || "N/A"}</span><span class="text-gray-300">•</span><span>${dadosDoSatelite.format || "N/A"}</span>
+        <span>${dadosDoSatelite.resolution || "N/A"}</span><span class="text-gray-400">•</span><span>${dadosDoSatelite.revisit || "N/A"}</span><span class="text-gray-400">•</span><span>${dadosDoSatelite.format || "N/A"}</span>
       </div>
-      <div class="mt-2 pt-2 border-t border-gray-100 flex items-baseline gap-1">
+      <div class="mt-2 pt-2 border-t border-gray-200 flex items-baseline gap-1">
         <span class="text-xl font-bold tracking-heading">${dadosDoSatelite.price || "Free"}</span>
         <span class="text-xs text-gray-400">${dadosDoSatelite.priceUnit || ""}</span>
       </div>
-      <a href="${basePath}/pages/satellite.html?id=${dadosDoSatelite.id}" class="mt-4 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+      <a href="${basePath}/pages/satellite.html?id=${dadosDoSatelite.id}" class="mt-4 w-full py-2 text-base font-semibold text-white bg-black rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
     </div>
   `;
 
@@ -315,4 +315,7 @@ function executarFrameDeAnimacao() {
 executarFrameDeAnimacao();
 
 };
+
+
+
 
