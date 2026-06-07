@@ -1,9 +1,9 @@
-// js/components/carrossel.js
+﻿// js/components/carrossel.js
 // Lógica genérica de carrosséis (navegação, botões e controles)
 // Depende: Nenhum
 
 // Inicializa a lógica de navegação horizontal (setas e scroll) para um carrossel específico
-export function inicializarCarrossel(idCarrossel, idBotaoAnterior, idBotaoProximo, seletorDePontos = null) {
+window.inicializarCarrossel = function inicializarCarrossel(idCarrossel, idBotaoAnterior, idBotaoProximo, seletorDePontos = null) {
   const carrossel = document.getElementById(idCarrossel);
   const botaoAnterior = document.getElementById(idBotaoAnterior);
   const botaoProximo = document.getElementById(idBotaoProximo);

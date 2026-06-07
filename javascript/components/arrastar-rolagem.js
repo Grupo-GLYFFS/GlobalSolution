@@ -1,8 +1,8 @@
-// js/components/arrastar-rolagem.js
+﻿// js/components/arrastar-rolagem.js
 // Lógica para arrastar contêineres horizontalmente com o mouse
 // Depende: Nenhum
 
-export function inicializarArrasteRolagem() {
+window.inicializarArrasteRolagem = function inicializarArrasteRolagem() {
   const conteineresDeRolagemPorArraste = document.querySelectorAll('.drag-scroll');
 
   conteineresDeRolagemPorArraste.forEach(conteinerCorrente => {

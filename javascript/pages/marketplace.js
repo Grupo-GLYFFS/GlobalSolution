@@ -1,16 +1,18 @@
-// js/pages/marketplace.js
+﻿// js/pages/marketplace.js
 // Ponto de entrada e inicialização para a página do Marketplace
 // Depende: arrastar-rolagem.js, carrossel.js
 
-import { inicializarArrasteRolagem } from '../components/arrastar-rolagem.js';
-import { inicializarCarrossel } from '../components/carrossel.js';
-
 document.addEventListener('DOMContentLoaded', () => {
+  window.injectComponents();
+  // Render satellites multiple times to simulate 20 items
+  window.renderSatellites('satellite-cards-container', undefined, '..');
+  window.renderSatellites('satellite-cards-container', undefined, '..');
+  window.renderSatellites('satellite-cards-container', undefined, '..');
   console.log('DataOrbit - Marketplace Carregado via ES Modules');
   
-  inicializarArrasteRolagem();
+  window.inicializarArrasteRolagem();
   
-  const atualizarControlesDoCarrossel = inicializarCarrossel('category-scroll', 'cat-prev', 'cat-next', '#category-dots div');
+  const atualizarControlesDoCarrossel = window.inicializarCarrossel('category-scroll', 'cat-prev', 'cat-next', '#category-dots div');
   
   const botaoDropdownCategorias = document.getElementById('categoriesDropdownBtn');
   if (botaoDropdownCategorias && atualizarControlesDoCarrossel) {
@@ -19,3 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+

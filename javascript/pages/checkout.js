@@ -1,9 +1,9 @@
-// js/pages/checkout.js
+﻿// js/pages/checkout.js
 // Lógica de navegação entre as etapas do processo de checkout
 // Depende: Nenhum
 
 // Exibe a etapa especificada e oculta as demais
-export function exibirEtapa(indiceEtapa) {
+function exibirEtapa(indiceEtapa) {
   // Atualiza a exibição das seções
   for (let i = 0; i <= 3; i++) {
     const elementoSecao = document.getElementById('sec-' + i);
@@ -32,3 +32,9 @@ export function exibirEtapa(indiceEtapa) {
 
 // Exporta para o escopo global para compatibilidade com os onclick inline
 window.exibirEtapa = exibirEtapa;
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.injectComponents();
+});
+
+
