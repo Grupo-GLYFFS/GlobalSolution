@@ -3,6 +3,10 @@
   
   window.injectComponents();
   window.renderSatellites('satellite-cards-container', undefined, '.');
+
+  if (window.init3DGlobe) {
+    window.init3DGlobe('globe-canvas', 'sat-popup', '.');
+  }
   
   window.inicializarArrasteRolagem();
   
@@ -15,5 +19,6 @@
     });
   }
 });
+
 
 

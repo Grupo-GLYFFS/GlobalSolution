@@ -11,7 +11,11 @@
     revisit: "Daily",
     format: "GeoTIFF",
     price: "R$ 15.00",
-    priceUnit: "/ km²"
+    priceUnit: "/ km²",
+    altitude_em_km: 550,
+    inclinacao_em_graus: 53,
+    raan_em_graus: 45,
+    cor: "#3B7BF5"
   },
   {
     id: "worldview-3",
@@ -25,7 +29,11 @@
     revisit: "1-4 Days",
     format: "GeoTIFF",
     price: "R$ 45.00",
-    priceUnit: "/ km²"
+    priceUnit: "/ km²",
+    altitude_em_km: 617,
+    inclinacao_em_graus: 97.9,
+    raan_em_graus: 180,
+    cor: "#FF6B35"
   },
   {
     id: "sentinel-2",
@@ -39,7 +47,11 @@
     revisit: "5 Days",
     format: "SAFE",
     price: "R$ 0.00",
-    priceUnit: "/ Free"
+    priceUnit: "/ Free",
+    altitude_em_km: 786,
+    inclinacao_em_graus: 98.5,
+    raan_em_graus: 0,
+    cor: "#18D4A7"
   },
   {
     id: "spire-lemur",
@@ -53,7 +65,11 @@
     revisit: "Hourly",
     format: "JSON API",
     price: "R$ 180.00",
-    priceUnit: "/ day"
+    priceUnit: "/ day",
+    altitude_em_km: 500,
+    inclinacao_em_graus: 83,
+    raan_em_graus: 90,
+    cor: "#D62839"
   },
   {
     id: "bee-iot",
@@ -67,7 +83,11 @@
     revisit: "15-60 min",
     format: "JSON",
     price: "R$ 0.05",
-    priceUnit: "/ message"
+    priceUnit: "/ message",
+    altitude_em_km: 400,
+    inclinacao_em_graus: 51.6,
+    raan_em_graus: 210,
+    cor: "#1D66F5"
   },
   {
     id: "link-cell",
@@ -81,7 +101,11 @@
     revisit: "Real-time",
     format: "TCP/UDP",
     price: "R$ 2.50",
-    priceUnit: "/ MB"
+    priceUnit: "/ MB",
+    altitude_em_km: 550,
+    inclinacao_em_graus: 53.2,
+    raan_em_graus: 270,
+    cor: "#00A8E8"
   },
   {
     id: "terrasync-sar",
@@ -95,7 +119,10 @@
     revisit: "< 20h",
     format: "GeoTIFF",
     price: "R$ 280.00",
-    priceUnit: "/ capture"
+    priceUnit: "/ capture",
+    altitude_em_km: 560,
+    inclinacao_em_graus: 97.7,
+    raan_em_graus: 135,
+    cor: "#F08A5D"
   }
 ];
-

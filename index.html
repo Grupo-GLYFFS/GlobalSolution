@@ -62,84 +62,14 @@
 
       </div>
 
-      <div class="w-full lg:w-1/2 relative mt-8 lg:mt-0">
-
-        <div id="globe-placeholder" class="aspect-square bg-gray-900 rounded-2xl border-2 border-dashed border-gray-700 flex flex-col items-center justify-center">
-
-          <span class="material-symbols-outlined text-[64px] text-gray-600 mb-4">language</span>
-
-          <span class="text-base text-gray-500 font-medium">3D Globe · Coming Soon</span>
-
-          <span class="text-xs text-gray-600 mt-1">Interactive Three.js visualization</span>
-
-        </div>
-
-        <div id="satellite-popup" class="satellite-popup absolute -right-4 top-16 bg-white rounded-xl shadow-2xl p-5 w-64 border border-gray-100 z-10">
-
-          <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-3">Satellite Details</div>
-
-          <h3 class="text-base font-bold tracking-heading text-gray-900 leading-none"><a href="pages/satellite.html" class="hover:underline">OrbitRent Dove-PSB</a></h3>
-
-          <p class="text-base text-gray-500 mt-1">Planet Labs</p>
-
-          <div class="mt-4 space-y-2">
-
-            <div class="flex justify-between text-base">
-
-              <span class="text-gray-400">Resolution</span>
-
-              <span class="font-medium text-gray-700">3.0 m</span>
-
-            </div>
-
-            <div class="flex justify-between text-base">
-
-              <span class="text-gray-400">Revisit</span>
-
-              <span class="font-medium text-gray-700">Daily</span>
-
-            </div>
-
-            <div class="flex justify-between text-base">
-
-              <span class="text-gray-400">Bands</span>
-
-              <span class="font-medium text-gray-700">8 spectral</span>
-
-            </div>
-
-            <div class="flex justify-between text-base">
-
-              <span class="text-gray-400">Format</span>
-
-              <span class="font-medium text-gray-700">GeoTIFF</span>
-
-            </div>
-
-          </div>
-
-          <div class="mt-4 pt-4 border-t border-gray-100">
-
-            <div class="flex items-baseline gap-1">
-
-              <span class="text-xl font-bold tracking-heading text-gray-900">R$ 15.00</span>
-
-              <span class="text-base text-gray-400">/ km²</span>
-
-            </div>
-
-          </div>
-
-          <a href="pages/satellite.html" class="mt-4 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
-
-        </div>
-
+      <div class="w-full lg:w-1/2 relative mt-8 lg:mt-0 aspect-square">
+        <canvas id="globe-canvas" class="w-full h-full absolute inset-0 cursor-grab active:cursor-grabbing"></canvas>
+        <div id="sat-popup" class="fixed bg-gray-900 border border-gray-800 rounded-xl shadow-2xl p-5 w-64 z-50 pointer-events-auto text-white" style="display: none; transform: translate(-50%, -100%);"></div>
       </div>
 
     </div>
 
   </section>
-
   <section id="metrics" class="border-b border-gray-200">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-12">
@@ -725,7 +655,12 @@
 
   <div id="footer-placeholder" data-basepath="."></div>
 
-    <script src="./javascript/components/navbar.js"></script>
+    <!-- Three.js e OrbitControls (Globo 3D) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="./javascript/components/globe.js"></script>
+  
+  <script src="./javascript/components/navbar.js"></script>
   <script src="./javascript/components/footer.js"></script>
   <script src="./javascript/components/satellite-card.js"></script>
   <script src="./javascript/data/satellites.js"></script>
@@ -740,6 +675,10 @@
 </body>
 
 </html>
+
+
+
+
 
 
 
