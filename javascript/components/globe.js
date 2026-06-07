@@ -172,7 +172,7 @@ function exibirPopupComDadosDoSatelite(dadosDoSatelite) {
         <span class="text-xl font-bold tracking-heading">${dadosDoSatelite.price || "Free"}</span>
         <span class="text-xs text-gray-400">${dadosDoSatelite.priceUnit || ""}</span>
       </div>
-      <a href="${basePath}/pages/satellite.html?id=${dadosDoSatelite.id}" class="mt-4 w-full py-2 text-sm font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
+      <a href="${basePath}/pages/satellite.html?id=${dadosDoSatelite.id}" class="mt-4 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
     </div>
   `;
 
