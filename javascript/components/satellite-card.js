@@ -1,4 +1,4 @@
-﻿window.getSatelliteCardHtml = function getSatelliteCardHtml(satellite, basePath = '.', extraClasses = '') {
+window.getSatelliteCardHtml = function getSatelliteCardHtml(satellite, basePath = '.', extraClasses = '') {
   const ratingStars = Math.floor(satellite.rating);
   let starsHtml = '';
   for (let i = 0; i < 5; i++) {
@@ -20,15 +20,15 @@
           <span class="text-xs text-gray-400">${satellite.rating.toFixed(1)} (${satellite.reviews})</span>
         </div>
         <div class="flex items-center gap-2 mt-3 text-xs text-gray-500">
-          <span>${satellite.resolution}</span><span class="text-gray-300">·</span><span>${satellite.revisit}</span><span class="text-gray-300">·</span><span>${satellite.format}</span>
+          <span>${satellite.resolution}</span><span class="text-gray-300">•</span><span>${satellite.revisit}</span><span class="text-gray-300">•</span><span>${satellite.format}</span>
         </div>
-        <div class="mt-auto pt-4 border-t border-gray-100">
-          <div class="flex items-baseline gap-1">
+        <div class="mt-auto">
+          <div class="mt-2 pt-2 border-t border-gray-100 flex items-baseline gap-1">
             <span class="text-xl font-bold tracking-heading">${satellite.price}</span>
             <span class="text-xs text-gray-400">${satellite.priceUnit}</span>
           </div>
+          <a href="${basePath}/pages/satellite.html?id=${satellite.id}" class="mt-4 w-full py-2 text-sm font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
         </div>
-        <a href="${basePath}/pages/satellite.html?id=${satellite.id}" class="mt-3 w-full py-2 text-base font-semibold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors text-center inline-block">Get access</a>
       </div>
     </div>
   `;
