@@ -20,6 +20,21 @@ tailwind.config = {
       }
     },
     extend: {
+      colors: {
+        accent: {
+          orange: '#E8510A',
+          blue: '#3B7BF5',
+          'blue-light': '#93C5FD',
+          green: '#22C55E',
+          'green-dark': '#15803D',
+          'green-tint': '#F0FDF4',
+          'green-light': '#86EFAC',
+          red: '#EF4444',
+          'red-dark': '#DC2626',
+          'red-tint': '#FEF2F2',
+          purple: '#C084FC',
+        }
+      },
       // Fontes padrão
       fontFamily: {
         sans: ['"DM Sans"', 'Inter', 'sans-serif'],
