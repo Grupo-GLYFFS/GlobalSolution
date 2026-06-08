@@ -5,6 +5,22 @@
 // Definição das configurações principais de design do site
 tailwind.config = {
   darkMode: 'class',
+  // Safelist: classes usadas em componentes JS (navbar.js, satellite-card.js, footer.js)
+  // que o Tailwind CDN não consegue detectar automaticamente por estarem em templates dinâmicos.
+  safelist: [
+    // Navbar dark
+    'dark:bg-gray-900', 'dark:bg-gray-800', 'dark:bg-gray-750', 'dark:bg-gray-700', 'dark:bg-white',
+    'dark:border-gray-800', 'dark:border-gray-700', 'dark:border-gray-600',
+    'dark:text-white', 'dark:text-black', 'dark:text-gray-200', 'dark:text-gray-400', 'dark:text-gray-500', 'dark:text-gray-600',
+    'dark:hover:bg-gray-800', 'dark:hover:bg-gray-700', 'dark:hover:bg-gray-600', 'dark:hover:bg-gray-100',
+    'dark:placeholder-gray-500',
+    'dark:focus:border-gray-500',
+    'dark:invert',
+    // Satellite card / benefit cards dark
+    'dark:divide-gray-800',
+    // Transitions
+    'transition-colors', 'duration-300',
+  ],
   theme: {
     // Definindo cores FORA do extend para forçar o projeto a usar APENAS estas.
     colors: {
@@ -16,8 +32,11 @@ tailwind.config = {
         200: '#e5e5e5',
         400: '#a3a3a3',
         500: '#737373',
+        600: '#525252',
         700: '#404040',
+        750: '#333333',
         800: '#262626',
+        900: '#171717',
       }
     },
     extend: {
@@ -64,3 +83,4 @@ tailwind.config = {
     },
   },
 }
+
