@@ -13,21 +13,10 @@ body {
   font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* --- Mapa de Satélite --- */
-.satellite-popup::before {
-  content: '';
-  position: absolute;
-  left: -8px;
-  top: 24px;
-  width: 16px;
-  height: 16px;
-  background: white;
-  border-left: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
-  transform: rotate(45deg);
-}
 
 /* --- Células Bento --- */
 .bento-cell {
@@ -100,4 +89,20 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* --- Dark Mode: Overrides CSS (não acessíveis via classes Tailwind) --- */
+
+
+/* Scrollbar customizada — dark */
+html.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #262626;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #404040;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #737373;
 }

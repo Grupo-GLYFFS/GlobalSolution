@@ -1,6 +1,6 @@
-﻿window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
+window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
   return `
-  <nav id="navbar" class="sticky top-0 z-50 bg-white border-b border-gray-200">
+  <nav id="navbar" class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 flex items-center h-20">
 
@@ -8,7 +8,7 @@
 
         <a href="${basePath}/index.html" id="nav-logo" class="inline-block">
 
-          <img src="${basePath}/assets/logo/dataorbit-logo-3.png" alt="DataOrbit" class="h-12">
+          <img src="${basePath}/assets/logo/dataorbit-logo-3.png" alt="DataOrbit" class="h-12 dark:invert">
 
         </a>
 
@@ -16,41 +16,41 @@
 
       <div class="hidden lg:flex items-center gap-2">
 
-        <button id="categoriesDropdownBtn" data-dropdown-toggle="categoriesDropdownMenu" class="h-12 flex items-center gap-1 px-5 text-base font-medium text-gray-800 border border-gray-400 bg-white rounded-lg hover:bg-gray-100 transition-colors">
+        <button id="categoriesDropdownBtn" data-dropdown-toggle="categoriesDropdownMenu" class="h-12 flex items-center gap-1 px-5 text-base font-medium text-gray-800 dark:text-gray-200 border border-gray-400 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
 
           Categories
 
-          <span class="material-symbols-outlined text-[20px] text-black ml-1">expand_more</span>
+          <span class="material-symbols-outlined text-[20px] text-black dark:text-gray-200 ml-1">expand_more</span>
 
         </button>
 
-        <div id="categoriesDropdownMenu" class="z-50 hidden absolute bg-white shadow-xl border-t border-gray-200 !w-full !left-0 !top-20 !transform-none">
+        <div id="categoriesDropdownMenu" class="z-50 hidden absolute bg-white dark:bg-gray-900 shadow-xl border-t border-gray-200 dark:border-gray-800 !w-full !left-0 !top-20 !transform-none">
 
           <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 py-8">
 
             <div class="flex justify-between items-center mb-6">
 
-              <h3 class="text-xs font-bold tracking-caps uppercase text-gray-500 m-0">Browse Categories</h3>
+              <h3 class="text-xs font-bold tracking-caps uppercase text-gray-500 dark:text-gray-400 m-0">Browse Categories</h3>
 
               <div class="flex items-center gap-3">
 
                 <div class="flex items-center gap-2 mr-2 hidden md:flex" id="category-dots">
 
-                  <div class="w-2 h-2 rounded-full bg-black transition-colors"></div>
+                  <div class="w-2 h-2 rounded-full bg-black dark:bg-white transition-colors"></div>
 
-                  <div class="w-2 h-2 rounded-full bg-gray-100 transition-colors"></div>
+                  <div class="w-2 h-2 rounded-full bg-gray-100 dark:bg-gray-700 transition-colors"></div>
 
                 </div>
 
-                <button id="cat-prev" class="w-10 h-10 flex items-center justify-center p-0 rounded-full border border-gray-400 hover:bg-gray-100 transition-colors focus:outline-none disabled:opacity-30 disabled:cursor-not-allowed">
+                <button id="cat-prev" class="w-10 h-10 flex items-center justify-center p-0 rounded-full border border-gray-400 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none disabled:opacity-30 disabled:cursor-not-allowed">
 
-                  <span class="material-symbols-outlined text-[20px] text-black">chevron_left</span>
+                  <span class="material-symbols-outlined text-[20px] text-black dark:text-gray-200">chevron_left</span>
 
                 </button>
 
-                <button id="cat-next" class="w-10 h-10 flex items-center justify-center p-0 rounded-full border border-gray-400 hover:bg-gray-100 transition-colors focus:outline-none disabled:opacity-30 disabled:cursor-not-allowed">
+                <button id="cat-next" class="w-10 h-10 flex items-center justify-center p-0 rounded-full border border-gray-400 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none disabled:opacity-30 disabled:cursor-not-allowed">
 
-                  <span class="material-symbols-outlined text-[20px] text-black">chevron_right</span>
+                  <span class="material-symbols-outlined text-[20px] text-black dark:text-gray-200">chevron_right</span>
 
                 </button>
 
@@ -62,7 +62,7 @@
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Imagery" class="w-full h-full object-cover">
 
@@ -70,15 +70,15 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Imagery</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Imagery</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">Optical, SAR, and hyperspectral data.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Optical, SAR, and hyperspectral data.</p>
 
               </a>
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Climate" class="w-full h-full object-cover">
 
@@ -86,15 +86,15 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Climate</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Climate</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">Weather patterns and GHG tracking.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Weather patterns and GHG tracking.</p>
 
               </a>
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Connectivity" class="w-full h-full object-cover">
 
@@ -102,15 +102,15 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Connectivity</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Connectivity</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">IoT network and broadband links.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">IoT network and broadband links.</p>
 
               </a>
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Analytics" class="w-full h-full object-cover">
 
@@ -118,15 +118,15 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Analytics</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Analytics</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">Derived intelligence and mapping.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Derived intelligence and mapping.</p>
 
               </a>
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Telemetry" class="w-full h-full object-cover">
 
@@ -134,15 +134,15 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Telemetry</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Telemetry</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">Raw sensor outputs and GNSS data.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Raw sensor outputs and GNSS data.</p>
 
               </a>
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Maritime" class="w-full h-full object-cover">
 
@@ -150,15 +150,15 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Maritime</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Maritime</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">Vessel tracking and AIS overlays.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Vessel tracking and AIS overlays.</p>
 
               </a>
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Agriculture" class="w-full h-full object-cover">
 
@@ -166,15 +166,15 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Agriculture</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Agriculture</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">Crop health and NDVI models.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Crop health and NDVI models.</p>
 
               </a>
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Urban Planning" class="w-full h-full object-cover">
 
@@ -182,15 +182,15 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Urban</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Urban</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">Infrastructure and night lights.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Infrastructure and night lights.</p>
 
               </a>
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Forestry" class="w-full h-full object-cover">
 
@@ -198,15 +198,15 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Forestry</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Forestry</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">Deforestation and biomass.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Deforestation and biomass.</p>
 
               </a>
 
               <a href="#" class="group block w-[calc(20%-1.2rem)] flex-shrink-0 snap-start">
 
-                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200">
+                <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
                   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Energy" class="w-full h-full object-cover">
 
@@ -214,9 +214,9 @@
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black group-hover:text-black transition-colors">Energy</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Energy</h4>
 
-                <p class="text-xs text-gray-500 mt-1 leading-normal">Solar irradiance and pipelines.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Solar irradiance and pipelines.</p>
 
               </a>
 
@@ -226,9 +226,9 @@
 
         </div>
 
-        <input type="text" id="nav-search" placeholder="Search satellites, providers, data types..." class="h-12 w-64 xl:w-[448px] px-4 text-base bg-white border border-gray-400 rounded-lg focus:outline-none focus:border-gray-500 placeholder-gray-400">
+        <input type="text" id="nav-search" placeholder="Search satellites, providers, data types..." class="h-12 w-64 xl:w-[448px] px-4 text-base bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 dark:focus:border-gray-500 placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white transition-colors">
 
-        <button id="nav-search-btn" class="h-12 w-12 flex-shrink-0 flex items-center justify-center bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
+        <button id="nav-search-btn" class="h-12 w-12 flex-shrink-0 flex items-center justify-center bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
 
           <span class="material-symbols-outlined text-[20px]">search</span>
 
@@ -238,7 +238,7 @@
 
       <div class="flex lg:hidden flex-1 justify-end">
 
-        <button data-collapse-toggle="mobile-menu" type="button" class="text-black focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+        <button data-collapse-toggle="mobile-menu" type="button" class="text-black dark:text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
 
           <span class="material-symbols-outlined text-[24px]">menu</span>
 
@@ -248,9 +248,9 @@
 
       <div class="flex-1 hidden lg:flex items-center justify-end gap-3">
 
-        <a href="${basePath}/pages/login.html" id="nav-login-btn" class="h-12 px-6 text-base font-medium text-gray-800 border border-gray-400 rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Log in</a>
+        <a href="${basePath}/pages/login.html" id="nav-login-btn" class="h-12 px-6 text-base font-medium text-gray-800 dark:text-gray-200 border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors inline-flex items-center justify-center">Log in</a>
 
-        <a href="${basePath}/pages/login.html" id="nav-signup-btn" class="h-12 px-6 text-base font-medium text-white bg-black rounded-lg hover:bg-gray-800 transition-colors inline-flex items-center justify-center">Sign up</a>
+        <a href="${basePath}/pages/login.html" id="nav-signup-btn" class="h-12 px-6 text-base font-medium text-white dark:text-black bg-black dark:bg-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Sign up</a>
 
       </div>
 
@@ -258,17 +258,17 @@
 
     <div class="hidden lg:hidden w-full" id="mobile-menu">
 
-      <div class="px-6 pt-2 pb-6 space-y-2 bg-white border-t border-gray-200 shadow-xl">
+      <div class="px-6 pt-2 pb-6 space-y-2 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-xl">
 
         <div class="mb-4 pt-2">
 
-          <input type="text" placeholder="Search satellites..." class="w-full h-12 px-4 text-base bg-white border border-gray-400 rounded-lg focus:outline-none focus:border-gray-500">
+          <input type="text" placeholder="Search satellites..." class="w-full h-12 px-4 text-base bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 text-black dark:text-white dark:placeholder-gray-500 transition-colors">
 
         </div>
 
-        <a href="#" class="block px-4 py-3 text-base font-medium text-black rounded-lg hover:bg-gray-100 border border-gray-200 text-center">Categories</a>
+        <a href="#" class="block px-4 py-3 text-base font-medium text-black dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center">Categories</a>
 
-        <a href="#" class="block px-4 py-3 text-base font-medium text-black rounded-lg hover:bg-gray-100 border border-gray-200 text-center">Log in</a>
+        <a href="#" class="block px-4 py-3 text-base font-medium text-black dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center">Log in</a>
 
         <a href="#" class="block px-4 py-3 text-base font-medium text-white bg-black rounded-lg hover:bg-gray-800 text-center">Sign up</a>
 
@@ -279,11 +279,3 @@
   </nav>
 `;
 }
-
-
-
-
-
-
-
-
