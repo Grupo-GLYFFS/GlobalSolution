@@ -1,4 +1,4 @@
-﻿window.injectComponents = function injectComponents() {
+window.injectComponents = function injectComponents() {
   const navbarPlaceholder = document.getElementById('navbar-placeholder');
   if (navbarPlaceholder) {
     const basePath = navbarPlaceholder.dataset.basepath || '.';
@@ -17,6 +17,11 @@
     setTimeout(() => {
       window.UIComponents.init();
     }, 50);
+  }
+
+  // Initialize Language Manager
+  if (window.LanguageManager) {
+    window.LanguageManager.init();
   }
 }
 

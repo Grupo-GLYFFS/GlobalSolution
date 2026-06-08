@@ -9,13 +9,18 @@
   const promoCard = container.querySelector('.promo-card');
   if (promoCard) {
     promoCard.insertAdjacentHTML('beforebegin', cardsHtml);
+    if (window.LanguageManager) { window.LanguageManager.setLanguage(window.LanguageManager.currentLanguage); }
   } else {
     container.innerHTML = cardsHtml;
   }
   
   // Prevent browser scroll anchoring from jumping to the old promo card
   container.scrollLeft = 0;
+
+  // Re-run language translation for new elements
+  if (window.LanguageManager) { window.LanguageManager.setLanguage(window.LanguageManager.currentLanguage); }
 }
+
 
 
 

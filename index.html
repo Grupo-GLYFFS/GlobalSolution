@@ -19,6 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
   <script src="./javascript/utils/themeManager.js"></script>
+  <script src="./javascript/utils/language.js?v=2"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script src="./javascript/tailwind.config.js"></script>
@@ -27,7 +28,7 @@
 
   <link rel="icon" type="image/png" href="./assets/favicon/favicon-light.png" media="(prefers-color-scheme: light)">
 
-  <link rel="icon" type="image/png" href="./assets/favicon/favicon-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-light.png" media="(prefers-color-scheme: dark)">
   
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -43,15 +44,15 @@
 
       <div class="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start justify-center">
 
-        <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4">Platform</div>
+        <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4" data-lang="home_badge">Platform</div>
 
-        <h1 class="text-7xl font-bold tracking-heading leading-none text-white">
+        <h1 class="text-7xl font-bold tracking-heading leading-none text-white" data-lang="home_headline">
 
           Satellite data,<br>on demand.
 
         </h1>
 
-        <p class="mt-6 text-xl text-gray-400 leading-normal max-w-lg mx-auto lg:mx-0">
+        <p class="mt-6 text-xl text-gray-400 leading-normal max-w-lg mx-auto lg:mx-0" data-lang="home_subtitle">
 
           Browse thousands of satellites from verified providers. Choose your coverage area, data format, and delivery
 
@@ -59,7 +60,7 @@
 
         </p>
 
-        <a href="pages/marketplace.html" id="hero-cta" class="mt-8 px-8 py-4 text-base font-semibold text-black bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Explore catalog</a>
+        <a href="pages/marketplace.html" id="hero-cta" class="mt-8 px-8 py-4 text-base font-semibold text-black bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center" data-lang="home_cta_explore">Explore catalog</a>
 
       </div>
 
@@ -81,7 +82,7 @@
 
           <div class="text-4xl font-bold tracking-heading text-black dark:text-white leading-none">3,200+</div>
 
-          <div class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal">Satellites indexed</div>
+          <div class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal" data-lang="home_stat_1">Satellites indexed</div>
 
         </div>
 
@@ -89,7 +90,7 @@
 
           <div class="text-4xl font-bold tracking-heading text-black dark:text-white leading-none">14</div>
 
-          <div class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal">Data formats</div>
+          <div class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal" data-lang="home_stat_2">Data formats</div>
 
         </div>
 
@@ -97,7 +98,7 @@
 
           <div class="text-4xl font-bold tracking-heading text-black dark:text-white leading-none">&lt; 24h</div>
 
-          <div class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal">Average revisit time</div>
+          <div class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal" data-lang="home_stat_3">Average revisit time</div>
 
         </div>
 
@@ -105,7 +106,7 @@
 
           <div class="text-4xl font-bold tracking-heading text-black dark:text-white leading-none">$0.01</div>
 
-          <div class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal">Starting unit price</div>
+          <div class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal" data-lang="home_stat_4">Starting unit price</div>
         </div>
       </div>
       </div>
@@ -121,9 +122,9 @@
 
           <div class="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-caps mb-3">Marketplace</div>
 
-          <h2 class="text-5xl font-bold tracking-heading text-black dark:text-white leading-none">Explore what's in orbit</h2>
+          <h2 class="text-5xl font-bold tracking-heading text-black dark:text-white leading-none" data-lang="home_explore_title">Explore what's in orbit</h2>
 
-          <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal">Real satellite data products from leading providers,
+          <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal" data-lang="home_explore_desc">Real satellite data products from leading providers,
 
             ready for integration.</p>
 
@@ -135,29 +136,29 @@
 
         <div class="flex items-center flex-wrap gap-2">
 
-          <button class="px-4 py-2 text-base font-medium text-white dark:text-black bg-black dark:bg-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">All</button>
+          <button class="px-4 py-2 text-base font-medium text-white dark:text-black bg-black dark:bg-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors" data-lang="home_filter_all">All</button>
 
-          <button class="px-4 py-2 text-base font-medium text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Imagery</button>
+          <button class="px-4 py-2 text-base font-medium text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" data-lang="cat_imagery">Imagery</button>
 
-          <button class="px-4 py-2 text-base font-medium text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Climate</button>
+          <button class="px-4 py-2 text-base font-medium text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" data-lang="cat_climate">Climate</button>
 
-          <button class="px-4 py-2 text-base font-medium text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Connectivity</button>
+          <button class="px-4 py-2 text-base font-medium text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" data-lang="cat_connectivity">Connectivity</button>
 
         </div>
 
         <div class="relative inline-block">
           <button id="sortDropdownBtn" data-dropdown-toggle="sortDropdownMenu" class="flex items-center gap-2 px-4 py-2 text-base font-medium text-black dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-            Sort by: Relevance
+            <span data-lang="home_sort_by">Sort by: Relevance</span>
             <span class="material-symbols-outlined text-[20px]">expand_more</span>
           </button>
           <div id="sortDropdownMenu" class="z-10 hidden absolute right-0 top-full mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 w-48">
             <ul class="text-base text-gray-800 dark:text-gray-200">
 
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Relevance</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Newest</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Price: Low to High</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Price: High to Low</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Rating</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-lang="home_sort_relevance">Relevance</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-lang="home_sort_newest">Newest</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-lang="home_sort_price_asc">Price: Low to High</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-lang="home_sort_price_desc">Price: High to Low</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium" data-lang="home_sort_rating">Rating</a></li>
           </ul>
         </div>
       </div>
@@ -173,13 +174,13 @@
 
           </div>
 
-          <h3 class="text-xl font-bold tracking-heading leading-none">View full catalog</h3>
+          <h3 class="text-xl font-bold tracking-heading leading-none" data-lang="home_view_catalog">View full catalog</h3>
 
-          <p class="text-base text-gray-400 mt-3 leading-normal">Browse all 3,200+ satellites from verified providers
+          <p class="text-base text-gray-400 mt-3 leading-normal" data-lang="home_view_catalog_desc">Browse all 3,200+ satellites from verified providers
 
             worldwide.</p>
 
-          <a href="pages/marketplace.html" class="mt-6 w-full py-2 text-base font-semibold text-black bg-white border border-gray-200 rounded-lg hover:bg-gray-200 transition-colors block text-center">Go to marketplace</a>
+          <a href="pages/marketplace.html" class="mt-6 w-full py-2 text-base font-semibold text-black bg-white border border-gray-200 rounded-lg hover:bg-gray-200 transition-colors block text-center" data-lang="home_go_marketplace">Go to marketplace</a>
 
         </div>
 
@@ -195,11 +196,11 @@
 
       <div class="mb-12">
 
-        <div class="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-caps mb-3">Benefits</div>
+        <div class="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-caps mb-3" data-lang="home_benefits_label">Benefits</div>
 
-        <h2 class="text-5xl font-bold tracking-heading text-black dark:text-white leading-none">Why DataOrbit</h2>
+        <h2 class="text-5xl font-bold tracking-heading text-black dark:text-white leading-none" data-lang="home_benefits_heading">Why DataOrbit</h2>
 
-        <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal">Everything you need to access satellite data at scale,
+        <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal" data-lang="home_benefits_title">Everything you need to access satellite data at scale,
 
           without the complexity.</p>
 
@@ -223,9 +224,9 @@
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight">API-first access</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight" data-lang="home_benefit_1">API-first access</h3>
 
-            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal">Integrate satellite data directly into your pipeline
+            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal" data-lang="home_benefit_1_desc">Integrate satellite data directly into your pipeline
 
               with our REST API. Retrieve imagery, telemetry, and climate data programmatically.</p>
 
@@ -255,9 +256,9 @@
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight">Verified providers</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight" data-lang="home_benefit_2">Verified providers</h3>
 
-            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal">Planet Labs, ESA, SpaceX, and more. Real satellite
+            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal" data-lang="home_benefit_2_desc">Planet Labs, ESA, SpaceX, and more. Real satellite
 
               networks delivering verified data products. Never simulated, never estimated.</p>
 
@@ -267,7 +268,7 @@
 
             <div class="text-[32px] font-bold tracking-heading text-black dark:text-white">120+</div>
 
-            <div class="text-xs text-gray-400 dark:text-gray-500 leading-normal">providers<br>worldwide</div>
+            <div class="text-xs text-gray-400 dark:text-gray-500 leading-normal" data-lang="home_benefit_stat_1">providers<br>worldwide</div>
 
           </div>
 
@@ -289,11 +290,9 @@
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight">Easy integration</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight" data-lang="home_benefit_3">Easy integration</h3>
 
-            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal">Ready-made SDKs and comprehensive documentation get
-
-              you up and running quickly. Drop our snippets directly into your codebase.</p>
+            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal" data-lang="home_benefit_3_desc">Ready-made SDKs and comprehensive documentation get you up and running quickly. Drop our snippets directly into your codebase.</p>
 
           </div>
 
@@ -327,11 +326,9 @@
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight">No infrastructure needed</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight" data-lang="home_benefit_4">No infrastructure needed</h3>
 
-            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal">Skip the ground station. We handle reception,
-
-              processing, storage, and distribution so you can focus entirely on analysis.</p>
+            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal" data-lang="home_benefit_4_desc">Skip the ground station. We handle reception, processing, storage, and distribution so you can focus entirely on analysis.</p>
 
           </div>
 
@@ -339,7 +336,7 @@
 
             <div class="text-[32px] font-bold tracking-heading text-black dark:text-white">99.99%</div>
 
-            <div class="text-xs text-gray-400 dark:text-gray-500 leading-normal">guaranteed<br>uptime SLA</div>
+            <div class="text-xs text-gray-400 dark:text-gray-500 leading-normal" data-lang="home_benefit_stat_2">guaranteed<br>uptime SLA</div>
 
           </div>
 
@@ -361,9 +358,9 @@
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight">Built for scale</h3>
+            <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-tight" data-lang="home_benefit_5">Built for scale</h3>
 
-            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal">Our infrastructure automatically scales to meet your
+            <p class="text-base text-gray-500 dark:text-gray-400 mt-2 leading-normal" data-lang="home_benefit_5_desc">Our infrastructure automatically scales to meet your
 
               demands, whether you're pulling a single image or petabytes of historical data.</p>
 
@@ -373,7 +370,7 @@
 
             <div class="text-[32px] font-bold tracking-heading text-black dark:text-white">100 PB+</div>
 
-            <div class="text-xs text-gray-400 dark:text-gray-500 leading-normal">data readily<br>available</div>
+            <div class="text-xs text-gray-400 dark:text-gray-500 leading-normal" data-lang="home_benefit_stat_3">data readily<br>available</div>
 
           </div>
 
@@ -395,9 +392,9 @@
 
           <div>
 
-            <h3 class="text-xl font-bold tracking-heading leading-tight">Global coverage</h3>
+            <h3 class="text-xl font-bold tracking-heading leading-tight" data-lang="home_benefit_6">Global coverage</h3>
 
-            <p class="text-base text-gray-400 mt-2 leading-normal">From the busiest cities to the most remote oceans.
+            <p class="text-base text-gray-400 mt-2 leading-normal" data-lang="home_benefit_6_desc">From the busiest cities to the most remote oceans.
 
               Continuous monitoring spanning every continent and every time zone.</p>
 
@@ -407,7 +404,7 @@
 
             <div class="text-[32px] font-bold tracking-heading">100%</div>
 
-            <div class="text-xs text-gray-500 leading-normal">Earth surface<br>covered</div>
+            <div class="text-xs text-gray-500 leading-normal" data-lang="home_benefit_stat_4">Earth surface<br>covered</div>
 
           </div>
 
@@ -425,9 +422,9 @@
 
       <div class="mb-12">
 
-        <div class="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-caps mb-3">Process</div>
+        <div class="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-caps mb-3" data-lang="home_process_label">Process</div>
 
-        <h2 class="text-5xl font-bold tracking-heading text-black dark:text-white leading-none">How it works</h2>
+        <h2 class="text-5xl font-bold tracking-heading text-black dark:text-white leading-none" data-lang="home_process_title">How it works</h2>
 
       </div>
 
@@ -489,9 +486,9 @@
 
           </div>
 
-          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-none">Explore</h3>
+          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-none" data-lang="home_process_1">Explore</h3>
 
-          <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal">Browse 3,200+ satellites. Filter by data type,
+          <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal" data-lang="home_process_1_desc">Browse 3,200+ satellites. Filter by data type,
 
             resolution, coverage area, and price.</p>
 
@@ -565,9 +562,9 @@
 
           </div>
 
-          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-none">Configure</h3>
+          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-none" data-lang="home_process_2">Configure</h3>
 
-          <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal">Set your parameters: geographic area, time window, and
+          <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal" data-lang="home_process_2_desc">Set your parameters: geographic area, time window, and
 
             data delivery format.</p>
 
@@ -607,9 +604,9 @@
 
           </div>
 
-          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-none">Access</h3>
+          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white leading-none" data-lang="home_process_3">Access</h3>
 
-          <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal">Receive data via API, webhook, or direct download.
+          <p class="text-base text-gray-500 dark:text-gray-400 mt-3 leading-normal" data-lang="home_process_3_desc">Receive data via API, webhook, or direct download.
 
             Your pipeline stays the same.</p>
 
@@ -625,17 +622,17 @@
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-32 pb-0 text-center">
 
-      <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4">Get Started</div>
+      <div class="text-xs font-medium text-gray-400 uppercase tracking-caps mb-4" data-lang="home_process_start">Get Started</div>
 
-      <h2 class="text-6xl font-bold tracking-heading text-white leading-tight">Ready to access<br>satellite data?</h2>
+      <h2 class="text-6xl font-bold tracking-heading text-white leading-tight" data-lang="home_cta_title">Ready to access<br>satellite data?</h2>
 
-      <p class="text-base text-gray-400 mt-4 leading-normal max-w-lg mx-auto">Join hundreds of companies already using DataOrbit to power their geospatial intelligence, climate monitoring, and IoT infrastructure.</p>
+      <p class="text-base text-gray-400 mt-4 leading-normal max-w-lg mx-auto" data-lang="home_cta_paragraph">Join hundreds of companies already using DataOrbit to power their geospatial intelligence, climate monitoring, and IoT infrastructure.</p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full sm:w-auto">
 
-        <a href="pages/login.html" id="cta-signup" class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-black bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Create account</a>
+        <a href="pages/login.html" id="cta-signup" class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-black bg-white rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center" data-lang="home_cta_create">Create account</a>
 
-        <a href="pages/marketplace.html" id="cta-explore" class="inline-block text-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white border border-gray-500 rounded-lg hover:bg-gray-800 transition-colors">Explore catalog</a>
+        <a href="pages/marketplace.html" id="cta-explore" class="inline-block text-center w-full sm:w-auto px-8 py-4 text-base font-semibold text-white border border-gray-500 rounded-lg hover:bg-gray-800 transition-colors" data-lang="home_cta_explore_secondary">Explore catalog</a>
 
       </div>
 

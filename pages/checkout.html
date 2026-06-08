@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 
@@ -19,6 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
   <script src="../javascript/utils/themeManager.js"></script>
+  <script src="../javascript/utils/language.js?v=2"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script src="../javascript/tailwind.config.js"></script>
@@ -27,7 +28,7 @@
 
   <link rel="icon" type="image/png" href="../assets/favicon/favicon-light.png" media="(prefers-color-scheme: light)">
 
-  <link rel="icon" type="image/png" href="../assets/favicon/favicon-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="../assets/favicon/favicon-light.png" media="(prefers-color-scheme: dark)">
   
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -54,27 +55,18 @@
         <div class="flex items-center w-full max-w-lg bg-gray-100 dark:bg-gray-800 p-2 rounded-xl border border-gray-200/50 dark:border-gray-700">
 
           <button id="nav-step-1" onclick="exibirEtapa(1)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold tracking-heading transition-all flex items-center gap-2 text-accent-blue bg-white dark:bg-gray-750 shadow-sm">
-
             <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-accent-blue/10 text-accent-blue">1</span>
-
-            Plan
-
+            <span data-lang="checkout_step_plan">Plan</span>
           </button>
 
           <button id="nav-step-2" onclick="exibirEtapa(2)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white tracking-heading">
-
             <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400">2</span>
-
-            Payment
-
+            <span data-lang="checkout_step_payment">Payment</span>
           </button>
 
           <button id="nav-step-3" onclick="exibirEtapa(3)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white tracking-heading">
-
             <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400">3</span>
-
-            Confirmation
-
+            <span data-lang="checkout_step_confirmation">Confirmation</span>
           </button>
 
         </div>
@@ -109,11 +101,11 @@
 
       </div>
 
-      <h2 class="text-2xl font-bold text-black dark:text-white tracking-heading mb-2">Sign in to continue</h2>
+      <h2 class="text-2xl font-bold text-black dark:text-white tracking-heading mb-2" data-lang="checkout_sign_in">Sign in to continue</h2>
 
-      <p class="text-gray-500 dark:text-gray-400 mb-8 leading-normal">You need a DataOrbit account to checkout.</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-8 leading-normal" data-lang="checkout_need_account">You need a DataOrbit account to checkout.</p>
 
-      <button onclick="exibirEtapa(1)" class="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors tracking-heading">Log In / Sign Up</button>
+      <button onclick="exibirEtapa(1)" class="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors tracking-heading" data-lang="checkout_login_btn">Log In / Sign Up</button>
 
     </div>
 
@@ -125,7 +117,7 @@
 
       <div class="w-full lg:w-7/12">
 
-        <h2 class="text-4xl font-bold tracking-heading text-black dark:text-white mb-8">Customize your Plan</h2>
+        <h2 class="text-4xl font-bold tracking-heading text-black dark:text-white mb-8" data-lang="checkout_customize">Customize your Plan</h2>
 
         <div class="flex items-center gap-6 p-6 border border-gray-200 dark:border-gray-700 rounded-2xl mb-10 bg-gray-100 dark:bg-gray-800">
 
@@ -141,29 +133,29 @@
 
             <h3 class="text-xl font-bold text-black dark:text-white tracking-heading"><a href="satellite.html" class="hover:underline">OrbitRent Dove-PSB</a></h3>
 
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Operated by Planet Labs</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" data-lang="checkout_operated_by">Operated by Planet Labs</p>
 
           </div>
 
         </div>
 
-        <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading">Select Access Option</h4>
+        <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading" data-lang="checkout_access_option">Select Access Option</h4>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
 
           <label class="block border-2 border-gray-800 dark:border-gray-200 rounded-xl p-5 cursor-pointer bg-gray-100/30 dark:bg-gray-800 relative">
 
-            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent-orange text-white px-3 py-1 rounded text-xs font-bold tracking-caps uppercase shadow-sm whitespace-nowrap">Most Popular</div>
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent-orange text-white px-3 py-1 rounded text-xs font-bold tracking-caps uppercase shadow-sm whitespace-nowrap" data-lang="checkout_most_popular">Most Popular</div>
 
             <div class="flex items-center gap-3 mb-2">
 
               <input type="radio" name="plan_s1" checked class="w-4 h-4 accent-blue text-gray-800 dark:text-gray-200 focus:ring-gray-800 dark:focus:ring-gray-200 border-gray-400 dark:border-gray-600">
 
-              <span class="text-base font-bold text-black dark:text-white tracking-heading">Per km&sup2;</span>
+              <span class="text-base font-bold text-black dark:text-white tracking-heading" data-lang="checkout_per_km">Per km&sup2;</span>
 
             </div>
 
-            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">For large scale monitoring.</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4" data-lang="checkout_per_km_desc">For large scale monitoring.</p>
 
             <div class="text-2xl font-bold tracking-heading text-black dark:text-white">R$ 15<span class="text-xs font-normal text-gray-500 dark:text-gray-400">/km&sup2;</span></div>
 
@@ -175,11 +167,11 @@
 
               <input type="radio" name="plan_s1" class="w-4 h-4 accent-blue text-gray-800 dark:text-gray-200 focus:ring-gray-800 dark:focus:ring-gray-200 border-gray-400 dark:border-gray-600">
 
-              <span class="text-base font-bold text-black dark:text-white tracking-heading">Per Image</span>
+              <span class="text-base font-bold text-black dark:text-white tracking-heading" data-lang="checkout_per_image">Per Image</span>
 
             </div>
 
-            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">For localized studies.</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4" data-lang="checkout_per_image_desc">For localized studies.</p>
 
             <div class="text-2xl font-bold tracking-heading text-black dark:text-white">R$ 50<span class="text-xs font-normal text-gray-500 dark:text-gray-400">/img</span></div>
 
@@ -191,19 +183,19 @@
 
               <input type="radio" name="plan_s1" class="w-4 h-4 accent-blue text-gray-800 dark:text-gray-200 focus:ring-gray-800 dark:focus:ring-gray-200 border-gray-400 dark:border-gray-600">
 
-              <span class="text-base font-bold text-black dark:text-white tracking-heading">Monthly</span>
+              <span class="text-base font-bold text-black dark:text-white tracking-heading" data-lang="checkout_monthly">Monthly</span>
 
             </div>
 
-            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Unlimited API access.</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4" data-lang="checkout_monthly_desc">Unlimited API access.</p>
 
-            <div class="text-2xl font-bold tracking-heading text-black dark:text-white">Custom</div>
+            <div class="text-2xl font-bold tracking-heading text-black dark:text-white" data-lang="checkout_custom">Custom</div>
 
           </label>
 
         </div>
 
-        <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading">Access Period</h4>
+        <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading" data-lang="checkout_access_period">Access Period</h4>
 
         <div class="grid grid-cols-4 gap-3 mb-10">
 
@@ -211,7 +203,7 @@
 
             <input type="radio" name="period_s1" class="hidden">
 
-            <span class="block text-base font-bold text-black dark:text-white tracking-heading">1 Hour</span>
+            <span class="block text-base font-bold text-black dark:text-white tracking-heading" data-lang="checkout_1hour">1 Hour</span>
 
           </label>
 
@@ -219,7 +211,7 @@
 
             <input type="radio" name="period_s1" class="hidden">
 
-            <span class="block text-base font-bold text-black dark:text-white tracking-heading">1 Day</span>
+            <span class="block text-base font-bold text-black dark:text-white tracking-heading" data-lang="checkout_1day">1 Day</span>
 
           </label>
 
@@ -227,7 +219,7 @@
 
             <input type="radio" name="period_s1" checked class="hidden">
 
-            <span class="block text-base font-bold text-black dark:text-white tracking-heading">1 Week</span>
+            <span class="block text-base font-bold text-black dark:text-white tracking-heading" data-lang="checkout_1week">1 Week</span>
 
           </label>
 
@@ -235,13 +227,13 @@
 
             <input type="radio" name="period_s1" class="hidden">
 
-            <span class="block text-base font-bold text-black dark:text-white tracking-heading">1 Month</span>
+            <span class="block text-base font-bold text-black dark:text-white tracking-heading" data-lang="checkout_1month">1 Month</span>
 
           </label>
 
         </div>
 
-        <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading">Integration Type</h4>
+        <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading" data-lang="checkout_integration">Integration Type</h4>
 
         <div class="grid grid-cols-3 gap-3">
 
@@ -249,7 +241,7 @@
 
             <input type="radio" name="integ_s1" checked class="w-4 h-4 accent-blue text-black dark:text-white focus:ring-black dark:focus:ring-white border-gray-400 dark:border-gray-600">
 
-            <span class="text-base font-bold text-black dark:text-white tracking-heading">REST API</span>
+            <span class="text-base font-bold text-black dark:text-white tracking-heading"><span data-lang="checkout_rest_api">REST API</span></span>
 
           </label>
 
@@ -257,7 +249,7 @@
 
             <input type="radio" name="integ_s1" class="w-4 h-4 accent-blue text-black dark:text-white focus:ring-black dark:focus:ring-white border-gray-400 dark:border-gray-600">
 
-            <span class="text-base font-bold text-black dark:text-white tracking-heading">Direct Download</span>
+            <span class="text-base font-bold text-black dark:text-white tracking-heading"><span data-lang="checkout_direct_download">Direct Download</span></span>
 
           </label>
 
@@ -265,7 +257,7 @@
 
             <input type="radio" name="integ_s1" class="w-4 h-4 accent-blue text-black dark:text-white focus:ring-black dark:focus:ring-white border-gray-400 dark:border-gray-600">
 
-            <span class="text-base font-bold text-black dark:text-white tracking-heading">Webhook</span>
+            <span class="text-base font-bold text-black dark:text-white tracking-heading"><span data-lang="checkout_webhook">Webhook</span></span>
 
           </label>
 
@@ -277,13 +269,13 @@
 
         <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6 lg:p-8 bg-white dark:bg-gray-750 shadow-sm">
 
-          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white mb-6">Order Summary</h3>
+          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white mb-6" data-lang="checkout_order_summary">Order Summary</h3>
 
           <div class="space-y-4 pb-6 border-b border-gray-200 dark:border-gray-700">
 
             <div class="flex justify-between items-start">
 
-              <span class="text-gray-500 dark:text-gray-400">Satellite</span>
+              <span class="text-gray-500 dark:text-gray-400" data-lang="checkout_satellite">Satellite</span>
 
               <span class="font-bold text-black dark:text-white text-right tracking-heading">OrbitRent Dove-PSB</span>
 
@@ -291,17 +283,17 @@
 
             <div class="flex justify-between items-start">
 
-              <span class="text-gray-500 dark:text-gray-400">Plan</span>
+              <span class="text-gray-500 dark:text-gray-400" data-lang="checkout_plan">Plan</span>
 
-              <span class="font-bold text-black dark:text-white text-right tracking-heading">Per km&sup2;</span>
+              <span class="font-bold text-black dark:text-white text-right tracking-heading" data-lang="checkout_per_km">Per km&sup2;</span>
 
             </div>
 
             <div class="flex justify-between items-start">
 
-              <span class="text-gray-500 dark:text-gray-400">Access Period</span>
+              <span class="text-gray-500 dark:text-gray-400" data-lang="checkout_access_period">Access Period</span>
 
-              <span class="font-bold text-black dark:text-white text-right tracking-heading">1 Week</span>
+              <span class="font-bold text-black dark:text-white text-right tracking-heading" data-lang="checkout_1week">1 Week</span>
 
             </div>
 
@@ -309,7 +301,7 @@
 
           <div class="py-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
 
-            <span class="text-black dark:text-white font-bold tracking-heading">Estimated Total</span>
+            <span class="text-black dark:text-white font-bold tracking-heading" data-lang="checkout_estimated_total">Estimated Total</span>
 
             <span class="text-4xl font-bold tracking-heading text-black dark:text-white">R$ 15,00</span>
 
@@ -317,7 +309,7 @@
 
           <button onclick="exibirEtapa(2)" class="w-full mt-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex justify-center items-center gap-2 tracking-heading">
 
-            Continue to Payment
+            <span data-lang="checkout_continue_payment">Continue to Payment</span>
 
             <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
 
@@ -337,17 +329,17 @@
 
       <div class="w-full lg:w-7/12">
 
-        <h2 class="text-4xl font-bold tracking-heading text-black dark:text-white mb-8">Payment Details</h2>
+        <h2 class="text-4xl font-bold tracking-heading text-black dark:text-white mb-8" data-lang="checkout_payment_details">Payment Details</h2>
 
         <div class="mb-10">
 
-          <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading">Billing Information</h4>
+          <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading" data-lang="checkout_billing_info">Billing Information</h4>
 
           <div class="grid grid-cols-2 gap-4">
 
             <div class="col-span-2">
 
-              <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1">Full Name</label>
+              <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1" data-lang="checkout_full_name">Full Name</label>
 
               <input type="text" class="w-full bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-400 dark:border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-black dark:focus:border-white outline-none" value="John Doe">
 
@@ -355,7 +347,7 @@
 
             <div class="col-span-2 md:col-span-1">
 
-              <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1">Email Address</label>
+              <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1" data-lang="checkout_email_address">Email Address</label>
 
               <input type="email" class="w-full bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-400 dark:border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-black dark:focus:border-white outline-none" value="john@example.com">
 
@@ -371,7 +363,7 @@
 
             <div class="col-span-2">
 
-              <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1">Country</label>
+              <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1" data-lang="checkout_country">Country</label>
 
               <div class="relative w-full">
 
@@ -397,11 +389,11 @@
 
         <div>
 
-          <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading">Payment Method</h4>
+          <h4 class="text-xl font-bold text-black dark:text-white mb-4 tracking-heading" data-lang="checkout_payment_method">Payment Method</h4>
 
           <div class="flex border-b border-gray-200 dark:border-gray-700 mb-6">
 
-            <button class="px-6 py-3 border-b-2 border-black dark:border-white text-black dark:text-white font-bold tracking-heading">Credit Card</button>
+            <button class="px-6 py-3 border-b-2 border-black dark:border-white text-black dark:text-white font-bold tracking-heading" data-lang="checkout_credit_card">Credit Card</button>
 
             <button class="px-6 py-3 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium">PIX</button>
 
@@ -415,7 +407,7 @@
 
               <div class="col-span-2">
 
-                <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1">Card Number</label>
+                <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1" data-lang="checkout_card_number">Card Number</label>
 
                 <div class="relative">
 
@@ -429,7 +421,7 @@
 
               <div class="col-span-2">
 
-                <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1">Name on Card</label>
+                <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1" data-lang="checkout_name_on_card">Name on Card</label>
 
                 <input type="text" class="w-full bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-400 dark:border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-black dark:focus:border-white outline-none" placeholder="JOHN DOE">
 
@@ -437,7 +429,7 @@
 
               <div class="col-span-1">
 
-                <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1">Expiry Date</label>
+                <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1" data-lang="checkout_expiry_date">Expiry Date</label>
 
                 <input type="text" class="w-full bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-400 dark:border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-black dark:focus:border-white outline-none" placeholder="MM/YY">
 
@@ -445,7 +437,7 @@
 
               <div class="col-span-1">
 
-                <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1">CVV</label>
+                <label class="block text-xs font-medium text-gray-800 dark:text-gray-200 mb-1" data-lang="checkout_cvv">CVV</label>
 
                 <input type="text" class="w-full bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-400 dark:border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-black dark:focus:border-white outline-none" placeholder="123">
 
@@ -459,7 +451,7 @@
 
             <span class="material-symbols-outlined text-[20px] text-gray-500">lock</span>
 
-            <span class="text-xs font-medium">Your payment is encrypted and 100% secure.</span>
+            <span class="text-xs font-medium" data-lang="checkout_secure_note">Your payment is encrypted and 100% secure.</span>
 
           </div>
 
@@ -471,13 +463,13 @@
 
         <div class="border border-gray-200 dark:border-gray-700 rounded-2xl p-6 lg:p-8 bg-white dark:bg-gray-750 shadow-sm">
 
-          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white mb-6">Order Summary</h3>
+          <h3 class="text-xl font-bold tracking-heading text-black dark:text-white mb-6" data-lang="checkout_order_summary">Order Summary</h3>
 
           <div class="space-y-4 pb-6 border-b border-gray-200 dark:border-gray-700">
 
             <div class="flex justify-between items-start">
 
-              <span class="text-gray-500 dark:text-gray-400">Satellite</span>
+              <span class="text-gray-500 dark:text-gray-400" data-lang="checkout_satellite">Satellite</span>
 
               <span class="font-bold text-black dark:text-white text-right tracking-heading">OrbitRent Dove-PSB</span>
 
@@ -485,17 +477,17 @@
 
             <div class="flex justify-between items-start">
 
-              <span class="text-gray-500 dark:text-gray-400">Plan</span>
+              <span class="text-gray-500 dark:text-gray-400" data-lang="checkout_plan">Plan</span>
 
-              <span class="font-bold text-black dark:text-white text-right tracking-heading">Per km&sup2;</span>
+              <span class="font-bold text-black dark:text-white text-right tracking-heading" data-lang="checkout_per_km">Per km&sup2;</span>
 
             </div>
 
             <div class="flex justify-between items-start">
 
-              <span class="text-gray-500 dark:text-gray-400">Access Period</span>
+              <span class="text-gray-500 dark:text-gray-400" data-lang="checkout_access_period">Access Period</span>
 
-              <span class="font-bold text-black dark:text-white text-right tracking-heading">1 Week</span>
+              <span class="font-bold text-black dark:text-white text-right tracking-heading" data-lang="checkout_1week">1 Week</span>
 
             </div>
 
@@ -505,7 +497,7 @@
 
             <div class="flex justify-between text-gray-500 dark:text-gray-400 text-xs">
 
-              <span>Subtotal</span>
+              <span data-lang="checkout_subtotal">Subtotal</span>
 
               <span class="font-bold text-black dark:text-white tracking-heading">R$ 15,00</span>
 
@@ -513,7 +505,7 @@
 
             <div class="flex justify-between text-gray-500 dark:text-gray-400 text-xs">
 
-              <span>Taxes (10%)</span>
+              <span data-lang="checkout_taxes">Taxes (10%)</span>
 
               <span class="font-bold text-black dark:text-white tracking-heading">R$ 1,50</span>
 
@@ -523,7 +515,7 @@
 
           <div class="pt-6 flex justify-between items-center">
 
-            <span class="text-black dark:text-white font-bold tracking-heading">Total</span>
+            <span class="text-black dark:text-white font-bold tracking-heading" data-lang="checkout_total">Total</span>
 
             <span class="text-4xl font-bold tracking-heading text-black dark:text-white">R$ 16,50</span>
 
@@ -531,11 +523,11 @@
 
           <button onclick="exibirEtapa(3)" class="w-full mt-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex justify-center items-center gap-2 tracking-heading">
 
-            Confirm Payment
+            <span data-lang="checkout_confirm_payment">Confirm Payment</span>
 
           </button>
 
-          <a href="#" onclick="exibirEtapa(1); return false;" class="block text-center mt-4 text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors tracking-heading">&larr; Back to Plan</a>
+          <a href="#" onclick="exibirEtapa(1); return false;" class="block text-center mt-4 text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors tracking-heading" data-lang="checkout_back_to_plan">&larr; Back to Plan</a>
 
         </div>
 
@@ -557,21 +549,21 @@
 
         </div>
 
-        <h1 class="text-4xl font-bold tracking-heading text-black dark:text-white">Payment Confirmed!</h1>
+        <h1 class="text-4xl font-bold tracking-heading text-black dark:text-white" data-lang="checkout_step_confirmation">Payment Confirmed!</h1>
 
       </div>
 
-      <p class="text-gray-500 dark:text-gray-400 mb-10 text-xl">Your transaction was successful. Credentials have been sent to your email.</p>
+      <p class="text-gray-500 dark:text-gray-400 mb-10 text-xl"><span data-lang="checkout_success_message">Your transaction was successful. Credentials have been sent to your email.</span></p>
 
       <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-8 text-left mb-10">
 
-        <h3 class="text-xl font-bold text-black dark:text-white border-b border-gray-200 dark:border-gray-700 pb-4 mb-4 tracking-heading">Receipt Details</h3>
+        <h3 class="text-xl font-bold text-black dark:text-white border-b border-gray-200 dark:border-gray-700 pb-4 mb-4 tracking-heading" data-lang="checkout_receipt_details">Receipt Details</h3>
 
         <div class="grid grid-cols-2 gap-6">
 
           <div>
 
-            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1">Order ID</p>
+            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1" data-lang="checkout_order_id">Order ID</p>
 
             <p class="text-black dark:text-white font-medium">#DO-982374</p>
 
@@ -579,7 +571,7 @@
 
           <div>
 
-            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1">Satellite</p>
+            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1" data-lang="checkout_satellite">Satellite</p>
 
             <p class="text-black dark:text-white font-medium">OrbitRent Dove-PSB</p>
 
@@ -587,15 +579,15 @@
 
           <div>
 
-            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1">Plan</p>
+            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1" data-lang="checkout_plan">Plan</p>
 
-            <p class="text-black dark:text-white font-medium">Per km&sup2; (1 Week)</p>
+            <p class="text-black dark:text-white font-medium"><span data-lang="checkout_per_km">Per km&sup2;</span> (<span data-lang="checkout_1week">1 Week</span>)</p>
 
           </div>
 
           <div>
 
-            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1">Total Paid</p>
+            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1" data-lang="checkout_total_paid">Total Paid</p>
 
             <p class="text-black dark:text-white font-medium">R$ 16,50</p>
 
@@ -607,7 +599,7 @@
 
           <div>
 
-            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1">Your API Key</p>
+            <p class="text-xs font-bold tracking-caps uppercase text-gray-400 dark:text-gray-500 mb-1" data-lang="checkout_api_key">Your API Key</p>
 
             <p class="text-white font-mono text-xs tracking-wider">sk_live_928374982374928374</p>
 
@@ -625,9 +617,9 @@
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 
-        <button class="w-full sm:w-auto px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors tracking-heading">View API Documentation</button>
+        <button class="w-full sm:w-auto px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors tracking-heading" data-lang="checkout_view_docs">View API Documentation</button>
 
-        <a href="marketplace.html" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-black dark:text-white font-bold rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors tracking-heading text-center inline-block">Explore more Satellites</a>
+        <a href="marketplace.html" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-black dark:text-white font-bold rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors tracking-heading text-center inline-block" data-lang="checkout_explore_more">Explore more Satellites</a>
 
       </div>
 
@@ -654,6 +646,10 @@
 </body>
 
 </html>
+
+
+
+
 
 
 

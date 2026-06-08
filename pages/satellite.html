@@ -19,6 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
   <script src="../javascript/utils/themeManager.js"></script>
+  <script src="../javascript/utils/language.js?v=2"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script src="../javascript/tailwind.config.js"></script>
@@ -27,7 +28,7 @@
 
   <link rel="icon" type="image/png" href="../assets/favicon/favicon-light.png" media="(prefers-color-scheme: light)">
 
-  <link rel="icon" type="image/png" href="../assets/favicon/favicon-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="../assets/favicon/favicon-light.png" media="(prefers-color-scheme: dark)">
 
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -49,12 +50,9 @@
 
             <ol class="flex items-center space-x-2">
 
-              <li><a href="marketplace.html" class="hover:text-black transition-colors">Marketplace</a></li>
-
+              <li><a href="marketplace.html" class="hover:text-black transition-colors" data-lang="footer_marketplace">Marketplace</a></li>
               <li><span class="text-gray-400">/</span></li>
-
-              <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Imagery</a></li>
-
+              <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors" data-lang="cat_imagery">Imagery</a></li>
               <li><span class="text-gray-400">/</span></li>
 
               <li class="text-black dark:text-white" aria-current="page">OrbitRent Dove-PSB</li>
@@ -67,7 +65,7 @@
 
             <div class="w-full aspect-[4/3] sm:aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black border border-gray-200 dark:border-gray-700">
 
-              <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1200&h=800&fit=crop" alt="Earth from Space" class="w-full h-full object-cover opacity-90">
+              <img src="../assets/satellites/satellite-card-thumbnail.png" alt="Earth from Space" class="w-full h-full object-cover opacity-90">
 
             </div>
 
@@ -77,25 +75,25 @@
 
           <div class="mb-16">
 
-            <h2 class="text-2xl font-bold tracking-heading text-black dark:text-white mb-4">About this satellite</h2>
+            <h2 class="text-2xl font-bold tracking-heading text-black dark:text-white mb-4" data-lang="sat_overview">About this satellite</h2>
 
             <div class="space-y-4">
 
               <p class="text-base text-gray-500 dark:text-gray-400 leading-normal">
 
-                The OrbitRent Dove-PSB, operated by Planet Labs under the SuperDove technology line, provides an "always on" optical scanning constellation. This satellite captures continuous, high-resolution imagery without the need for manual tasking. It delivers unmatched coverage for rapid global change detection.
+                <span data-lang="sat_overview_p1">The OrbitRent Dove-PSB, operated by Planet Labs under the SuperDove technology line, provides an "always on" optical scanning constellation. This satellite captures continuous, high-resolution imagery without the need for manual tasking. It delivers unmatched coverage for rapid global change detection.</span>
 
               </p>
 
               <p class="text-base text-gray-500 dark:text-gray-400 leading-normal">
 
-                Equipped with 8 spectral bands (including Coastal Blue, Red Edge, and NIR), it is highly optimized for agricultural monitoring, coastal studies, and especially tracking illegal deforestation. With daily global revisit capabilities, this dataset ensures you never miss a critical terrestrial event.
+                <span data-lang="sat_overview_p2">Equipped with 8 spectral bands (including Coastal Blue, Red Edge, and NIR), it is highly optimized for agricultural monitoring, coastal studies, and especially tracking illegal deforestation. With daily global revisit capabilities, this dataset ensures you never miss a critical terrestrial event.</span>
 
               </p>
 
               <p class="text-base text-gray-500 dark:text-gray-400 leading-normal">
 
-                The data is processed to Surface Reflectance and delivered via our fast REST API or Webhook directly to your cloud infrastructure, natively in GeoTIFF format for immediate GIS integration.
+                <span data-lang="sat_overview_p3">The data is processed to Surface Reflectance and delivered via our fast REST API or Webhook directly to your cloud infrastructure, natively in GeoTIFF format for immediate GIS integration.</span>
 
               </p>
 
@@ -105,7 +103,7 @@
 
           <div class="mb-16">
 
-            <h2 class="text-2xl font-bold tracking-heading text-black dark:text-white mb-6">Technical Specifications</h2>
+            <h2 class="text-2xl font-bold tracking-heading text-black dark:text-white mb-6" data-lang="sat_tech_specs">Technical Specifications</h2>
 
             <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
 
@@ -116,31 +114,24 @@
                   <tr class="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
 
                     <th scope="row" class="px-6 py-4 font-bold text-black dark:text-white w-1/3 tracking-heading">Type</th>
-
                     <td class="px-6 py-4">Optical Scanning Constellation</td>
-
                   </tr>
-
                   <tr class="bg-white dark:bg-gray-750 border-b border-gray-200 dark:border-gray-700">
-
-                    <th scope="row" class="px-6 py-4 font-bold text-black dark:text-white w-1/3 tracking-heading">Resolution</th>
-
-                    <td class="px-6 py-4">3.0m resampled (3.7m nadir)</td>
+                    <th scope="row" class="px-6 py-4 font-bold text-black dark:text-white w-1/3 tracking-heading" data-lang="sat_resolution">Resolution</th>
+                    <td class="px-6 py-4"><span data-lang="sat_res_3m_resampled_nadir">3.0m resampled (3.7m nadir)</span></td>
 
                   </tr>
 
                   <tr class="bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
 
-                    <th scope="row" class="px-6 py-4 font-bold text-black dark:text-white w-1/3 tracking-heading">Revisit Time</th>
-
-                    <td class="px-6 py-4">Daily (Global)</td>
+                    <th scope="row" class="px-6 py-4 font-bold text-black dark:text-white w-1/3 tracking-heading" data-lang="sat_revisit">Revisit Time</th>
+                    <td class="px-6 py-4"><span data-lang="sat_rev_daily_global">Daily (Global)</span></td>
 
                   </tr>
 
                   <tr class="bg-white dark:bg-gray-750 border-b border-gray-200 dark:border-gray-700">
 
-                    <th scope="row" class="px-6 py-4 font-bold text-black dark:text-white w-1/3 tracking-heading">Spectral Bands</th>
-
+                    <th scope="row" class="px-6 py-4 font-bold text-black dark:text-white w-1/3 tracking-heading" data-lang="sat_spectral">Spectral Bands</th>
                     <td class="px-6 py-4 leading-normal">8 Bands: Coastal Blue, Blue, Green I, Green, Yellow, Red, Red Edge, NIR</td>
 
                   </tr>
@@ -179,7 +170,7 @@
 
           <div>
 
-            <h2 class="text-2xl font-bold tracking-heading text-black dark:text-white mb-6">Data Preview</h2>
+            <h2 class="text-2xl font-bold tracking-heading text-black dark:text-white mb-6"><span data-lang="sat_data_preview">Data Preview</span></h2>
 
             <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
 
@@ -187,13 +178,13 @@
 
                 <li class="mr-2" role="presentation">
 
-                  <button class="inline-block pb-3 px-4 border-b-[3px] border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:border-gray-400 transition-all aria-selected:border-black dark:aria-selected:border-white aria-selected:text-black dark:aria-selected:text-white aria-selected:font-bold" id="json-tab" data-tabs-target="#json" type="button" role="tab" aria-controls="json" aria-selected="true">JSON Payload</button>
+                  <button class="inline-block pb-3 px-4 border-b-[3px] border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:border-gray-400 transition-all aria-selected:border-black dark:aria-selected:border-white aria-selected:text-black dark:aria-selected:text-white aria-selected:font-bold" id="json-tab" data-tabs-target="#json" type="button" role="tab" aria-controls="json" aria-selected="true"><span data-lang="sat_json_payload">JSON Payload</span></button>
 
                 </li>
 
                 <li class="mr-2" role="presentation">
 
-                  <button class="inline-block pb-3 px-4 border-b-[3px] border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:border-gray-400 transition-all aria-selected:border-black dark:aria-selected:border-white aria-selected:text-black dark:aria-selected:text-white aria-selected:font-bold" id="visual-tab" data-tabs-target="#visual" type="button" role="tab" aria-controls="visual" aria-selected="false">Visual Sample</button>
+                  <button class="inline-block pb-3 px-4 border-b-[3px] border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:border-gray-400 transition-all aria-selected:border-black dark:aria-selected:border-white aria-selected:text-black dark:aria-selected:text-white aria-selected:font-bold" id="visual-tab" data-tabs-target="#visual" type="button" role="tab" aria-controls="visual" aria-selected="false"><span data-lang="sat_visual_sample">Visual Sample</span></button>
 
                 </li>
 
@@ -217,7 +208,7 @@
 
   <span class="text-accent-blue-light">"tipo"</span>: <span class="text-accent-green-light">"Constelação Óptica de Varredura Contínua"</span>,
 
-  <span class="text-accent-blue-light">"resolucao"</span>: <span class="text-accent-green-light">"3.0m resampled (3.7m nadir)"</span>,
+  <span class="text-accent-blue-light">"resolucao"</span>: <span class="text-accent-green-light">"<span data-lang="sat_res_3m_resampled_nadir">3.0m resampled (3.7m nadir)</span>"</span>,
 
   <span class="text-accent-blue-light">"revisita"</span>: <span class="text-accent-green-light">"Diária (Global)"</span>,
 
@@ -257,19 +248,19 @@
 
                   <div class="w-full aspect-video rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-700">
 
-                    <img id="main-preview-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" class="w-full h-full object-cover" alt="Main Sample">
+                    <img id="main-preview-img" src="../assets/gallery/image-gallery-1.png" class="w-full h-full object-cover" alt="Main Sample">
 
                   </div>
 
                   <div class="grid grid-cols-4 gap-4">
 
-                    <button onclick="alterarImagemPrincipal('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors bg-black dark:bg-white ring-2 ring-black dark:ring-white opacity-100"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" class="w-full h-full object-cover"></button>
+                    <button onclick="alterarImagemPrincipal('../assets/gallery/image-gallery-1.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors bg-black dark:bg-white ring-2 ring-black dark:ring-white opacity-100"><img src="../assets/gallery/image-gallery-1.png" class="w-full h-full object-cover"></button>
 
-                    <button onclick="alterarImagemPrincipal('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" class="w-full h-full object-cover"></button>
+                    <button onclick="alterarImagemPrincipal('../assets/gallery/image-gallery-2.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="../assets/gallery/image-gallery-2.png" class="w-full h-full object-cover"></button>
 
-                    <button onclick="alterarImagemPrincipal('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" class="w-full h-full object-cover"></button>
+                    <button onclick="alterarImagemPrincipal('../assets/gallery/image-gallery-3.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="../assets/gallery/image-gallery-3.png" class="w-full h-full object-cover"></button>
 
-                    <button onclick="alterarImagemPrincipal('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" class="w-full h-full object-cover"></button>
+                    <button onclick="alterarImagemPrincipal('../assets/gallery/image-gallery-4.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="../assets/gallery/image-gallery-4.png" class="w-full h-full object-cover"></button>
 
                   </div>
 
@@ -283,7 +274,7 @@
 
           <div class="mt-12 pt-12 border-t border-gray-200 dark:border-gray-700">
 
-            <h2 class="text-2xl font-bold tracking-heading text-black dark:text-white mb-6">Ratings & Reviews</h2>
+            <h2 class="text-2xl font-bold tracking-heading text-black dark:text-white mb-6" data-lang="sat_customer_reviews">Ratings & Reviews</h2>
 
             <div class="flex items-center gap-4 mb-8">
 
@@ -305,7 +296,7 @@
 
                 </div>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400">Based on 127 reviews</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400"><span data-lang="sat_based_on">Based on</span> 127 <span data-lang="sat_reviews">reviews</span></p>
 
               </div>
 
@@ -331,7 +322,7 @@
 
                   </div>
 
-                  <span class="text-xs text-gray-400">2 days ago</span>
+                  <span class="text-xs text-gray-400"><span data-lang="sat_2_days_ago">2 days ago</span></span>
 
                 </div>
 
@@ -349,7 +340,7 @@
 
                 </div>
 
-                <p class="text-base text-gray-800 dark:text-gray-200">Excellent spatial resolution. The infrared bands were exactly what we needed to monitor crop health over the midwest. The data delivery was almost instant after checkout.</p>
+                <p class="text-base text-gray-800 dark:text-gray-200"><span data-lang="sat_review_1">Excellent spatial resolution. The infrared bands were exactly what we needed to monitor crop health over the midwest. The data delivery was almost instant after checkout.</span></p>
 
               </div>
 
@@ -371,7 +362,7 @@
 
                   </div>
 
-                  <span class="text-xs text-gray-400">1 week ago</span>
+                  <span class="text-xs text-gray-400"><span data-lang="sat_1_week_ago">1 week ago</span></span>
 
                 </div>
 
@@ -389,13 +380,13 @@
 
                 </div>
 
-                <p class="text-base text-gray-800 dark:text-gray-200">Very reliable data source. Sometimes the cloud cover estimates are slightly off, but the 0.5m resolution makes up for it when you get a clear shot. Will definitely use again for our city expansion analysis.</p>
+                <p class="text-base text-gray-800 dark:text-gray-200"><span data-lang="sat_review_2">Very reliable data source. Sometimes the cloud cover estimates are slightly off, but the 0.5m resolution makes up for it when you get a clear shot. Will definitely use again for our city expansion analysis.</span></p>
 
               </div>
 
             </div>
 
-            <button class="mt-6 w-full py-4 border border-gray-200 dark:border-gray-700 text-black dark:text-white font-semibold rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">See all 127 reviews</button>
+            <button class="mt-6 w-full py-4 border border-gray-200 dark:border-gray-700 text-black dark:text-white font-semibold rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" data-lang="sat_see_all_reviews">See all 127 reviews</button>
 
           </div>
 
@@ -407,7 +398,7 @@
 
             <div class="flex items-center gap-3 mb-3">
 
-              <span class="px-3 py-1 text-xs font-bold tracking-caps uppercase text-white bg-black rounded-md flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-accent-blue rounded-full"></span>Imagery</span>
+              <span class="px-3 py-1 text-xs font-bold tracking-caps uppercase text-white bg-black rounded-md flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-accent-blue rounded-full"></span><span data-lang="cat_imagery">Imagery</span></span>
 
               <span class="flex items-center gap-2 px-3 py-1 text-xs font-bold tracking-caps uppercase text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 rounded-md border border-gray-200 dark:border-gray-700">
 
@@ -419,7 +410,7 @@
 
             <h1 class="text-4xl lg:text-4xl font-bold tracking-heading text-black dark:text-white leading-tight">OrbitRent Dove-PSB</h1>
 
-            <p class="text-base text-gray-500 dark:text-gray-400 mt-1 pb-3 border-b border-gray-200 dark:border-gray-700">Operated by <span class="font-bold text-black dark:text-white tracking-heading">Planet Labs</span></p>
+            <p class="text-base text-gray-500 dark:text-gray-400 mt-1 pb-3 border-b border-gray-200 dark:border-gray-700"><span data-lang="sat_operated_by">Operated by</span> <span class="font-bold text-black dark:text-white tracking-heading">Planet Labs</span></p>
 
             <div class="py-3 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
 
@@ -439,11 +430,11 @@
 
                 </div>
 
-                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">4.8 (127 reviews)</span>
+                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">4.8 (127 <span data-lang="sat_reviews">reviews</span>)</span>
 
               </div>
 
-              <div class="text-xs font-medium text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded-md border border-gray-200 dark:border-gray-700">Uptime: <span class="text-accent-blue font-bold">99.9%</span></div>
+              <div class="text-xs font-medium text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded-md border border-gray-200 dark:border-gray-700"><span data-lang="sat_uptime">Uptime:</span> <span class="text-accent-blue font-bold">99.9%</span></div>
 
             </div>
 
@@ -451,17 +442,17 @@
 
               <div>
 
-                <p class="text-xs font-bold tracking-caps uppercase text-gray-400">Resolution</p>
+                <p class="text-xs font-bold tracking-caps uppercase text-gray-400" data-lang="sat_resolution">Resolution</p>
 
-                <p class="text-base font-bold text-black dark:text-white mt-1 tracking-heading">3.0m resampled</p>
+                <p class="text-base font-bold text-black dark:text-white mt-1 tracking-heading"><span data-lang="sat_res_3m_resampled">3.0m resampled</span></p>
 
               </div>
 
               <div>
 
-                <p class="text-xs font-bold tracking-caps uppercase text-gray-400">Revisit Time</p>
+                <p class="text-xs font-bold tracking-caps uppercase text-gray-400" data-lang="sat_revisit">Revisit Time</p>
 
-                <p class="text-base font-bold text-black dark:text-white mt-1 tracking-heading">Daily (Global)</p>
+                <p class="text-base font-bold text-black dark:text-white mt-1 tracking-heading"><span data-lang="sat_rev_daily_global">Daily (Global)</span></p>
 
               </div>
 
@@ -485,13 +476,13 @@
 
             <div class="py-4">
 
-              <h3 class="text-base font-bold tracking-heading text-black dark:text-white mb-3">Select Data Access Option</h3>
+              <h3 class="text-base font-bold tracking-heading text-black dark:text-white mb-3" data-lang="checkout_access_option">Select Data Access Option</h3>
 
               <div class="grid grid-cols-3 gap-3">
 
                 <label class="block border-2 border-black dark:border-white rounded-xl p-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors relative flex flex-col justify-between">
 
-                  <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent-orange text-white px-2 py-1 rounded text-xs font-bold tracking-caps uppercase shadow-sm whitespace-nowrap">Most Popular</div>
+                  <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent-orange text-white px-2 py-1 rounded text-xs font-bold tracking-caps uppercase shadow-sm whitespace-nowrap" data-lang="checkout_most_popular">Most Popular</div>
 
                   <div>
 
@@ -507,7 +498,7 @@
 
                     </div>
 
-                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-tight">For large scale monitoring.</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-tight" data-lang="checkout_per_km_desc">For large scale monitoring.</p>
 
                   </div>
 
@@ -525,13 +516,13 @@
 
                         <input type="radio" name="plan" class="w-4 h-4 accent-blue text-black focus:ring-black border-gray-400">
 
-                        <h4 class="text-base font-bold text-black dark:text-white tracking-heading">Per Image</h4>
+                        <h4 class="text-base font-bold text-black dark:text-white tracking-heading" data-lang="checkout_per_image">Per Image</h4>
 
                       </div>
 
                     </div>
 
-                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-tight">For localized studies.</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-tight" data-lang="checkout_per_image_desc">For localized studies.</p>
 
                   </div>
 
@@ -549,31 +540,25 @@
 
                         <input type="radio" name="plan" class="w-4 h-4 accent-blue text-black focus:ring-black border-gray-400">
 
-                        <h4 class="text-base font-bold text-black dark:text-white tracking-heading">Monthly</h4>
+                        <h4 class="text-base font-bold text-black dark:text-white tracking-heading" data-lang="checkout_monthly">Monthly</h4>
 
                       </div>
 
                     </div>
 
-                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-tight">Unlimited API access.</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-tight" data-lang="checkout_monthly_desc">Unlimited API access.</p>
 
                   </div>
 
-                  <div class="mt-3 text-xl font-bold tracking-heading text-black dark:text-white">Custom</div>
+                  <div class="mt-3 text-xl font-bold tracking-heading text-black dark:text-white" data-lang="checkout_custom">Custom</div>
 
                 </label>
 
               </div>
 
-              <a href="checkout.html" class="block w-full mt-4 py-4 bg-black dark:bg-white text-white dark:text-black text-center font-bold rounded-xl shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors tracking-heading">Checkout</a>
+              <a href="checkout.html" class="block w-full mt-4 py-4 bg-black dark:bg-white text-white dark:text-black text-center font-bold rounded-xl shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors tracking-heading" data-lang="footer_checkout">Checkout</a>
 
-              <p class="text-center text-xs text-gray-400 mt-3 flex items-center justify-center gap-1">
-
-                <span class="material-symbols-outlined text-[16px] text-gray-400">lock</span>
-
-                Secure transaction. Instant API access after checkout.
-
-              </p>
+              <p class="text-center text-xs text-gray-400 mt-3 flex items-center justify-center gap-1"><span class="material-symbols-outlined text-[16px] text-gray-400">lock</span><span data-lang="sat_secure_transaction">Secure transaction. Instant API access after checkout.</span></p>
 
             </div>
 
@@ -624,11 +609,11 @@
 
             </div>
 
-            <h3 class="text-xl font-bold tracking-heading leading-none relative z-10">View full catalog</h3>
+            <h3 class="text-xl font-bold tracking-heading leading-none relative z-10" data-lang="home_view_catalog">View full catalog</h3>
 
-            <p class="text-base text-gray-400 mt-3 leading-normal relative z-10">Browse all 3,200+ satellites from verified providers worldwide.</p>
+            <p class="text-base text-gray-400 mt-3 leading-normal relative z-10" data-lang="home_view_catalog_desc">Browse all 3,200+ satellites from verified providers worldwide.</p>
 
-            <a href="marketplace.html" class="mt-6 w-full py-2 text-base font-semibold text-black bg-white border border-gray-200 rounded-lg hover:bg-gray-200 transition-colors block text-center relative z-10">Go to marketplace</a>
+            <a href="marketplace.html" class="mt-6 w-full py-2 text-base font-semibold text-black bg-white border border-gray-200 rounded-lg hover:bg-gray-200 transition-colors block text-center relative z-10" data-lang="home_go_marketplace">Go to marketplace</a>
 
           </div>
 
@@ -659,6 +644,10 @@
 </body>
 
 </html>
+
+
+
+
 
 
 
