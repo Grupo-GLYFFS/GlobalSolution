@@ -9,6 +9,7 @@
   if (footerPlaceholder) {
     const basePath = footerPlaceholder.dataset.basepath || '.';
     footerPlaceholder.outerHTML = window.getFooterHtml(basePath);
+    if (window.initFooter) window.initFooter();
   }
 
   // Initialize Custom UI Components
@@ -18,6 +19,7 @@
     }, 50);
   }
 }
+
 
 
 

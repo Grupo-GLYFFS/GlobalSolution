@@ -4,6 +4,7 @@
 
 // Definição das configurações principais de design do site
 tailwind.config = {
+  darkMode: 'class',
   theme: {
     // Definindo cores FORA do extend para forçar o projeto a usar APENAS estas.
     colors: {

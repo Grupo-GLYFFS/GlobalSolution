@@ -42,19 +42,19 @@
 
             <div class="inline-flex items-center bg-gray-800 rounded-lg p-1 gap-1">
 
-              <button class="theme-toggle-btn active p-2 rounded-md inline-flex items-center justify-center" title="System">
+              <button id="theme-sys" class="theme-toggle-btn p-2 rounded-md inline-flex items-center justify-center text-gray-500 hover:bg-gray-700 hover:text-white" title="System">
 
                 <span class="material-symbols-outlined text-[16px]">desktop_windows</span>
 
               </button>
 
-              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:bg-gray-700 hover:text-white inline-flex items-center justify-center" title="Light mode">
+              <button id="theme-light" class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:bg-gray-700 hover:text-white inline-flex items-center justify-center" title="Light mode">
 
                 <span class="material-symbols-outlined text-[16px]">light_mode</span>
 
               </button>
 
-              <button class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:bg-gray-700 hover:text-white inline-flex items-center justify-center" title="Dark mode">
+              <button id="theme-dark" class="theme-toggle-btn p-2 rounded-md text-gray-500 hover:bg-gray-700 hover:text-white inline-flex items-center justify-center" title="Dark mode">
 
                 <span class="material-symbols-outlined text-[16px]">dark_mode</span>
 
@@ -107,6 +107,7 @@
     </div>
 
   </footer>
+  
 `;
 }
 
@@ -120,4 +121,39 @@
 
 
 
+
+
+window.initFooter = function() {
+  if (!window.ThemeManager) return;
+  
+  const sysBtn = document.getElementById('theme-sys');
+  const lightBtn = document.getElementById('theme-light');
+  const darkBtn = document.getElementById('theme-dark');
+  
+  function updateActiveBtn(currentTheme) {
+    if(!sysBtn || !lightBtn || !darkBtn) return;
+    
+    [sysBtn, lightBtn, darkBtn].forEach(btn => {
+      btn.classList.remove('active', 'bg-gray-700', 'text-white');
+      btn.classList.add('text-gray-500');
+    });
+    
+    let activeBtn = sysBtn;
+    if (currentTheme === 'light') activeBtn = lightBtn;
+    else if (currentTheme === 'dark') activeBtn = darkBtn;
+    
+    activeBtn.classList.add('active', 'bg-gray-700', 'text-white');
+    activeBtn.classList.remove('text-gray-500');
+  }
+
+  updateActiveBtn(window.ThemeManager.getTheme());
+
+  window.addEventListener('themeChanged', (e) => {
+    updateActiveBtn(e.detail.theme);
+  });
+
+  if(sysBtn) sysBtn.addEventListener('click', () => window.ThemeManager.setTheme('system'));
+  if(lightBtn) lightBtn.addEventListener('click', () => window.ThemeManager.setTheme('light'));
+  if(darkBtn) darkBtn.addEventListener('click', () => window.ThemeManager.setTheme('dark'));
+}
 
