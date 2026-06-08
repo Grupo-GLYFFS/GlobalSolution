@@ -18,7 +18,7 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
         <button id="categoriesDropdownBtn" data-dropdown-toggle="categoriesDropdownMenu" class="h-12 flex items-center gap-1 px-5 text-base font-medium text-gray-800 dark:text-gray-200 border border-gray-400 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
 
-          Categories
+          <span data-lang="nav_categories">Categories</span>
 
           <span class="material-symbols-outlined text-[20px] text-black dark:text-gray-200 ml-1">expand_more</span>
 
@@ -30,7 +30,7 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
             <div class="flex justify-between items-center mb-6">
 
-              <h3 class="text-xs font-bold tracking-caps uppercase text-gray-500 dark:text-gray-400 m-0">Browse Categories</h3>
+              <h3 class="text-xs font-bold tracking-caps uppercase text-gray-500 dark:text-gray-400 m-0" data-lang="nav_browse_categories">Browse Categories</h3>
 
               <div class="flex items-center gap-3">
 
@@ -64,15 +64,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Imagery" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/imagery-category.png" alt="Imagery" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Imagery</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_imagery">Imagery</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Optical, SAR, and hyperspectral data.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_imagery_desc">Optical, SAR, and hyperspectral data.</p>
 
               </a>
 
@@ -80,15 +80,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Climate" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/climate-category.png" alt="Climate" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Climate</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_climate">Climate</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Weather patterns and GHG tracking.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_climate_desc">Weather patterns and GHG tracking.</p>
 
               </a>
 
@@ -96,15 +96,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Connectivity" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/connectivity-category.png" alt="Connectivity" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Connectivity</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_connectivity">Connectivity</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">IoT network and broadband links.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_connectivity_desc">IoT network and broadband links.</p>
 
               </a>
 
@@ -112,15 +112,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Analytics" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/analytics-category.png" alt="Analytics" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Analytics</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_analytics">Analytics</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Derived intelligence and mapping.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_analytics_desc">Derived intelligence and mapping.</p>
 
               </a>
 
@@ -128,15 +128,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Telemetry" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/telemetry-category.png" alt="Telemetry" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Telemetry</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_telemetry">Telemetry</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Raw sensor outputs and GNSS data.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_telemetry_desc">Raw sensor outputs and GNSS data.</p>
 
               </a>
 
@@ -144,15 +144,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Maritime" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/maritime-category.png" alt="Maritime" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Maritime</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_maritime">Maritime</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Vessel tracking and AIS overlays.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_maritime_desc">Vessel tracking and AIS overlays.</p>
 
               </a>
 
@@ -160,15 +160,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Agriculture" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/agriculture-category.png" alt="Agriculture" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Agriculture</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_agriculture">Agriculture</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Crop health and NDVI models.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_agriculture_desc">Crop health and NDVI models.</p>
 
               </a>
 
@@ -176,15 +176,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Urban Planning" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/urban-category.png" alt="Urban Planning" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Urban</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_urban">Urban</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Infrastructure and night lights.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_urban_desc">Infrastructure and night lights.</p>
 
               </a>
 
@@ -192,15 +192,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Forestry" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/forestry-category.png" alt="Forestry" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Forestry</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_forestry">Forestry</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Deforestation and biomass.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_forestry_desc">Deforestation and biomass.</p>
 
               </a>
 
@@ -208,15 +208,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
                 <div class="aspect-[4/3] rounded-xl overflow-hidden bg-black mb-3 relative border border-gray-200 dark:border-gray-700">
 
-                  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=" alt="Energy" class="w-full h-full object-cover">
+                  <img src="${basePath}/assets/categories/energy-category.png" alt="Energy" class="w-full h-full object-cover">
 
                   <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 </div>
 
-                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors">Energy</h4>
+                <h4 class="text-base font-bold tracking-heading text-black dark:text-white group-hover:text-black dark:group-hover:text-white transition-colors" data-lang="cat_energy">Energy</h4>
 
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal">Solar irradiance and pipelines.</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-normal" data-lang="cat_energy_desc">Solar irradiance and pipelines.</p>
 
               </a>
 
@@ -226,7 +226,7 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
         </div>
 
-        <input type="text" id="nav-search" placeholder="Search satellites, providers, data types..." class="h-12 w-64 xl:w-[448px] px-4 text-base bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 dark:focus:border-gray-500 placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white transition-colors">
+        <input type="text" id="nav-search" data-lang="nav_search_placeholder" placeholder="Search satellites, providers, data types..." class="h-12 w-64 xl:w-[448px] px-4 text-base bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 dark:focus:border-gray-500 placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white transition-colors">
 
         <button id="nav-search-btn" class="h-12 w-12 flex-shrink-0 flex items-center justify-center bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
 
@@ -248,9 +248,9 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
       <div class="flex-1 hidden lg:flex items-center justify-end gap-3">
 
-        <a href="${basePath}/pages/login.html" id="nav-login-btn" class="h-12 px-6 text-base font-medium text-gray-800 dark:text-gray-200 border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors inline-flex items-center justify-center">Log in</a>
+        <a href="${basePath}/pages/login.html" id="nav-login-btn" class="h-12 px-6 text-base font-medium text-gray-800 dark:text-gray-200 border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors inline-flex items-center justify-center" data-lang="nav_login">Log in</a>
 
-        <a href="${basePath}/pages/login.html" id="nav-signup-btn" class="h-12 px-6 text-base font-medium text-white dark:text-black bg-black dark:bg-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors inline-flex items-center justify-center">Sign up</a>
+        <a href="${basePath}/pages/login.html" id="nav-signup-btn" class="h-12 px-6 text-base font-medium text-white dark:text-black bg-black dark:bg-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors inline-flex items-center justify-center" data-lang="nav_signup">Sign up</a>
 
       </div>
 
@@ -262,15 +262,15 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
         <div class="mb-4 pt-2">
 
-          <input type="text" placeholder="Search satellites..." class="w-full h-12 px-4 text-base bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 text-black dark:text-white dark:placeholder-gray-500 transition-colors">
+          <input type="text" data-lang="nav_search_mobile" placeholder="Search satellites..." class="w-full h-12 px-4 text-base bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 rounded-lg focus:outline-none focus:border-gray-500 text-black dark:text-white dark:placeholder-gray-500 transition-colors">
 
         </div>
 
-        <a href="#" class="block px-4 py-3 text-base font-medium text-black dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center">Categories</a>
+        <a href="#" class="block px-4 py-3 text-base font-medium text-black dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center" data-lang="nav_categories">Categories</a>
 
-        <a href="#" class="block px-4 py-3 text-base font-medium text-black dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center">Log in</a>
+        <a href="#" class="block px-4 py-3 text-base font-medium text-black dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-center" data-lang="nav_login">Log in</a>
 
-        <a href="#" class="block px-4 py-3 text-base font-medium text-white bg-black rounded-lg hover:bg-gray-800 text-center">Sign up</a>
+        <a href="#" class="block px-4 py-3 text-base font-medium text-white bg-black rounded-lg hover:bg-gray-800 text-center" data-lang="nav_signup">Sign up</a>
 
       </div>
 

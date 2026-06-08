@@ -12,9 +12,9 @@ window.getSatelliteCardHtml = function getSatelliteCardHtml(satellite, basePath 
 
   return `
     <div class="satellite-card bg-white dark:bg-gray-750 border border-gray-200 dark:border-gray-600 rounded-xl overflow-hidden transition-colors ${extraClasses}">
-      <div class="h-40 bg-black overflow-hidden"><img src="${satellite.image}" alt="${satellite.name}" class="w-full h-full object-cover"></div>
+      <div class="h-40 bg-black overflow-hidden"><img src="${basePath}/${satellite.image}" alt="${satellite.name}" class="w-full h-full object-cover"></div>
       <div class="p-4 flex-1 flex flex-col">
-        <div class="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-caps flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full ${dotColor}"></span>${satellite.category}</div>
+        <div class="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-caps flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full ${dotColor}"></span><span data-lang="cat_${satellite.category.toLowerCase().replace(' ', '_')}">${satellite.category}</span></div>
         <h3 class="text-base font-bold tracking-heading text-black dark:text-white mt-1 leading-none"><a href="${basePath}/pages/satellite.html?id=${satellite.id}" class="hover:underline">${satellite.name}</a></h3>
         <p class="text-base text-gray-500 dark:text-gray-400 mt-1">${satellite.provider}</p>
         <div class="flex items-center gap-2 mt-2">
@@ -24,16 +24,18 @@ window.getSatelliteCardHtml = function getSatelliteCardHtml(satellite, basePath 
           <span class="text-xs text-gray-400 dark:text-gray-500">${satellite.rating.toFixed(1)} (${satellite.reviews})</span>
         </div>
         <div class="flex items-center gap-2 mt-3 text-xs text-gray-500 dark:text-gray-400">
-          <span>${satellite.resolution}</span><span class="text-gray-400 dark:text-gray-600">•</span><span>${satellite.revisit}</span><span class="text-gray-400 dark:text-gray-600">•</span><span>${satellite.format}</span>
+          <span data-lang="sat_res_${satellite.resolution.toLowerCase().replace(/[^a-z0-9]/g, '_')}">${satellite.resolution}</span><span class="text-gray-400 dark:text-gray-600"> • </span><span data-lang="sat_rev_${satellite.revisit.toLowerCase().replace(/[^a-z0-9]/g, '_')}">${satellite.revisit}</span><span class="text-gray-400 dark:text-gray-600"> • </span><span data-lang="sat_fmt_${satellite.format.toLowerCase().replace(/[^a-z0-9]/g, '_')}">${satellite.format}</span>
         </div>
         <div class="mt-auto">
           <div class="mt-2 pt-2 border-t border-gray-200 dark:border-gray-700 flex items-baseline gap-1">
             <span class="text-xl font-bold tracking-heading dark:text-white">${satellite.price}</span>
-            <span class="text-xs text-gray-400 dark:text-gray-500">${satellite.priceUnit}</span>
+            <span class="text-xs text-gray-400 dark:text-gray-500" data-lang="sat_unit_${satellite.priceUnit.replace('/ ', '').replace('', '2')}">${satellite.priceUnit}</span>
           </div>
-          <a href="${basePath}/pages/satellite.html?id=${satellite.id}" class="mt-4 w-full py-2 text-base font-semibold text-white dark:text-black bg-black dark:bg-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-center inline-block">Get access</a>
+          <a href="${basePath}/pages/satellite.html?id=${satellite.id}" class="mt-4 w-full py-2 text-base font-semibold text-white dark:text-black bg-black dark:bg-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-center inline-block" data-lang="satellite_get_access">Get access</a>
         </div>
       </div>
     </div>
   `;
 }
+
+
