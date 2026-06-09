@@ -1544,30 +1544,42 @@ const translations = {
 
 };
 
+/**
+ * Gerenciador responsável por controlar a internacionalização (tradução) completa do site.
+ * Ele salva a preferência do usuário e substitui os textos do HTML de acordo com o dicionário 'translations' acima.
+ */
 class LanguageManager {
 
   constructor() {
 
+    // Recupera o idioma salvo na última visita do usuário (via banco local do navegador) ou usa inglês ('en') como idioma padrão
     this.currentLanguage = localStorage.getItem('site_language') || 'en';
 
+    // Mapa de memória para guardar o texto original (em inglês) de cada elemento antes da primeira tradução
     this.originalTexts = new Map();
 
   }
 
+  /**
+   * Executado quando a página carrega. Varre o HTML procurando tags marcadas com o atributo especial 'data-lang'.
+   */
   init() {
 
     document.querySelectorAll('[data-lang]').forEach(el => {
 
       const key = el.getAttribute('data-lang');
 
+      // Se ainda não salvamos o texto original deste elemento na memória...
       if (!this.originalTexts.has(key)) {
 
+        // Tratamento especial para caixas de texto (inputs): salvamos o texto fantasma (placeholder), não o HTML interno
         if (el.tagName === 'INPUT' && el.placeholder) {
 
           this.originalTexts.set(key + '_placeholder', el.placeholder);
 
         } else {
 
+          // Para tags normais de texto (h1, p, span), salva o conteúdo interno original
           this.originalTexts.set(key, el.innerHTML);
 
         }
@@ -1576,14 +1588,21 @@ class LanguageManager {
 
     });
 
+    // Aplica o idioma escolhido (ou o padrão) imediatamente em todos os elementos encontrados
     this.setLanguage(this.currentLanguage);
 
   }
 
   getLanguage() { return this.currentLanguage; }
 
+  /**
+   * Muda ativamente todos os textos da página visíveis no momento para o novo idioma selecionado.
+   * 
+   * @param {string} lang - Código do idioma alvo ('en', 'pt', 'es')
+   */
   setLanguage(lang) {
 
+    // Trava de segurança: se algum script tentar setar um idioma que não existe, força para inglês
     if (!['en', 'pt', 'es'].includes(lang)) {
 
       lang = 'en';
@@ -1592,14 +1611,17 @@ class LanguageManager {
 
     this.currentLanguage = lang;
 
+    // Salva a escolha permanente no navegador para que as outras páginas carreguem traduzidas
     localStorage.setItem('site_language', lang);
 
+    // Varre novamente a tela para alterar dinamicamente os textos de todos os elementos rastreados
     document.querySelectorAll('[data-lang]').forEach(el => {
 
       const key = el.getAttribute('data-lang');
 
       if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
 
+        // Se a tradução existir no grande dicionário lá no topo, substitui o texto do placeholder
         if (translations[lang] && translations[lang][key]) {
 
           el.placeholder = translations[lang][key];
@@ -1608,6 +1630,7 @@ class LanguageManager {
 
       } else {
 
+        // Substitui o texto normal injetando diretamente no HTML da tag
         if (translations[lang] && translations[lang][key]) {
 
           el.innerHTML = translations[lang][key];
@@ -1618,14 +1641,18 @@ class LanguageManager {
 
     });
 
+    // Dispara um alarme/evento global na página informando a todos que o idioma acabou de mudar.
+    // Isso é útil para outros componentes (como o Footer) saberem que precisam atualizar a aparência de seus botões.
     document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
 
   }
 
 }
 
+// Instancia um objeto global único (Singleton) do gerenciador para ser acessível de qualquer script
 window.LanguageManager = new LanguageManager();
 
+// Garante que a tradução inicial ocorra apenas quando a árvore HTML inteira estiver carregada
 document.addEventListener('DOMContentLoaded', () => {
 
   window.LanguageManager.init();

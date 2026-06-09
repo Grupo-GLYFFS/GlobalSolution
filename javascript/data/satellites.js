@@ -1,3 +1,8 @@
+/**
+ * Banco de dados simulado (Mock) contendo a lista de satélites disponíveis no Marketplace.
+ * Cada objeto contém os dados comerciais e também os parâmetros orbitais (altitude, inclinação, RAAN)
+ * que são usados pelo motor 3D (Three.js) para desenhar a órbita de forma fisicamente coerente no globo.
+ */
 window.satellites = [
 
   {
@@ -26,13 +31,13 @@ window.satellites = [
 
     priceUnit: "/ km²",
 
-    altitude_em_km: 550,
+    altitudeInKilometers: 550,
 
-    inclinacao_em_graus: 53,
+    inclinationInDegrees: 53,
 
-    raan_em_graus: 45,
+    raanInDegrees: 45,
 
-    cor: "#3B7BF5"
+    satelliteColorCode: "#3B7BF5"
 
   },
 
@@ -62,13 +67,13 @@ window.satellites = [
 
     priceUnit: "/ km²",
 
-    altitude_em_km: 617,
+    altitudeInKilometers: 617,
 
-    inclinacao_em_graus: 97.9,
+    inclinationInDegrees: 97.9,
 
-    raan_em_graus: 180,
+    raanInDegrees: 180,
 
-    cor: "#FF6B35"
+    satelliteColorCode: "#FF6B35"
 
   },
 
@@ -98,13 +103,13 @@ window.satellites = [
 
     priceUnit: "/ Free",
 
-    altitude_em_km: 786,
+    altitudeInKilometers: 786,
 
-    inclinacao_em_graus: 98.5,
+    inclinationInDegrees: 98.5,
 
-    raan_em_graus: 0,
+    raanInDegrees: 0,
 
-    cor: "#18D4A7"
+    satelliteColorCode: "#18D4A7"
 
   },
 
@@ -134,13 +139,13 @@ window.satellites = [
 
     priceUnit: "/ day",
 
-    altitude_em_km: 500,
+    altitudeInKilometers: 500,
 
-    inclinacao_em_graus: 83,
+    inclinationInDegrees: 83,
 
-    raan_em_graus: 90,
+    raanInDegrees: 90,
 
-    cor: "#D62839"
+    satelliteColorCode: "#D62839"
 
   },
 
@@ -170,13 +175,13 @@ window.satellites = [
 
     priceUnit: "/ message",
 
-    altitude_em_km: 400,
+    altitudeInKilometers: 400,
 
-    inclinacao_em_graus: 51.6,
+    inclinationInDegrees: 51.6,
 
-    raan_em_graus: 210,
+    raanInDegrees: 210,
 
-    cor: "#1D66F5"
+    satelliteColorCode: "#1D66F5"
 
   },
 
@@ -206,13 +211,13 @@ window.satellites = [
 
     priceUnit: "/ MB",
 
-    altitude_em_km: 550,
+    altitudeInKilometers: 550,
 
-    inclinacao_em_graus: 53.2,
+    inclinationInDegrees: 53.2,
 
-    raan_em_graus: 270,
+    raanInDegrees: 270,
 
-    cor: "#00A8E8"
+    satelliteColorCode: "#00A8E8"
 
   },
 
@@ -242,13 +247,13 @@ window.satellites = [
 
     priceUnit: "/ capture",
 
-    altitude_em_km: 560,
+    altitudeInKilometers: 560,
 
-    inclinacao_em_graus: 97.7,
+    inclinationInDegrees: 97.7,
 
-    raan_em_graus: 135,
+    raanInDegrees: 135,
 
-    cor: "#F08A5D"
+    satelliteColorCode: "#F08A5D"
 
   }
 

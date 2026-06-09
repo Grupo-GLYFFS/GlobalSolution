@@ -1,5 +1,15 @@
+/**
+ * Retorna o HTML em formato de string (Template Literal) que representa a barra de navegação superior (navbar).
+ * Ao manter o HTML aqui, conseguimos injetá-lo dinamicamente em várias páginas diferentes (Home, Login, Marketplace),
+ * garantindo que qualquer alteração no menu principal seja feita em um único lugar.
+ * 
+ * @param {string} basePath - O caminho relativo da raiz do projeto (ex: '.' para a Home, '..' para páginas internas).
+ *                            Isso garante que as imagens (como a logo) e os links não quebrem ao mudar de pasta.
+ * @returns {string} - Código HTML completo e renderizável da Navbar.
+ */
 window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
 
+  // Retorna a estrutura HTML com as classes do Tailwind para o layout e o design responsivo
   return `
 
   <nav id="navbar" class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">

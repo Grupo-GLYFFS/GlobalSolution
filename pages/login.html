@@ -64,7 +64,7 @@
 
       <div id="state-login" class="hidden animate-fade-in" role="tabpanel" aria-labelledby="tab-login">
 
-      <form onsubmit="event.preventDefault(); exibirErro('password');">
+      <form onsubmit="event.preventDefault(); displayErrorMessage('password');">
 
         <div class="mb-5">
 
@@ -102,7 +102,7 @@
 
       <div id="state-signup" class="hidden animate-fade-in" role="tabpanel" aria-labelledby="tab-signup">
 
-        <form onsubmit="event.preventDefault(); exibirSucesso();">
+        <form onsubmit="event.preventDefault(); displaySuccessMessage();">
 
         <div class="mb-4">
 
@@ -152,7 +152,7 @@
 
           <input type="email" value="unknown@email.com" class="w-full bg-accent-red/10 border border-accent-red text-black dark:text-white rounded-xl px-4 py-3 focus:border-accent-red focus:ring-1 focus:ring-accent-red outline-none transition-all">
 
-          <p class="mt-2 text-xs text-accent-red font-medium"><span data-lang="login_no_account">No account found with this email.</span> <a href="#" onclick="voltarParaCadastro()" class="text-black dark:text-white hover:underline"><span data-lang="login_sign_up">Sign up?</span></a></p>
+          <p class="mt-2 text-xs text-accent-red font-medium"><span data-lang="login_no_account">No account found with this email.</span> <a href="#" onclick="returnToSignupView()" class="text-black dark:text-white hover:underline"><span data-lang="login_sign_up">Sign up?</span></a></p>
 
         </div>
 
@@ -232,11 +232,11 @@
 
     <div class="text-xs uppercase font-bold text-gray-500 dark:text-white/50 absolute -top-3 left-4 bg-gray-200 dark:bg-black px-2 rounded-full border border-gray-300 dark:border-white/10 tracking-caps">Dev States</div>
 
-    <button onclick="exibirErro('email')" class="px-3 py-2 text-xs font-bold text-black dark:text-white bg-gray-200 dark:bg-gray-500/20 hover:bg-gray-300 dark:hover:bg-gray-500/40 rounded-lg border border-gray-300 dark:border-gray-500/30 transition-colors tracking-heading">Err: Email</button>
+    <button onclick="displayErrorMessage('email')" class="px-3 py-2 text-xs font-bold text-black dark:text-white bg-gray-200 dark:bg-gray-500/20 hover:bg-gray-300 dark:hover:bg-gray-500/40 rounded-lg border border-gray-300 dark:border-gray-500/30 transition-colors tracking-heading">Err: Email</button>
 
-    <button onclick="exibirErro('password')" class="px-3 py-2 text-xs font-bold text-black dark:text-white bg-gray-200 dark:bg-gray-500/20 hover:bg-gray-300 dark:hover:bg-gray-500/40 rounded-lg border border-gray-300 dark:border-gray-500/30 transition-colors tracking-heading">Err: Pass</button>
+    <button onclick="displayErrorMessage('password')" class="px-3 py-2 text-xs font-bold text-black dark:text-white bg-gray-200 dark:bg-gray-500/20 hover:bg-gray-300 dark:hover:bg-gray-500/40 rounded-lg border border-gray-300 dark:border-gray-500/30 transition-colors tracking-heading">Err: Pass</button>
 
-    <button onclick="exibirSucesso()" class="px-3 py-2 text-xs font-bold text-black dark:text-white bg-gray-200 dark:bg-gray-500/20 hover:bg-gray-300 dark:hover:bg-gray-500/40 rounded-lg border border-gray-300 dark:border-gray-500/30 transition-colors tracking-heading">Success</button>
+    <button onclick="displaySuccessMessage()" class="px-3 py-2 text-xs font-bold text-black dark:text-white bg-gray-200 dark:bg-gray-500/20 hover:bg-gray-300 dark:hover:bg-gray-500/40 rounded-lg border border-gray-300 dark:border-gray-500/30 transition-colors tracking-heading">Success</button>
 
   </div>
 
@@ -248,9 +248,9 @@
 
   <script src="../javascript/data/satellites.js"></script>
 
-  <script src="../javascript/components/arrastar-rolagem.js"></script>
+  <script src="../javascript/components/drag-scroll.js"></script>
 
-  <script src="../javascript/components/carrossel.js"></script>
+  <script src="../javascript/components/carousel.js"></script>
 
   <script src="../javascript/utils/componentLoader.js"></script>
 

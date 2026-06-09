@@ -1,13 +1,16 @@
+/* Garante que o cálculo de largura/altura dos elementos inclua padding e bordas, facilitando a estilização */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Ativa a rolagem suave na página inteira, útil para links de navegação interna (âncoras) */
 html {
   scroll-behavior: smooth;
 }
 
+/* Define a fonte padrão da aplicação (DM Sans), suaviza a renderização das fontes no navegador e adiciona transições globais suaves para mudanças de tema (claro/escuro) */
 body {
   font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,63 +18,77 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Define as transições para quando o usuário interagir com as células do layout bento (ex: passar o mouse por cima) */
 .bento-cell {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Anima a célula do layout bento subindo ligeiramente e recebendo uma sombra maior ao passar o mouse */
 .bento-cell:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Prepara os cards de satélite para terem transições fluidas de elevação e sombra */
 .satellite-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Destaca o card do satélite levantando-o um pouco mais alto e aumentando significativamente a sombra no hover */
 .satellite-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Suaviza a troca de cor de fundo dos botões que alternam o tema do site */
 .theme-toggle-btn {
   transition: background-color 0.15s ease;
 }
 
+/* Define o estilo do botão de tema quando ele está ativo, aplicando um fundo escuro e texto branco */
 .theme-toggle-btn.active {
   background-color: #171717;
   color: white;
 }
 
+/* Customiza a altura das barras de rolagem horizontais em elementos com essa classe (para navegadores baseados em webkit) */
 .custom-scrollbar::-webkit-scrollbar {
   height: 8px;
 }
 
+/* Define a cor de fundo e o arredondamento da trilha da barra de rolagem (modo claro) */
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #f3f4f6;
   border-radius: 4px;
 }
 
+/* Define a cor e o arredondamento da barra deslizante em si (modo claro) */
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #d1d5db;
   border-radius: 4px;
 }
 
+/* Escurece a barra deslizante quando o usuário passa o mouse por cima dela (modo claro) */
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #9ca3af;
 }
 
+/* Oculta completamente a barra de rolagem nativa do carrossel de categorias para manter o design limpo */
 #category-scroll::-webkit-scrollbar {
   display: none;
 }
 
+/* Oculta completamente a barra de rolagem nativa do carrossel de itens similares */
 #similar-scroll::-webkit-scrollbar {
   display: none;
 }
 
+/* Classe utilitária para acionar a animação de "fade-in" em qualquer elemento HTML */
 .animate-fade-in {
   animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Animação chave (keyframes) que faz o elemento aparecer gradualmente (fade) enquanto desliza de baixo para cima */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -85,15 +102,17 @@ body {
 
 }
 
+/* Aplica cores escuras para a trilha da barra de rolagem quando o modo escuro ('dark') está ativado no HTML */
 html.dark .custom-scrollbar::-webkit-scrollbar-track {
   background: #262626;
 }
 
+/* Define uma cor acinzentada mais escura para a barra deslizante no modo escuro */
 html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #404040;
 }
 
+/* Clareia sutilmente a barra deslizante no modo escuro quando ocorre o evento de hover */
 html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #737373;
 }
-

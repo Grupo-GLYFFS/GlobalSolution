@@ -56,7 +56,7 @@
 
         <div class="flex items-center w-full max-w-lg bg-gray-100 dark:bg-gray-800 p-2 rounded-xl border border-gray-200/50 dark:border-gray-700">
 
-          <button id="nav-step-1" onclick="exibirEtapa(1)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold tracking-heading transition-all flex items-center gap-2 text-accent-blue bg-white dark:bg-gray-750 shadow-sm">
+          <button id="nav-step-1" onclick="displayCheckoutStep(1)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold tracking-heading transition-all flex items-center gap-2 text-accent-blue bg-white dark:bg-gray-750 shadow-sm">
 
             <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-accent-blue/10 text-accent-blue">1</span>
 
@@ -64,7 +64,7 @@
 
           </button>
 
-          <button id="nav-step-2" onclick="exibirEtapa(2)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white tracking-heading">
+          <button id="nav-step-2" onclick="displayCheckoutStep(2)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white tracking-heading">
 
             <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400">2</span>
 
@@ -72,7 +72,7 @@
 
           </button>
 
-          <button id="nav-step-3" onclick="exibirEtapa(3)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white tracking-heading">
+          <button id="nav-step-3" onclick="displayCheckoutStep(3)" class="flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold transition-all flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white tracking-heading">
 
             <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400">3</span>
 
@@ -116,7 +116,7 @@
 
       <p class="text-gray-500 dark:text-gray-400 mb-8 leading-normal" data-lang="checkout_need_account">You need a DataOrbit account to checkout.</p>
 
-      <button onclick="exibirEtapa(1)" class="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors tracking-heading" data-lang="checkout_login_btn">Log In / Sign Up</button>
+      <button onclick="displayCheckoutStep(1)" class="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors tracking-heading" data-lang="checkout_login_btn">Log In / Sign Up</button>
 
     </div>
 
@@ -318,7 +318,7 @@
 
           </div>
 
-          <button onclick="exibirEtapa(2)" class="w-full mt-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex justify-center items-center gap-2 tracking-heading">
+          <button onclick="displayCheckoutStep(2)" class="w-full mt-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex justify-center items-center gap-2 tracking-heading">
 
             <span data-lang="checkout_continue_payment">Continue to Payment</span>
 
@@ -532,13 +532,13 @@
 
           </div>
 
-          <button onclick="exibirEtapa(3)" class="w-full mt-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex justify-center items-center gap-2 tracking-heading">
+          <button onclick="displayCheckoutStep(3)" class="w-full mt-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex justify-center items-center gap-2 tracking-heading">
 
             <span data-lang="checkout_confirm_payment">Confirm Payment</span>
 
           </button>
 
-          <a href="#" onclick="exibirEtapa(1); return false;" class="block text-center mt-4 text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors tracking-heading" data-lang="checkout_back_to_plan">&larr; Back to Plan</a>
+          <a href="#" onclick="displayCheckoutStep(1); return false;" class="block text-center mt-4 text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors tracking-heading" data-lang="checkout_back_to_plan">&larr; Back to Plan</a>
 
         </div>
 
@@ -648,9 +648,9 @@
 
   <script src="../javascript/data/satellites.js"></script>
 
-  <script src="../javascript/components/arrastar-rolagem.js"></script>
+  <script src="../javascript/components/drag-scroll.js"></script>
 
-  <script src="../javascript/components/carrossel.js"></script>
+  <script src="../javascript/components/carousel.js"></script>
 
   <script src="../javascript/utils/componentLoader.js"></script>
 

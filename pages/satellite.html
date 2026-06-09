@@ -266,13 +266,13 @@
 
                   <div class="grid grid-cols-4 gap-4">
 
-                    <button onclick="alterarImagemPrincipal('../assets/gallery/image-gallery-1.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors bg-black dark:bg-white ring-2 ring-black dark:ring-white opacity-100"><img src="../assets/gallery/image-gallery-1.png" class="w-full h-full object-cover"></button>
+                    <button onclick="changeMainPreviewImage('../assets/gallery/image-gallery-1.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors bg-black dark:bg-white ring-2 ring-black dark:ring-white opacity-100"><img src="../assets/gallery/image-gallery-1.png" class="w-full h-full object-cover"></button>
 
-                    <button onclick="alterarImagemPrincipal('../assets/gallery/image-gallery-2.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="../assets/gallery/image-gallery-2.png" class="w-full h-full object-cover"></button>
+                    <button onclick="changeMainPreviewImage('../assets/gallery/image-gallery-2.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="../assets/gallery/image-gallery-2.png" class="w-full h-full object-cover"></button>
 
-                    <button onclick="alterarImagemPrincipal('../assets/gallery/image-gallery-3.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="../assets/gallery/image-gallery-3.png" class="w-full h-full object-cover"></button>
+                    <button onclick="changeMainPreviewImage('../assets/gallery/image-gallery-3.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="../assets/gallery/image-gallery-3.png" class="w-full h-full object-cover"></button>
 
-                    <button onclick="alterarImagemPrincipal('../assets/gallery/image-gallery-4.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="../assets/gallery/image-gallery-4.png" class="w-full h-full object-cover"></button>
+                    <button onclick="changeMainPreviewImage('../assets/gallery/image-gallery-4.png', this)" class="gallery-thumb aspect-[4/3] rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white focus:outline-none transition-colors opacity-70 hover:opacity-100 bg-gray-100 dark:bg-gray-700"><img src="../assets/gallery/image-gallery-4.png" class="w-full h-full object-cover"></button>
 
                   </div>
 
@@ -594,13 +594,13 @@
 
         <div class="flex gap-2">
 
-          <button id="slider-prev" disabled onclick="rolarCarrossel(-1)" class="flex items-center justify-center h-10 w-10 cursor-pointer focus:outline-none bg-white dark:bg-gray-700 border border-gray-400 dark:border-gray-600 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+          <button id="slider-prev" disabled onclick="scrollCarousel(-1)" class="flex items-center justify-center h-10 w-10 cursor-pointer focus:outline-none bg-white dark:bg-gray-700 border border-gray-400 dark:border-gray-600 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
 
             <span class="material-symbols-outlined text-[20px] text-black dark:text-white">chevron_left</span>
 
           </button>
 
-          <button id="slider-next" onclick="rolarCarrossel(1)" class="flex items-center justify-center h-10 w-10 cursor-pointer focus:outline-none bg-white dark:bg-gray-700 border border-gray-400 dark:border-gray-600 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+          <button id="slider-next" onclick="scrollCarousel(1)" class="flex items-center justify-center h-10 w-10 cursor-pointer focus:outline-none bg-white dark:bg-gray-700 border border-gray-400 dark:border-gray-600 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
 
             <span class="material-symbols-outlined text-[20px] text-black dark:text-white">chevron_right</span>
 
@@ -648,9 +648,9 @@
 
   <script src="../javascript/data/satellites.js"></script>
 
-  <script src="../javascript/components/arrastar-rolagem.js"></script>
+  <script src="../javascript/components/drag-scroll.js"></script>
 
-  <script src="../javascript/components/carrossel.js"></script>
+  <script src="../javascript/components/carousel.js"></script>
 
   <script src="../javascript/utils/componentLoader.js"></script>
 
