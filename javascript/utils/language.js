@@ -1,878 +1,1660 @@
-﻿const translations = {
+const translations = {
+
   en: {
+
     "nav_categories": "Categories",
+
     "nav_browse_categories": "Browse Categories",
+
     "nav_search_placeholder": "Search satellites, providers, data...",
+
     "nav_search_mobile": "Search satellites...",
+
     "nav_login": "Log in",
+
     "nav_signup": "Sign up",
 
     "cat_imagery": "Imagery",
+
     "cat_imagery_desc": "Optical, SAR, and hyperspectral data.",
+
     "cat_climate": "Climate",
+
     "cat_climate_desc": "Weather patterns and GHG tracking.",
+
     "cat_connectivity": "Connectivity",
+
     "cat_connectivity_desc": "IoT networking and broadband links.",
+
     "cat_analytics": "Analytics",
+
     "cat_analytics_desc": "Derived intelligence and mapping.",
+
     "cat_telemetry": "Telemetry",
+
     "cat_telemetry_desc": "Raw sensor outputs and GNSS data.",
+
     "cat_maritime": "Maritime",
+
     "cat_maritime_desc": "Vessel tracking and AIS overlays.",
+
     "cat_agriculture": "Agriculture",
+
     "cat_agriculture_desc": "Crop health and NDVI models.",
+
     "cat_urban": "Urban",
+
     "cat_urban_desc": "Infrastructure and night lights.",
+
     "cat_forestry": "Forestry",
+
     "cat_forestry_desc": "Deforestation and biomass.",
+
     "cat_energy": "Energy",
+
     "cat_energy_desc": "Solar irradiance and pipelines.",
 
     "satellite_get_access": "Get Access",
+
     "sat_unit_capture": "/ image",
+
     "sat_unit_km2": "/ km²",
+
     "sat_unit_month": "/ month",
 
     "home_badge": "Platform",
+
     "home_headline": "Satellite data, on demand.",
+
     "home_subtitle": "Browse thousands of satellites from verified providers. Choose your coverage area, data format, and delivery method, then integrate via API in minutes.",
+
     "home_cta_explore": "Explore Catalog",
+
     "home_stat_1": "Satellites Indexed",
+
     "home_stat_2": "Data Formats",
+
     "home_stat_3": "Avg. Revisit Time",
+
     "home_stat_4": "Starting Unit Price",
+
     "home_view_catalog": "View Full Catalog",
+
     "home_view_catalog_desc": "Browse over 3,200 satellites from verified providers worldwide.",
+
     "home_benefits_label": "Benefits",
+
     "home_benefits_heading": "Why DataOrbit",
+
     "home_benefits_title": "Everything you need to access satellite data at scale, without the complexity.",
+
     "home_benefit_1": "API-First Access",
+
     "home_benefit_1_desc": "Integrate satellite data directly into your pipeline with our REST API. Retrieve imagery, telemetry, and climate data programmatically.",
+
     "home_benefit_2": "Verified Providers",
+
     "home_benefit_2_desc": "Planet Labs, ESA, SpaceX, and more. Real satellite networks delivering verified data products. Never simulated, never estimated.",
+
     "home_benefit_3": "Easy Integration",
+
     "home_benefit_3_desc": "Ready-to-use SDKs and comprehensive documentation get you up and running quickly. Drop our snippets right into your codebase.",
+
     "home_benefit_4": "No Infrastructure Needed",
+
     "home_benefit_4_desc": "Skip the ground station. We handle reception, processing, storage, and distribution so you can focus entirely on analysis.",
+
     "home_benefit_5": "Built for Scale",
+
     "home_benefit_5_desc": "Our infrastructure automatically scales to meet your demands, whether you're pulling a single image or petabytes of historical data.",
+
     "home_benefit_6": "Global Coverage",
+
     "home_benefit_6_desc": "From the busiest cities to the most remote oceans. Continuous monitoring spanning every continent and time zone.",
+
     "home_benefit_stat_1": "providers<br>worldwide",
+
     "home_benefit_stat_2": "uptime SLA<br>guaranteed",
+
     "home_benefit_stat_3": "data readily<br>available",
+
     "home_benefit_stat_4": "Earth's surface<br>covered",
+
     "home_process_label": "Process",
+
     "home_process_title": "How it works",
+
     "home_process_1": "Explore",
+
     "home_process_1_desc": "Browse over 3,200 satellites. Filter by data type, resolution, coverage area, and price.",
+
     "home_process_2": "Configure",
+
     "home_process_2_desc": "Set your parameters: geographic area, time window, and data delivery format.",
+
     "home_process_3": "Access",
+
     "home_process_3_desc": "Receive data via API, webhook, or direct download. Your pipeline stays the same.",
+
     "home_process_start": "Start Now",
+
     "home_cta_title": "Ready to access<br>satellite data?",
+
     "home_cta_paragraph": "Join hundreds of companies already using DataOrbit to power their geospatial intelligence, climate monitoring, and IoT infrastructure.",
+
     "home_cta_create": "Create Account",
+
     "home_cta_explore_secondary": "Explore Catalog",
 
     "home_sort_by": "Sort by: Relevance",
+
     "home_sort_relevance": "Relevance",
+
     "home_sort_newest": "Newest",
+
     "home_sort_price_asc": "Price: Low to High",
+
     "home_sort_price_desc": "Price: High to Low",
+
     "home_sort_rating": "Rating",
 
     "home_explore_title": "Explore what's in orbit",
+
     "home_explore_desc": "Real satellite data products from leading providers, ready for integration.",
+
     "home_filter_all": "All",
 
     "market_title": "Satellite Catalog",
+
     "market_desc": "Browse verified satellite data from top providers. Filter by resolution, revisit time, and availability to find exactly what you need.",
+
     "market_filters": "Filters",
+
     "market_category": "Category",
+
     "market_provider": "Provider",
+
     "market_resolution": "Resolution",
+
     "market_more_filters": "More filters +",
+
     "market_clear_all": "Clear all",
+
     "market_found": "satellites found",
+
     "market_loading": "Loading more satellites...",
+
     "market_showing_results": "Showing results for your active filters.",
+
     "market_clear": "Clear",
+
     "market_apply": "Apply",
 
     "filter_imagery": "Imagery",
+
     "filter_weather": "Weather",
+
     "filter_sub1m": "Sub-1m",
+
     "filter_1_10m": "1–10m",
 
     "sat_operated_by": "Operated by",
+
     "sat_reviews": "reviews",
+
     "sat_uptime": "Uptime:",
+
     "sat_latency": "Latency:",
+
     "sat_overview": "Overview",
+
     "sat_key_features": "Key Features",
+
     "sat_use_cases": "Common Use Cases",
+
     "sat_tech_specs": "Technical Specifications",
+
     "sat_resolution": "Resolution",
+
     "sat_swath": "Swath Width",
+
     "sat_orbit": "Orbit",
+
     "sat_revisit": "Revisit Time",
+
     "sat_spectral": "Spectral Bands",
+
     "sat_pricing_options": "Pricing Options",
+
     "sat_per_image": "Per image",
+
     "sat_per_km2": "Per km²",
+
     "sat_get_api": "Get API Access",
+
     "sat_customer_reviews": "Customer Reviews",
+
     "sat_see_all_reviews": "See all reviews",
 
     "login_welcome": "Welcome back",
+
     "login_welcome_sub": "Log in to your account to access your satellite data and API keys.",
+
     "login_tab_login": "Log in",
+
     "login_tab_signup": "Sign up",
+
     "login_email_ph": "you@company.com",
+
     "login_pass": "Password",
+
     "login_confirm_pass": "Confirm Password",
+
     "login_fullname": "Full name",
+
     "login_fullname_ph": "John Doe",
+
     "login_remember": "Remember me",
+
     "login_forgot": "Forgot password?",
+
     "login_btn": "Log in",
+
     "signup_btn": "Create account",
+
     "login_or": "Or continue with",
+
     "login_google": "Log in with Google",
+
     "login_github": "Log in with GitHub",
+
     "login_no_account": "Don't have an account?",
+
     "login_yes_account": "Already have an account?",
+
     "login_go_signup": "Sign up",
+
     "login_go_login": "Log in",
-    
+
     "footer_desc": "Satellite data marketplace for businesses and developers.",
+
     "footer_nav": "Navigation",
+
     "footer_home": "Home",
+
     "footer_marketplace": "Marketplace",
+
     "footer_checkout": "Checkout",
+
     "footer_theme": "Theme",
+
     "footer_language": "Language",
+
     "footer_copyright": "© 2026 DataOrbit. All rights reserved.",
 
     "login_email_label": "Email address",
+
     "login_email_placeholder": "you@company.com",
+
     "login_password_label": "Password",
+
     "login_forgot_password": "Forgot your password?",
+
     "login_dont_have": "Don't have an account? ",
+
     "signup_fullname_label": "Full name",
+
     "signup_fullname_placeholder": "John Doe",
+
     "signup_btn": "Create account",
+
     "signup_already_have": "Already have an account? ",
 
     "checkout_sign_in": "Sign in to continue",
+
     "checkout_need_account": "You need a DataOrbit account to checkout.",
+
     "checkout_login_btn": "Log In / Sign Up",
+
     "checkout_customize": "Customize your Plan",
+
     "checkout_access_option": "Select Access Option",
+
     "checkout_most_popular": "Most Popular",
+
     "checkout_per_km": "Per km²",
+
     "checkout_per_km_desc": "For large scale monitoring.",
+
     "checkout_per_image": "Per Image",
+
     "checkout_per_image_desc": "For localized studies.",
+
     "checkout_monthly": "Monthly",
+
     "checkout_monthly_desc": "Unlimited API access.",
+
     "checkout_custom": "Custom",
+
     "checkout_access_period": "Access Period",
+
     "checkout_1hour": "1 Hour",
+
     "checkout_1day": "1 Day",
+
     "checkout_1week": "1 Week",
+
     "checkout_1month": "1 Month",
+
     "checkout_integration": "Integration Type",
+
     "checkout_step_plan": "Plan",
+
     "checkout_step_payment": "Payment",
+
     "checkout_step_confirmation": "Confirmation",
+
     "checkout_operated_by": "Operated by",
+
     "checkout_order_summary": "Order Summary",
+
     "checkout_satellite": "Satellite",
+
     "checkout_plan": "Plan",
+
     "checkout_estimated_total": "Estimated Total",
+
     "checkout_continue_payment": "Continue to Payment",
+
     "checkout_payment_details": "Payment Details",
+
     "checkout_billing_info": "Billing Information",
+
     "checkout_full_name": "Full Name",
+
     "checkout_email_address": "Email Address",
+
     "checkout_country": "Country",
+
     "checkout_payment_method": "Payment Method",
+
     "checkout_credit_card": "Credit Card",
+
     "checkout_card_number": "Card Number",
+
     "checkout_name_on_card": "Name on Card",
+
     "checkout_expiry_date": "Expiry Date",
+
     "checkout_cvv": "CVV",
+
     "checkout_secure_note": "Your payment is encrypted and 100% secure.",
+
     "checkout_subtotal": "Subtotal",
+
     "checkout_taxes": "Taxes (10%)",
+
     "checkout_total": "Total",
+
     "checkout_confirm_payment": "Confirm Payment",
+
     "checkout_back_to_plan": "← Back to Plan",
+
     "checkout_success_message": "Your transaction was successful. Credentials have been sent to your email.",
+
     "checkout_receipt_details": "Receipt Details",
+
     "checkout_order_id": "Order ID",
+
     "checkout_total_paid": "Total Paid",
+
     "checkout_api_key": "Your API Key",
+
     "checkout_view_docs": "View API Documentation",
+
     "checkout_explore_more": "Explore more Satellites",
+
     "home_go_marketplace": "Go to Marketplace",
+
     "sat_rev_daily": "Daily",
+
     "sat_rev_1_4_days": "1-4 Days",
+
     "sat_rev_5_days": "5 Days",
+
     "sat_rev_hourly": "Hourly",
+
     "sat_rev_15_60_min": "15-60 min",
+
     "sat_rev_real_time": "Real-time",
+
     "sat_rev___20h": "< 20h",
+
     "sat_unit_free": "/ Free",
+
     "sat_unit_day": "/ day",
+
     "sat_unit_message": "/ message",
+
     "sat_unit_mb": "/ MB",
+
     "sat_unit_capture": "/ capture",
+
     "sat_unit_km2": "/ km²",
+
     "sat_res_3m_resampled_nadir": "3.0m resampled (3.7m nadir)",
+
     "sat_res_3m_resampled": "3.0m resampled",
+
     "sat_rev_daily_global": "Daily (Global)",
+
     "sat_overview_p1": "The OrbitRent Dove-PSB, operated by Planet Labs under the SuperDove technology line, provides an 'always on' optical scanning constellation. This satellite captures continuous, high-resolution imagery without the need for manual tasking. It delivers unmatched coverage for rapid global change detection.",
+
     "sat_overview_p2": "Equipped with 8 spectral bands (including Coastal Blue, Red Edge, and NIR), it is highly optimized for agricultural monitoring, coastal studies, and especially tracking illegal deforestation. With daily global revisit capabilities, this dataset ensures you never miss a critical terrestrial event.",
+
     "sat_overview_p3": "The data is processed to Surface Reflectance and delivered via our fast REST API or Webhook directly to your cloud infrastructure, natively in GeoTIFF format for immediate GIS integration.",
+
     "sat_review_1": "Excellent spatial resolution. The infrared bands were exactly what we needed to monitor crop health over the midwest. The data delivery was almost instant after checkout.",
+
     "sat_review_2": "Very reliable data source. Sometimes the cloud cover estimates are slightly off, but the 0.5m resolution makes up for it when you get a clear shot. Will definitely use again for our city expansion analysis.",
+
     "sat_data_preview": "Data Preview",
+
     "sat_json_payload": "JSON Payload",
+
     "sat_visual_sample": "Visual Sample",
+
     "sat_based_on": "Based on",
+
     "sat_2_days_ago": "2 days ago",
+
     "sat_1_week_ago": "1 week ago",
+
     "checkout_rest_api": "REST API",
+
     "checkout_direct_download": "Direct Download",
+
     "checkout_webhook": "Webhook",
+
     "sat_res_3_0_m": "3.0 m",
+
     "sat_res_30_cm": "30 cm",
+
     "sat_res_10_m": "10 m",
+
     "sat_res_ais_ads_b": "AIS/ADS-B",
+
     "sat_res_200_bytes": "200 bytes",
+
     "sat_res_lte_m": "LTE-M",
+
     "sat_res_1_m_sar": "1 m SAR",
+
     "sat_fmt_geotiff": "GeoTIFF",
+
     "sat_fmt_safe": "SAFE",
+
     "sat_fmt_json_api": "JSON API",
+
     "sat_fmt_json": "JSON",
+
     "sat_fmt_tcp_udp": "TCP/UDP",
+
     "login_no_account": "No account found with this email.",
+
     "login_sign_up": "Sign up?",
+
     "login_incorrect_pwd": "Incorrect password.",
+
     "login_try_again": "Try again or reset it.",
+
     "login_account_created": "Account created!",
+
     "login_redirecting": "Redirecting to the marketplace..."
+
   },
+
   pt: {
+
     "nav_categories": "Categorias",
+
     "nav_browse_categories": "Navegar Categorias",
+
     "nav_search_placeholder": "Pesquisar satélites, provedores, dados...",
+
     "nav_search_mobile": "Pesquisar satélites...",
+
     "nav_login": "Entrar",
+
     "nav_signup": "Cadastrar",
 
     "cat_imagery": "Imagens",
+
     "cat_imagery_desc": "Dados ópticos, SAR e hiperespectrais.",
+
     "cat_climate": "Clima",
+
     "cat_climate_desc": "Padrões climáticos e rastreamento de GEE.",
+
     "cat_connectivity": "Conectividade",
+
     "cat_connectivity_desc": "Rede IoT e links de banda larga.",
+
     "cat_analytics": "Análise",
+
     "cat_analytics_desc": "Inteligência derivada e mapeamento.",
+
     "cat_telemetry": "Telemetria",
+
     "cat_telemetry_desc": "Saídas de sensores brutos e dados GNSS.",
+
     "cat_maritime": "Marítimo",
+
     "cat_maritime_desc": "Rastreamento de navios e sobreposições AIS.",
+
     "cat_agriculture": "Agricultura",
+
     "cat_agriculture_desc": "Saúde das culturas e modelos NDVI.",
+
     "cat_urban": "Urbano",
+
     "cat_urban_desc": "Infraestrutura e luzes noturnas.",
+
     "cat_forestry": "Silvicultura",
+
     "cat_forestry_desc": "Desmatamento e biomassa.",
+
     "cat_energy": "Energia",
+
     "cat_energy_desc": "Irradiância solar e gasodutos.",
 
     "satellite_get_access": "Acessar",
+
     "sat_unit_capture": "/ imagem",
+
     "sat_unit_km2": "/ km²",
+
     "sat_unit_month": "/ mês",
 
     "home_badge": "Plataforma",
+
     "home_headline": "Dados de satélite, sob demanda.",
+
     "home_subtitle": "Navegue por milhares de satélites de provedores verificados. Escolha sua área de cobertura, formato de dados e método de entrega, e integre via API em minutos.",
+
     "home_cta_explore": "Explorar catálogo",
+
     "home_stat_1": "Satélites indexados",
+
     "home_stat_2": "Formatos de dados",
+
     "home_stat_3": "Tempo médio de revisita",
+
     "home_stat_4": "Preço unitário inicial",
+
     "home_view_catalog": "Ver catálogo completo",
+
     "home_view_catalog_desc": "Navegue por mais de 3.200 satélites de provedores verificados em todo o mundo.",
+
     "home_benefits_label": "Benefícios",
+
     "home_benefits_heading": "Por que o DataOrbit",
+
     "home_benefits_title": "Tudo que você precisa para acessar dados de satélite em escala, sem a complexidade.",
+
     "home_benefit_1": "Acesso focado em API",
+
     "home_benefit_1_desc": "Integre dados de satélite diretamente no seu pipeline com nossa API REST. Recupere imagens, telemetria e dados climáticos programaticamente.",
+
     "home_benefit_2": "Provedores verificados",
+
     "home_benefit_2_desc": "Planet Labs, ESA, SpaceX e mais. Redes de satélites reais entregando produtos de dados verificados. Nunca simulado, nunca estimado.",
+
     "home_benefit_3": "Fácil integração",
+
     "home_benefit_3_desc": "SDKs prontos e documentação abrangente colocam você em funcionamento rapidamente. Coloque nossos snippets diretamente na sua base de código.",
+
     "home_benefit_4": "Nenhuma infraestrutura necessária",
+
     "home_benefit_4_desc": "Pule a estação terrestre. Lidamos com recepção, processamento, armazenamento e distribuição para que você possa focar totalmente na análise.",
+
     "home_benefit_5": "Construído para escala",
+
     "home_benefit_5_desc": "Nossa infraestrutura escala automaticamente para atender às suas demandas, seja puxando uma única imagem ou petabytes de dados históricos.",
+
     "home_benefit_6": "Cobertura global",
+
     "home_benefit_6_desc": "Das cidades mais movimentadas aos oceanos mais remotos. Monitoramento contínuo abrangendo todos os continentes e fusos horários.",
+
     "home_benefit_stat_1": "provedores<br>pelo mundo",
+
     "home_benefit_stat_2": "SLA de uptime<br>garantido",
+
     "home_benefit_stat_3": "dados prontamente<br>disponíveis",
+
     "home_benefit_stat_4": "superfície da Terra<br>coberta",
+
     "home_process_label": "Processo",
+
     "home_process_title": "Como funciona",
+
     "home_process_1": "Explorar",
+
     "home_process_1_desc": "Navegue por mais de 3.200 satélites. Filtre por tipo de dados, resolução, área de cobertura e preço.",
+
     "home_process_2": "Configurar",
+
     "home_process_2_desc": "Defina seus parâmetros: área geográfica, janela de tempo e formato de entrega de dados.",
+
     "home_process_3": "Acessar",
+
     "home_process_3_desc": "Receba dados via API, webhook ou download direto. Seu pipeline permanece o mesmo.",
+
     "home_process_start": "Começar agora",
+
     "home_cta_title": "Pronto para acessar<br>dados de satélite?",
+
     "home_cta_paragraph": "Junte-se a centenas de empresas que já usam o DataOrbit para impulsionar sua inteligência geoespacial, monitoramento climático e infraestrutura IoT.",
+
     "home_cta_create": "Criar conta",
+
     "home_cta_explore_secondary": "Explorar catálogo",
-    
+
     "home_sort_by": "Ordenar por: Relevância",
+
     "home_sort_relevance": "Relevância",
+
     "home_sort_newest": "Mais recentes",
+
     "home_sort_price_asc": "Preço: Menor para Maior",
+
     "home_sort_price_desc": "Preço: Maior para Menor",
+
     "home_sort_rating": "Avaliação",
 
     "home_explore_title": "Explore o que está em órbita",
+
     "home_explore_desc": "Produtos reais de dados de satélite de provedores líderes, prontos para integração.",
+
     "home_filter_all": "Todos",
 
     "market_title": "Catálogo de Satélites",
+
     "market_desc": "Navegue por dados de satélite verificados dos principais provedores. Filtre por resolução, tempo de revisita e disponibilidade para encontrar exatamente o que precisa.",
+
     "market_filters": "Filtros",
+
     "market_category": "Categoria",
+
     "market_provider": "Provedor",
+
     "market_resolution": "Resolução",
+
     "market_more_filters": "Mais filtros +",
+
     "market_clear_all": "Limpar tudo",
+
     "market_found": "satélites encontrados",
+
     "market_loading": "Carregando mais satélites...",
+
     "market_showing_results": "Mostrando resultados para seus filtros ativos.",
+
     "market_clear": "Limpar",
+
     "market_apply": "Aplicar",
 
     "filter_imagery": "Imagens",
+
     "filter_weather": "Clima",
+
     "filter_sub1m": "Sub-1m",
+
     "filter_1_10m": "1–10m",
 
     "sat_operated_by": "Operado por",
+
     "sat_reviews": "avaliações",
+
     "sat_uptime": "Uptime:",
+
     "sat_latency": "Latência:",
+
     "sat_overview": "Visão Geral",
+
     "sat_key_features": "Principais Recursos",
+
     "sat_use_cases": "Casos de Uso Comuns",
+
     "sat_tech_specs": "Especificações Técnicas",
+
     "sat_resolution": "Resolução",
+
     "sat_swath": "Largura da Faixa",
+
     "sat_orbit": "Órbita",
+
     "sat_revisit": "Tempo de Revisita",
+
     "sat_spectral": "Bandas Espectrais",
+
     "sat_pricing_options": "Opções de Preços",
+
     "sat_per_image": "Por imagem",
+
     "sat_per_km2": "Por km²",
+
     "sat_get_api": "Obter Acesso à API",
+
     "sat_customer_reviews": "Avaliações de Clientes",
+
     "sat_see_all_reviews": "Ver todas as avaliações",
 
     "login_welcome": "Bem-vindo de volta",
+
     "login_welcome_sub": "Faça login na sua conta para acessar seus dados de satélite e chaves de API.",
+
     "login_tab_login": "Entrar",
+
     "login_tab_signup": "Cadastrar",
+
     "login_email_ph": "voce@empresa.com",
+
     "login_pass": "Senha",
+
     "login_confirm_pass": "Confirmar Senha",
+
     "login_fullname": "Nome completo",
+
     "login_fullname_ph": "João Silva",
+
     "login_remember": "Lembrar-me",
+
     "login_forgot": "Esqueceu a senha?",
+
     "login_btn": "Entrar",
+
     "signup_btn": "Criar conta",
+
     "login_or": "Ou continue com",
+
     "login_google": "Entrar com Google",
+
     "login_github": "Entrar com GitHub",
+
     "login_no_account": "Não tem uma conta?",
+
     "login_yes_account": "Já tem uma conta?",
+
     "login_go_signup": "Cadastre-se",
+
     "login_go_login": "Entre",
-    
+
     "footer_desc": "Marketplace de dados de satélite para empresas e desenvolvedores.",
+
     "footer_nav": "Navegação",
+
     "footer_home": "Início",
+
     "footer_marketplace": "Mercado",
+
     "footer_checkout": "Pagamento",
+
     "footer_theme": "Tema",
+
     "footer_language": "Idioma",
+
     "footer_copyright": "© 2026 DataOrbit. Todos os direitos reservados.",
 
     "login_email_label": "Endereço de email",
+
     "login_email_placeholder": "voce@empresa.com",
+
     "login_password_label": "Senha",
+
     "login_forgot_password": "Esqueceu sua senha?",
+
     "login_dont_have": "Não tem uma conta? ",
+
     "signup_fullname_label": "Nome completo",
+
     "signup_fullname_placeholder": "João Silva",
+
     "signup_btn": "Criar conta",
+
     "signup_already_have": "Já tem uma conta? ",
 
     "checkout_sign_in": "Entre para continuar",
+
     "checkout_need_account": "Você precisa de uma conta para pagar.",
+
     "checkout_login_btn": "Entrar / Cadastrar",
+
     "checkout_customize": "Personalize seu Plano",
+
     "checkout_access_option": "Selecione a Opção de Acesso",
+
     "checkout_most_popular": "Mais Popular",
+
     "checkout_per_km": "Por km²",
+
     "checkout_per_km_desc": "Para monitoramento em larga escala.",
+
     "checkout_per_image": "Por Imagem",
+
     "checkout_per_image_desc": "Para estudos localizados.",
+
     "checkout_monthly": "Mensal",
+
     "checkout_monthly_desc": "Acesso API ilimitado.",
+
     "checkout_custom": "Personalizado",
+
     "checkout_access_period": "Período de Acesso",
+
     "checkout_1hour": "1 Hora",
+
     "checkout_1day": "1 Dia",
+
     "checkout_1week": "1 Semana",
+
     "checkout_1month": "1 Mês",
+
     "checkout_integration": "Tipo de Integração",
+
     "checkout_step_plan": "Plano",
+
     "checkout_step_payment": "Pagamento",
+
     "checkout_step_confirmation": "Confirmação",
+
     "checkout_operated_by": "Operado por",
+
     "checkout_order_summary": "Resumo do Pedido",
+
     "checkout_satellite": "Satélite",
+
     "checkout_plan": "Plano",
+
     "checkout_estimated_total": "Total Estimado",
+
     "checkout_continue_payment": "Continuar para o Pagamento",
+
     "checkout_payment_details": "Detalhes do Pagamento",
+
     "checkout_billing_info": "Informações de Cobrança",
+
     "checkout_full_name": "Nome Completo",
+
     "checkout_email_address": "Endereço de E-mail",
+
     "checkout_country": "País",
+
     "checkout_payment_method": "Método de Pagamento",
+
     "checkout_credit_card": "Cartão de Crédito",
+
     "checkout_card_number": "Número do Cartão",
+
     "checkout_name_on_card": "Nome no Cartão",
+
     "checkout_expiry_date": "Data de Validade",
+
     "checkout_cvv": "CVV",
+
     "checkout_secure_note": "Seu pagamento é criptografado e 100% seguro.",
+
     "checkout_subtotal": "Subtotal",
+
     "checkout_taxes": "Impostos (10%)",
+
     "checkout_total": "Total",
+
     "checkout_confirm_payment": "Confirmar Pagamento",
+
     "checkout_back_to_plan": "← Voltar para o Plano",
+
     "checkout_success_message": "Sua transação foi bem-sucedida. As credenciais foram enviadas para o seu e-mail.",
+
     "checkout_receipt_details": "Detalhes do Recibo",
+
     "checkout_order_id": "ID do Pedido",
+
     "checkout_total_paid": "Total Pago",
+
     "checkout_api_key": "Sua Chave de API",
+
     "checkout_view_docs": "Visualizar Documentação",
+
     "checkout_explore_more": "Explorar mais Satélites",
+
     "home_go_marketplace": "Ir ao mercado",
+
     "sat_rev_daily": "Diário",
+
     "sat_rev_1_4_days": "1-4 Dias",
+
     "sat_rev_5_days": "5 Dias",
+
     "sat_rev_hourly": "A cada hora",
+
     "sat_rev_15_60_min": "15-60 min",
+
     "sat_rev_real_time": "Tempo Real",
+
     "sat_rev___20h": "< 20h",
+
     "sat_unit_free": "/ Grátis",
+
     "sat_unit_day": "/ dia",
+
     "sat_unit_message": "/ mens.",
+
     "sat_unit_mb": "/ MB",
+
     "sat_unit_capture": "/ captura",
+
     "sat_unit_km2": "/ km²",
+
     "sat_res_3m_resampled_nadir": "3.0m reamostrado (3.7m nadir)",
+
     "sat_res_3m_resampled": "3.0m reamostrado",
+
     "sat_rev_daily_global": "Diário (Global)",
+
     "sat_overview_p1": "O OrbitRent Dove-PSB, operado pela Planet Labs sob a linha de tecnologia SuperDove, fornece uma constelação de varredura óptica 'sempre ligada'. Este satélite captura imagens contínuas de alta resolução sem a necessidade de atribuição manual. Ele oferece cobertura incomparável para detecção rápida de mudanças globais.",
+
     "sat_overview_p2": "Equipado com 8 bandas espectrais (incluindo Azul Costeiro, Borda Vermelha e NIR), ele é altamente otimizado para monitoramento agrícola, estudos costeiros e, especialmente, rastreamento de desmatamento ilegal. Com capacidades diárias de revisita global, este conjunto de dados garante que você nunca perca um evento terrestre crítico.",
+
     "sat_overview_p3": "Os dados são processados para Refletância de Superfície e entregues via nossa rápida REST API ou Webhook diretamente para sua infraestrutura na nuvem, nativamente em formato GeoTIFF para integração SIG imediata.",
+
     "sat_review_1": "Excelente resolução espacial. As bandas infravermelhas eram exatamente o que precisávamos para monitorar a saúde das plantações no centro-oeste. A entrega dos dados foi quase instantânea após a compra.",
+
     "sat_review_2": "Fonte de dados muito confiável. Às vezes, as estimativas de cobertura de nuvens ficam ligeiramente fora, mas a resolução de 0.5m compensa quando você consegue uma imagem limpa. Com certeza usarei de novo para nossa análise de expansão urbana.",
+
     "sat_data_preview": "Prévia dos Dados",
+
     "sat_json_payload": "Carga JSON",
+
     "sat_visual_sample": "Amostra Visual",
+
     "sat_based_on": "Baseado em",
+
     "sat_2_days_ago": "há 2 dias",
+
     "sat_1_week_ago": "há 1 semana",
+
     "checkout_rest_api": "REST API",
+
     "checkout_direct_download": "Download Direto",
+
     "checkout_webhook": "Webhook",
+
     "sat_res_3_0_m": "3.0 m",
+
     "sat_res_30_cm": "30 cm",
+
     "sat_res_10_m": "10 m",
+
     "sat_res_ais_ads_b": "AIS/ADS-B",
+
     "sat_res_200_bytes": "200 bytes",
+
     "sat_res_lte_m": "LTE-M",
+
     "sat_res_1_m_sar": "1 m SAR",
+
     "sat_fmt_geotiff": "GeoTIFF",
+
     "sat_fmt_safe": "SAFE",
+
     "sat_fmt_json_api": "JSON API",
+
     "sat_fmt_json": "JSON",
+
     "sat_fmt_tcp_udp": "TCP/UDP",
+
     "login_no_account": "Nenhuma conta encontrada com este e-mail.",
+
     "login_sign_up": "Cadastrar-se?",
+
     "login_incorrect_pwd": "Senha incorreta.",
+
     "login_try_again": "Tente novamente ou redefina-a.",
+
     "login_account_created": "Conta criada!",
+
     "login_redirecting": "Redirecionando para o mercado..."
+
   },
+
   es: {
+
     "nav_categories": "Categorías",
+
     "nav_browse_categories": "Explorar Categorías",
+
     "nav_search_placeholder": "Buscar satélites, proveedores, datos...",
+
     "nav_search_mobile": "Buscar satélites...",
+
     "nav_login": "Iniciar Sesión",
+
     "nav_signup": "Registrarse",
 
     "cat_imagery": "Imágenes",
+
     "cat_imagery_desc": "Datos ópticos, SAR e hiperespectrales.",
+
     "cat_climate": "Clima",
+
     "cat_climate_desc": "Patrones climáticos y rastreo de GEI.",
+
     "cat_connectivity": "Conectividad",
+
     "cat_connectivity_desc": "Red IoT y enlaces de banda ancha.",
+
     "cat_analytics": "Análisis",
+
     "cat_analytics_desc": "Inteligencia derivada y mapeo.",
+
     "cat_telemetry": "Telemetría",
+
     "cat_telemetry_desc": "Salidas de sensores en bruto y datos GNSS.",
+
     "cat_maritime": "Marítimo",
+
     "cat_maritime_desc": "Rastreo de buques y superposiciones AIS.",
+
     "cat_agriculture": "Agricultura",
+
     "cat_agriculture_desc": "Salud de cultivos y modelos NDVI.",
+
     "cat_urban": "Urbano",
+
     "cat_urban_desc": "Infraestructura y luces nocturnas.",
+
     "cat_forestry": "Silvicultura",
+
     "cat_forestry_desc": "Deforestación y biomasa.",
+
     "cat_energy": "Energía",
+
     "cat_energy_desc": "Irradiancia solar y tuberías.",
 
     "satellite_get_access": "Obtener acceso",
+
     "sat_unit_capture": "/ imagen",
+
     "sat_unit_km2": "/ km²",
+
     "sat_unit_month": "/ mes",
 
     "home_badge": "Plataforma",
+
     "home_headline": "Datos satelitales, a pedido.",
+
     "home_subtitle": "Navega por miles de satélites de proveedores verificados. Elige tu área de cobertura, formato de datos y método de entrega, y luego integra vía API en minutos.",
+
     "home_cta_explore": "Explorar catálogo",
+
     "home_stat_1": "Satélites indexados",
+
     "home_stat_2": "Formatos de datos",
+
     "home_stat_3": "Tiempo promedio de revisita",
+
     "home_stat_4": "Precio unitario inicial",
+
     "home_view_catalog": "Ver catálogo completo",
+
     "home_view_catalog_desc": "Explora más de 3.200 satélites de proveedores verificados en todo el mundo.",
+
     "home_benefits_label": "Beneficios",
+
     "home_benefits_heading": "Por qué DataOrbit",
+
     "home_benefits_title": "Todo lo que necesitas para acceder a datos satelitales a escala, sin la complejidad.",
+
     "home_benefit_1": "Acceso centrado en API",
+
     "home_benefit_1_desc": "Integra datos satelitales directamente en tu pipeline con nuestra API REST. Recupera imágenes, telemetría y datos climáticos programáticamente.",
+
     "home_benefit_2": "Proveedores verificados",
+
     "home_benefit_2_desc": "Planet Labs, ESA, SpaceX y más. Redes de satélites reales entregando productos de datos verificados. Nunca simulado, nunca estimado.",
+
     "home_benefit_3": "Fácil integración",
+
     "home_benefit_3_desc": "SDKs listos para usar y documentación completa te ponen en marcha rápidamente. Pega nuestros fragmentos de código directamente.",
+
     "home_benefit_4": "Sin infraestructura necesaria",
+
     "home_benefit_4_desc": "Omita la estación terrestre. Manejamos recepción, procesamiento, almacenamiento y distribución para que pueda concentrarse en el análisis.",
+
     "home_benefit_5": "Construido para escalar",
+
     "home_benefit_5_desc": "Nuestra infraestructura escala automáticamente para satisfacer tus demandas, ya sea descargando una sola imagen o petabytes de datos históricos.",
+
     "home_benefit_6": "Cobertura global",
+
     "home_benefit_6_desc": "Desde las ciudades más concurridas hasta los océanos más remotos. Monitoreo continuo que abarca todos los continentes y zonas horarias.",
+
     "home_benefit_stat_1": "proveedores<br>en el mundo",
+
     "home_benefit_stat_2": "SLA de uptime<br>garantizado",
+
     "home_benefit_stat_3": "datos fácilmente<br>disponibles",
+
     "home_benefit_stat_4": "superficie de la Tierra<br>cubierta",
+
     "home_process_label": "Proceso",
+
     "home_process_title": "Cómo funciona",
+
     "home_process_1": "Explorar",
+
     "home_process_1_desc": "Navega por más de 3,200 satélites. Filtra por tipo de datos, resolución, área de cobertura y precio.",
+
     "home_process_2": "Configurar",
+
     "home_process_2_desc": "Establece tus parámetros: área geográfica, ventana de tiempo y formato de entrega de datos.",
+
     "home_process_3": "Acceder",
+
     "home_process_3_desc": "Recibe datos a través de API, webhook o descarga directa. Tu pipeline se mantiene igual.",
+
     "home_process_start": "Empezar ahora",
+
     "home_cta_title": "¿Listo para acceder a<br>datos satelitales?",
+
     "home_cta_paragraph": "Únete a cientos de empresas que ya utilizan DataOrbit para potenciar su inteligencia geoespacial, monitoreo climático e infraestructura IoT.",
+
     "home_cta_create": "Crear cuenta",
+
     "home_cta_explore_secondary": "Explorar catálogo",
 
     "home_sort_by": "Ordenar por: Relevancia",
+
     "home_sort_relevance": "Relevancia",
+
     "home_sort_newest": "Más recientes",
+
     "home_sort_price_asc": "Precio: Menor a Mayor",
+
     "home_sort_price_desc": "Precio: Mayor a Menor",
+
     "home_sort_rating": "Calificación",
 
     "home_explore_title": "Explora lo que hay en órbita",
+
     "home_explore_desc": "Productos reales de datos satelitales de proveedores líderes, listos para integración.",
+
     "home_filter_all": "Todos",
 
     "market_title": "Catálogo de Satélites",
+
     "market_desc": "Navega por datos satelitales verificados de los principales proveedores. Filtra por resolución, tiempo de revisita y disponibilidad para encontrar exactamente lo que necesitas.",
+
     "market_filters": "Filtros",
+
     "market_category": "Categoría",
+
     "market_provider": "Proveedor",
+
     "market_resolution": "Resolución",
+
     "market_more_filters": "Más filtros +",
+
     "market_clear_all": "Limpiar todo",
+
     "market_found": "satélites encontrados",
+
     "market_loading": "Cargando más satélites...",
+
     "market_showing_results": "Mostrando resultados para tus filtros activos.",
+
     "market_clear": "Limpiar",
+
     "market_apply": "Aplicar",
 
     "filter_imagery": "Imágenes",
+
     "filter_weather": "Clima",
+
     "filter_sub1m": "Sub-1m",
+
     "filter_1_10m": "1–10m",
 
     "sat_operated_by": "Operado por",
+
     "sat_reviews": "evaluaciones",
+
     "sat_uptime": "Uptime:",
+
     "sat_latency": "Latencia:",
+
     "sat_overview": "Visión General",
+
     "sat_key_features": "Características Clave",
+
     "sat_use_cases": "Casos de Uso Comunes",
+
     "sat_tech_specs": "Especificaciones Técnicas",
+
     "sat_resolution": "Resolución",
+
     "sat_swath": "Ancho de Barrido",
+
     "sat_orbit": "Órbita",
+
     "sat_revisit": "Tiempo de Revisita",
+
     "sat_spectral": "Bandas Espectrales",
+
     "sat_pricing_options": "Opciones de Precios",
+
     "sat_per_image": "Por imagen",
+
     "sat_per_km2": "Por km²",
+
     "sat_get_api": "Obtener Acceso a la API",
+
     "sat_customer_reviews": "Reseñas de Clientes",
+
     "sat_see_all_reviews": "Ver todas las evaluaciones",
 
     "login_welcome": "Bienvenido de nuevo",
+
     "login_welcome_sub": "Inicia sesión en tu cuenta para acceder a tus datos satelitales y claves de API.",
+
     "login_tab_login": "Entrar",
+
     "login_tab_signup": "Registrarse",
+
     "login_email_ph": "tu@empresa.com",
+
     "login_pass": "Contraseña",
+
     "login_confirm_pass": "Confirmar Contraseña",
+
     "login_fullname": "Nombre completo",
+
     "login_fullname_ph": "Juan Pérez",
+
     "login_remember": "Recordarme",
+
     "login_forgot": "¿Olvidaste la contraseña?",
+
     "login_btn": "Entrar",
+
     "signup_btn": "Crear cuenta",
+
     "login_or": "O continúa con",
+
     "login_google": "Entrar con Google",
+
     "login_github": "Entrar con GitHub",
+
     "login_no_account": "¿No tienes una cuenta?",
+
     "login_yes_account": "¿Ya tienes una cuenta?",
+
     "login_go_signup": "Regístrate",
+
     "login_go_login": "Entra",
-    
+
     "footer_desc": "Mercado de datos satelitales para empresas y desarrolladores.",
+
     "footer_nav": "Navegación",
+
     "footer_home": "Inicio",
+
     "footer_marketplace": "Mercado",
+
     "footer_checkout": "Pago",
+
     "footer_theme": "Tema",
+
     "footer_language": "Idioma",
+
     "footer_copyright": "© 2026 DataOrbit. Todos los derechos reservados.",
 
     "login_email_label": "Correo electrónico",
+
     "login_email_placeholder": "tu@empresa.com",
+
     "login_password_label": "Contraseña",
+
     "login_forgot_password": "¿Olvidaste tu contraseña?",
+
     "login_dont_have": "¿No tienes cuenta? ",
+
     "signup_fullname_label": "Nombre completo",
+
     "signup_fullname_placeholder": "Juan Pérez",
+
     "signup_btn": "Crear cuenta",
+
     "signup_already_have": "¿Ya tienes cuenta? ",
 
     "checkout_sign_in": "Inicia sesión para continuar",
+
     "checkout_need_account": "Necesitas una cuenta para pagar.",
+
     "checkout_login_btn": "Entrar / Registrarse",
+
     "checkout_customize": "Personaliza tu Plan",
+
     "checkout_access_option": "Selecciona la Opción de Acceso",
+
     "checkout_most_popular": "Más Popular",
+
     "checkout_per_km": "Por km²",
+
     "checkout_per_km_desc": "Para monitoreo a gran escala.",
+
     "checkout_per_image": "Por Imagen",
+
     "checkout_per_image_desc": "Para estudios localizados.",
+
     "checkout_monthly": "Mensual",
+
     "checkout_monthly_desc": "Acceso API ilimitado.",
+
     "checkout_custom": "Personalizado",
+
     "checkout_access_period": "Período de Acceso",
+
     "checkout_1hour": "1 Hora",
+
     "checkout_1day": "1 Día",
+
     "checkout_1week": "1 Semana",
+
     "checkout_1month": "1 Mes",
+
     "checkout_integration": "Tipo de Integración",
+
     "checkout_step_plan": "Plan",
+
     "checkout_step_payment": "Pago",
+
     "checkout_step_confirmation": "Confirmación",
+
     "checkout_operated_by": "Operado por",
+
     "checkout_order_summary": "Resumen del Pedido",
+
     "checkout_satellite": "Satélite",
+
     "checkout_plan": "Plan",
+
     "checkout_estimated_total": "Total Estimado",
+
     "checkout_continue_payment": "Continuar al Pago",
+
     "checkout_payment_details": "Detalles del Pago",
+
     "checkout_billing_info": "Información de Facturación",
+
     "checkout_full_name": "Nombre Completo",
+
     "checkout_email_address": "Correo Electrónico",
+
     "checkout_country": "País",
+
     "checkout_payment_method": "Método de Pago",
+
     "checkout_credit_card": "Tarjeta de Crédito",
+
     "checkout_card_number": "Número de Tarjeta",
+
     "checkout_name_on_card": "Nombre en la Tarjeta",
+
     "checkout_expiry_date": "Fecha de Vencimiento",
+
     "checkout_cvv": "CVV",
+
     "checkout_secure_note": "Tu pago está encriptado y es 100% seguro.",
+
     "checkout_subtotal": "Subtotal",
+
     "checkout_taxes": "Impuestos (10%)",
+
     "checkout_total": "Total",
+
     "checkout_confirm_payment": "Confirmar Pago",
+
     "checkout_back_to_plan": "← Volver al Plan",
+
     "checkout_success_message": "Tu transacción fue exitosa. Las credenciales han sido enviadas a tu correo.",
+
     "checkout_receipt_details": "Detalles del Recibo",
+
     "checkout_order_id": "ID del Pedido",
+
     "checkout_total_paid": "Total Pagado",
+
     "checkout_api_key": "Tu Clave de API",
+
     "checkout_view_docs": "Ver Documentación",
+
     "checkout_explore_more": "Explorar más Satélites",
+
     "home_go_marketplace": "Ir al mercado",
+
     "sat_rev_daily": "Diario",
+
     "sat_rev_1_4_days": "1-4 Días",
+
     "sat_rev_5_days": "5 Días",
+
     "sat_rev_hourly": "Por hora",
+
     "sat_rev_15_60_min": "15-60 min",
+
     "sat_rev_real_time": "Tiempo Real",
+
     "sat_rev___20h": "< 20h",
+
     "sat_unit_free": "/ Gratis",
+
     "sat_unit_day": "/ día",
+
     "sat_unit_message": "/ mens.",
+
     "sat_unit_mb": "/ MB",
+
     "sat_unit_capture": "/ captura",
+
     "sat_unit_km2": "/ km²",
+
     "sat_res_3m_resampled_nadir": "3.0m remuestreado (3.7m nadir)",
+
     "sat_res_3m_resampled": "3.0m remuestreado",
+
     "sat_rev_daily_global": "Diario (Global)",
+
     "sat_overview_p1": "El OrbitRent Dove-PSB, operado por Planet Labs bajo la línea de tecnología SuperDove, proporciona una constelación de escaneo óptico 'siempre encendida'. Este satélite captura imágenes continuas de alta resolución sin la necesidad de asignación manual. Ofrece una cobertura inigualable para la detección rápida de cambios globales.",
+
     "sat_overview_p2": "Equipado con 8 bandas espectrales (incluyendo Azul Costero, Borde Rojo y NIR), está altamente optimizado para el monitoreo agrícola, estudios costeros y especialmente para el seguimiento de la deforestación ilegal. Con capacidades diarias de revisita global, este conjunto de datos garantiza que nunca se pierda un evento terrestre crítico.",
+
     "sat_overview_p3": "Los datos se procesan a Reflectancia de Superficie y se entregan a través de nuestra rápida REST API o Webhook directamente a su infraestructura en la nube, nativamente en formato GeoTIFF para una integración SIG inmediata.",
+
     "sat_review_1": "Excelente resolución espacial. Las bandas infrarrojas eran exactamente lo que necesitábamos para monitorear la salud de los cultivos en el medio oeste. La entrega de datos fue casi instantánea después de la compra.",
+
     "sat_review_2": "Fuente de datos muy confiable. A veces las estimaciones de cobertura de nubes están ligeramente desfasadas, pero la resolución de 0.5m lo compensa cuando se obtiene una toma clara. Definitivamente lo usaré nuevamente para nuestro análisis de expansión de la ciudad.",
+
     "sat_data_preview": "Vista Previa de Datos",
+
     "sat_json_payload": "Carga JSON",
+
     "sat_visual_sample": "Muestra Visual",
+
     "sat_based_on": "Basado en",
+
     "sat_2_days_ago": "hace 2 días",
+
     "sat_1_week_ago": "hace 1 semana",
+
     "checkout_rest_api": "REST API",
+
     "checkout_direct_download": "Descarga Directa",
+
     "checkout_webhook": "Webhook",
+
     "sat_res_3_0_m": "3.0 m",
+
     "sat_res_30_cm": "30 cm",
+
     "sat_res_10_m": "10 m",
+
     "sat_res_ais_ads_b": "AIS/ADS-B",
+
     "sat_res_200_bytes": "200 bytes",
+
     "sat_res_lte_m": "LTE-M",
+
     "sat_res_1_m_sar": "1 m SAR",
+
     "sat_fmt_geotiff": "GeoTIFF",
+
     "sat_fmt_safe": "SAFE",
+
     "sat_fmt_json_api": "JSON API",
+
     "sat_fmt_json": "JSON",
+
     "sat_fmt_tcp_udp": "TCP/UDP",
+
     "login_no_account": "No se encontró cuenta con este correo electrónico.",
+
     "login_sign_up": "¿Registrarse?",
+
     "login_incorrect_pwd": "Contraseña incorrecta.",
+
     "login_try_again": "Inténtalo de nuevo o restablécela.",
+
     "login_account_created": "¡Cuenta creada!",
+
     "login_redirecting": "Redirigiendo al mercado..."
+
   }
+
 };
 
+/**
+ * Gerenciador responsável por controlar a internacionalização (tradução) completa do site.
+ * Ele salva a preferência do usuário e substitui os textos do HTML de acordo com o dicionário 'translations' acima.
+ */
 class LanguageManager {
+
   constructor() {
+
+    // Recupera o idioma salvo na última visita do usuário (via banco local do navegador) ou usa inglês ('en') como idioma padrão
     this.currentLanguage = localStorage.getItem('site_language') || 'en';
-    
-    // Store original text for 'en' fallback
+
+    // Mapa de memória para guardar o texto original (em inglês) de cada elemento antes da primeira tradução
     this.originalTexts = new Map();
+
   }
 
+  /**
+   * Executado quando a página carrega. Varre o HTML procurando tags marcadas com o atributo especial 'data-lang'.
+   */
   init() {
-    // Collect original texts from the DOM on first load if not already stored
+
     document.querySelectorAll('[data-lang]').forEach(el => {
+
       const key = el.getAttribute('data-lang');
+
+      // Se ainda não salvamos o texto original deste elemento na memória...
       if (!this.originalTexts.has(key)) {
+
+        // Tratamento especial para caixas de texto (inputs): salvamos o texto fantasma (placeholder), não o HTML interno
         if (el.tagName === 'INPUT' && el.placeholder) {
+
           this.originalTexts.set(key + '_placeholder', el.placeholder);
+
         } else {
-          // Store child nodes text context, but since elements might have nested HTML, 
-          // we should ideally just replace text content. 
-          // For simple elements, textContent is fine.
-          // If they have icons, we should wrap the text in a span.
+
+          // Para tags normais de texto (h1, p, span), salva o conteúdo interno original
           this.originalTexts.set(key, el.innerHTML);
+
         }
+
       }
+
     });
 
+    // Aplica o idioma escolhido (ou o padrão) imediatamente em todos os elementos encontrados
     this.setLanguage(this.currentLanguage);
+
   }
 
   getLanguage() { return this.currentLanguage; }
 
+  /**
+   * Muda ativamente todos os textos da página visíveis no momento para o novo idioma selecionado.
+   * 
+   * @param {string} lang - Código do idioma alvo ('en', 'pt', 'es')
+   */
   setLanguage(lang) {
+
+    // Trava de segurança: se algum script tentar setar um idioma que não existe, força para inglês
     if (!['en', 'pt', 'es'].includes(lang)) {
+
       lang = 'en';
+
     }
+
     this.currentLanguage = lang;
+
+    // Salva a escolha permanente no navegador para que as outras páginas carreguem traduzidas
     localStorage.setItem('site_language', lang);
 
+    // Varre novamente a tela para alterar dinamicamente os textos de todos os elementos rastreados
     document.querySelectorAll('[data-lang]').forEach(el => {
+
       const key = el.getAttribute('data-lang');
-      
+
       if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
+
+        // Se a tradução existir no grande dicionário lá no topo, substitui o texto do placeholder
         if (translations[lang] && translations[lang][key]) {
+
           el.placeholder = translations[lang][key];
+
         }
+
       } else {
+
+        // Substitui o texto normal injetando diretamente no HTML da tag
         if (translations[lang] && translations[lang][key]) {
+
           el.innerHTML = translations[lang][key];
+
         }
+
       }
+
     });
 
-    // Fire event to notify other components (like select dropdowns)
+    // Dispara um alarme/evento global na página informando a todos que o idioma acabou de mudar.
+    // Isso é útil para outros componentes (como o Footer) saberem que precisam atualizar a aparência de seus botões.
     document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+
   }
+
 }
 
-// Initialize as soon as DOM is ready
+// Instancia um objeto global único (Singleton) do gerenciador para ser acessível de qualquer script
 window.LanguageManager = new LanguageManager();
+
+// Garante que a tradução inicial ocorra apenas quando a árvore HTML inteira estiver carregada
 document.addEventListener('DOMContentLoaded', () => {
+
   window.LanguageManager.init();
+
 });
-
-
-
-
-
-
-

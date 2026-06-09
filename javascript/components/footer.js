@@ -1,5 +1,16 @@
+/**
+ * Retorna o HTML em formato de string (Template Literal) que representa o rodapé do site.
+ * Usamos uma função que gera o HTML dinamicamente para facilitar a manutenção: se precisarmos
+ * alterar o rodapé, mudamos apenas aqui, em vez de alterar em todas as páginas HTML do projeto.
+ * 
+ * @param {string} basePath - O caminho relativo raiz (ex: '.' ou '..') para garantir que links e imagens funcionem independente da pasta onde a página atual está.
+ * @returns {string} - O HTML completo e estruturado do rodapé.
+ */
 window.getFooterHtml = function getFooterHtml(basePath = '.') {
+
+  // Retorna uma string multilinhas contendo a estrutura HTML do rodapé
   return `
+
   <footer id="footer" class="bg-black">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-24 pb-8">
@@ -9,7 +20,9 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
         <div>
 
           <a href="${basePath}/index.html" class="inline-block">
+
 <img src="${basePath}/assets/logo/dataorbit-logo-3.png" alt="DataOrbit" class="h-12 brightness-0 invert">
+
 </a>
 
           <p class="text-base text-gray-500 mt-4 leading-normal max-w-xs" data-lang="footer_desc">Satellite data marketplace for enterprises and developers.</p>
@@ -89,7 +102,9 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
                 <li><a href="#" class="block px-4 py-2 hover:bg-gray-700 hover:text-white lang-option" data-lang-val="es">Español</a></li>
 
               </ul>
+
             </div>
+
             </div>
 
           </div>
@@ -107,89 +122,151 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
     </div>
 
   </footer>
-  
+
 `;
+
 }
 
+/**
+ * Inicializa a lógica interativa do rodapé após ele ser injetado no DOM.
+ * Isso inclui os botões de alternância de tema (claro/escuro/sistema) e o dropdown de seleção de idioma.
+ */
+window.initializeFooter = function () {
 
-
-
-
-
-
-
-
-
-
-
-
-window.initFooter = function() {
+  // Se o gerenciador de temas global (ThemeManager) não foi carregado, aborta a inicialização para evitar erros
   if (!window.ThemeManager) return;
-  
-  const sysBtn = document.getElementById('theme-sys');
-  const lightBtn = document.getElementById('theme-light');
-  const darkBtn = document.getElementById('theme-dark');
-  
-  function updateActiveBtn(currentTheme) {
-    if(!sysBtn || !lightBtn || !darkBtn) return;
-    
-    [sysBtn, lightBtn, darkBtn].forEach(btn => {
-      btn.classList.remove('active', 'bg-gray-700', 'text-white');
-      btn.classList.add('text-gray-500');
+
+  // Busca os botões de seleção de tema usando seus IDs específicos definidos no HTML acima
+  const systemThemeButton = document.getElementById('theme-sys');
+
+  const lightThemeButton = document.getElementById('theme-light');
+
+  const darkThemeButton = document.getElementById('theme-dark');
+
+  /**
+   * Função auxiliar para atualizar a aparência visual dos botões de tema.
+   * O botão do tema atual fica destacado (fundo cinza escuro, texto branco),
+   * enquanto os inativos ficam mais discretos (texto cinza claro).
+   * 
+   * @param {string} currentTheme - O nome do tema ativo ('light', 'dark', ou 'system')
+   */
+  function updateActiveButton(currentTheme) {
+
+    // Se algum dos botões não existir no HTML, aborta a função para garantir segurança
+    if (!systemThemeButton || !lightThemeButton || !darkThemeButton) return;
+
+    // Passo 1: Percorre todos os botões e remove as classes de estado "ativo" (reset visual)
+    [systemThemeButton, lightThemeButton, darkThemeButton].forEach(button => {
+
+      button.classList.remove('active', 'bg-gray-700', 'text-white');
+
+      button.classList.add('text-gray-500');
+
     });
-    
-    let activeBtn = sysBtn;
-    if (currentTheme === 'light') activeBtn = lightBtn;
-    else if (currentTheme === 'dark') activeBtn = darkBtn;
-    
-    activeBtn.classList.add('active', 'bg-gray-700', 'text-white');
-    activeBtn.classList.remove('text-gray-500');
+
+    // Passo 2: Descobre qual é o botão que deve estar ativo. Assume que 'system' é o padrão.
+    let activeButton = systemThemeButton;
+
+    if (currentTheme === 'light') activeButton = lightThemeButton;
+
+    else if (currentTheme === 'dark') activeButton = darkThemeButton;
+
+    // Passo 3: Aplica as classes de destaque do TailwindCSS apenas no botão ativo selecionado
+    activeButton.classList.add('active', 'bg-gray-700', 'text-white');
+
+    activeButton.classList.remove('text-gray-500');
+
   }
 
-  updateActiveBtn(window.ThemeManager.getTheme());
+  // Sincroniza a aparência visual inicial puxando o tema salvo no gerenciador
+  updateActiveButton(window.ThemeManager.getTheme());
 
-  window.addEventListener('themeChanged', (e) => {
-    updateActiveBtn(e.detail.theme);
+  // Fica escutando eventos customizados de 'themeChanged'. Se outro script alterar o tema, o rodapé reage e atualiza os botões instantaneamente
+  window.addEventListener('themeChanged', (event) => {
+
+    updateActiveButton(event.detail.theme);
+
   });
 
-  if(sysBtn) sysBtn.addEventListener('click', () => window.ThemeManager.setTheme('system'));
-  if(lightBtn) lightBtn.addEventListener('click', () => window.ThemeManager.setTheme('light'));
-  if(darkBtn) darkBtn.addEventListener('click', () => window.ThemeManager.setTheme('dark'));
+  // Vincula o evento de clique (click) de cada botão à função que realmente altera o tema global do site
+  if (systemThemeButton) systemThemeButton.addEventListener('click', () => window.ThemeManager.setTheme('system'));
 
-  // Language Setup
+  if (lightThemeButton) lightThemeButton.addEventListener('click', () => window.ThemeManager.setTheme('light'));
+
+  if (darkThemeButton) darkThemeButton.addEventListener('click', () => window.ThemeManager.setTheme('dark'));
+
+  // Bloco dedicado exclusivamente a configurar a funcionalidade de idiomas no rodapé
   if (window.LanguageManager) {
-    const langLabel = document.getElementById('current-language-label');
-    const langOptions = document.querySelectorAll('.lang-option');
-    
-    function updateLangUI(lang) {
-      if (langLabel) {
-        if (lang === 'pt') langLabel.textContent = 'Português';
-        else if (lang === 'es') langLabel.textContent = 'Español';
-        else langLabel.textContent = 'English';
+
+    // Captura o elemento <span> que exibe textualmente o idioma atualmente selecionado (ex: "English")
+    const languageLabel = document.getElementById('current-language-label');
+
+    // Seleciona todos os links <a> que representam as opções de idiomas dentro do menu dropdown
+    const languageOptions = document.querySelectorAll('.lang-option');
+
+    /**
+     * Atualiza o texto do rótulo e coloca em negrito a opção de idioma correspondente na lista
+     * 
+     * @param {string} language - O código do idioma selecionado ('en', 'pt', 'es')
+     */
+    function updateLanguageUserInterface(language) {
+
+      // Atualiza o rótulo visível no botão do dropdown principal
+      if (languageLabel) {
+
+        if (language === 'pt') languageLabel.textContent = 'Português';
+
+        else if (language === 'es') languageLabel.textContent = 'Español';
+
+        else languageLabel.textContent = 'English';
+
       }
-      
-      langOptions.forEach(opt => {
-        if (opt.getAttribute('data-lang-val') === lang) {
-          opt.classList.add('font-medium');
+
+      // Adiciona estilo de negrito ('font-medium') apenas na opção que bate com o idioma ativo
+      languageOptions.forEach(option => {
+
+        // Verifica o atributo 'data-lang-val' para saber qual idioma a opção representa
+        if (option.getAttribute('data-lang-val') === language) {
+
+          option.classList.add('font-medium');
+
         } else {
-          opt.classList.remove('font-medium');
+
+          option.classList.remove('font-medium');
+
         }
+
       });
+
     }
 
-    updateLangUI(window.LanguageManager.getLanguage());
+    // Inicialização da interface puxando o idioma preferido do usuário salvo no LocalStorage
+    updateLanguageUserInterface(window.LanguageManager.getLanguage());
 
-    langOptions.forEach(opt => {
-      opt.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lang = opt.getAttribute('data-lang-val');
-        window.LanguageManager.setLanguage(lang);
+    // Registra o evento de clique em todas as opções do menu de idiomas
+    languageOptions.forEach(option => {
+
+      option.addEventListener('click', (event) => {
+
+        // Evita que a página role forçadamente de volta para o topo da tela ao clicar em links com href="#"
+        event.preventDefault();
+
+        // Extrai o valor do novo idioma a partir do atributo data e aplica a mudança
+        const selectedLanguage = option.getAttribute('data-lang-val');
+
+        window.LanguageManager.setLanguage(selectedLanguage);
+
       });
+
     });
 
-    window.addEventListener('languageChanged', (e) => {
-      updateLangUI(e.detail.language);
+    // Se outro local do site alterar o idioma, escuta o evento global e reflete a alteração na interface do rodapé
+    window.addEventListener('languageChanged', (event) => {
+
+      updateLanguageUserInterface(event.detail.language);
+
     });
+
   }
-}
 
+}
