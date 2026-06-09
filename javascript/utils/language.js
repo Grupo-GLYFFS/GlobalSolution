@@ -1643,7 +1643,7 @@ class LanguageManager {
 
     // Dispara um alarme/evento global na página informando a todos que o idioma acabou de mudar.
     // Isso é útil para outros componentes (como o Footer) saberem que precisam atualizar a aparência de seus botões.
-    document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+    window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
 
   }
 
