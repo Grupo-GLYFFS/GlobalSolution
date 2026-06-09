@@ -1,5 +1,7 @@
 window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
+
   return `
+
   <nav id="navbar" class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 flex items-center h-20">
@@ -277,5 +279,7 @@ window.getNavbarHtml = function getNavbarHtml(basePath = '.') {
     </div>
 
   </nav>
+
 `;
+
 }

@@ -1,5 +1,7 @@
 window.getFooterHtml = function getFooterHtml(basePath = '.') {
+
   return `
+
   <footer id="footer" class="bg-black">
 
     <div class="max-w-container mx-auto px-6 md:px-12 xl:px-24 pt-24 pb-8">
@@ -9,7 +11,9 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
         <div>
 
           <a href="${basePath}/index.html" class="inline-block">
+
 <img src="${basePath}/assets/logo/dataorbit-logo-3.png" alt="DataOrbit" class="h-12 brightness-0 invert">
+
 </a>
 
           <p class="text-base text-gray-500 mt-4 leading-normal max-w-xs" data-lang="footer_desc">Satellite data marketplace for enterprises and developers.</p>
@@ -89,7 +93,9 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
                 <li><a href="#" class="block px-4 py-2 hover:bg-gray-700 hover:text-white lang-option" data-lang-val="es">Español</a></li>
 
               </ul>
+
             </div>
+
             </div>
 
           </div>
@@ -107,89 +113,115 @@ window.getFooterHtml = function getFooterHtml(basePath = '.') {
     </div>
 
   </footer>
-  
+
 `;
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 window.initFooter = function() {
+
   if (!window.ThemeManager) return;
-  
+
   const sysBtn = document.getElementById('theme-sys');
+
   const lightBtn = document.getElementById('theme-light');
+
   const darkBtn = document.getElementById('theme-dark');
-  
+
   function updateActiveBtn(currentTheme) {
+
     if(!sysBtn || !lightBtn || !darkBtn) return;
-    
+
     [sysBtn, lightBtn, darkBtn].forEach(btn => {
+
       btn.classList.remove('active', 'bg-gray-700', 'text-white');
+
       btn.classList.add('text-gray-500');
+
     });
-    
+
     let activeBtn = sysBtn;
+
     if (currentTheme === 'light') activeBtn = lightBtn;
+
     else if (currentTheme === 'dark') activeBtn = darkBtn;
-    
+
     activeBtn.classList.add('active', 'bg-gray-700', 'text-white');
+
     activeBtn.classList.remove('text-gray-500');
+
   }
 
   updateActiveBtn(window.ThemeManager.getTheme());
 
   window.addEventListener('themeChanged', (e) => {
+
     updateActiveBtn(e.detail.theme);
+
   });
 
   if(sysBtn) sysBtn.addEventListener('click', () => window.ThemeManager.setTheme('system'));
+
   if(lightBtn) lightBtn.addEventListener('click', () => window.ThemeManager.setTheme('light'));
+
   if(darkBtn) darkBtn.addEventListener('click', () => window.ThemeManager.setTheme('dark'));
 
-  // Language Setup
   if (window.LanguageManager) {
+
     const langLabel = document.getElementById('current-language-label');
+
     const langOptions = document.querySelectorAll('.lang-option');
-    
+
     function updateLangUI(lang) {
+
       if (langLabel) {
+
         if (lang === 'pt') langLabel.textContent = 'Português';
+
         else if (lang === 'es') langLabel.textContent = 'Español';
+
         else langLabel.textContent = 'English';
+
       }
-      
+
       langOptions.forEach(opt => {
+
         if (opt.getAttribute('data-lang-val') === lang) {
+
           opt.classList.add('font-medium');
+
         } else {
+
           opt.classList.remove('font-medium');
+
         }
+
       });
+
     }
 
     updateLangUI(window.LanguageManager.getLanguage());
 
     langOptions.forEach(opt => {
+
       opt.addEventListener('click', (e) => {
+
         e.preventDefault();
+
         const lang = opt.getAttribute('data-lang-val');
+
         window.LanguageManager.setLanguage(lang);
+
       });
+
     });
 
     window.addEventListener('languageChanged', (e) => {
-      updateLangUI(e.detail.language);
-    });
-  }
-}
 
+      updateLangUI(e.detail.language);
+
+    });
+
+  }
+
+}
