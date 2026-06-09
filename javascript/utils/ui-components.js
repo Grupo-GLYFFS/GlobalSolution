@@ -34,95 +34,55 @@ window.UIComponents = {
 
   },
 
-  /**
-   * Configura o funcionamento lógico dos Menus Suspensos (Dropdowns) como o de Categorias e de Idiomas.
-   */
   initDropdowns() {
+    // Avoid attaching multiple global listeners if called multiple times
+    if (this._dropdownsInitialized) return;
+    this._dropdownsInitialized = true;
 
-    // Encontra todos os botões no HTML que possuem o atributo mágico 'data-dropdown-toggle'
-    const toggleBtns = document.querySelectorAll('[data-dropdown-toggle]');
+    // Use event delegation on the document body to handle clicks on any dropdown toggle, 
+    // even those injected dynamically later (like the footer language dropdown).
+    document.body.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-dropdown-toggle]');
+      if (!btn) return;
 
-    toggleBtns.forEach(btn => {
+      e.stopPropagation();
 
-      // Evita vincular o mesmo evento de clique várias vezes se a função init() for chamada novamente
-      if (btn.hasAttribute('data-ui-init')) return;
-
-      btn.setAttribute('data-ui-init', 'true');
-
-      // Descobre qual é a ID do menu que este botão deve abrir
       const targetId = btn.getAttribute('data-dropdown-toggle');
-
       const targetMenu = document.getElementById(targetId);
 
       if (targetMenu) {
-
-        // Marca esse menu com a classe '.dropdown-menu' para facilitar a busca do script que fecha os menus (acima)
         targetMenu.classList.add('dropdown-menu');
 
-        btn.addEventListener('click', (e) => {
-
-          // Impede que o clique "vaze" pro documento e feche o menu imediatamente
-          e.stopPropagation();
-
-          // Garante que, ao abrir um menu, todos os outros menus da página sejam fechados (efeito sanfona)
-          document.querySelectorAll('.dropdown-menu:not(.hidden)').forEach(menu => {
-
-            if (menu.id !== targetId) menu.classList.add('hidden');
-
-          });
-
-          // Lógica de alternância (Toggle): Se está escondido, mostra. Se está visível, esconde.
-          if (targetMenu.classList.contains('hidden')) {
-
-            targetMenu.classList.remove('hidden');
-
-            // --- Lógica avançada anti-quebra de layout ---
-            // Torna o menu visível pro navegador mas invisível pro usuário, só para podermos medir a altura real dele
-            targetMenu.style.visibility = 'hidden';
-
-            const btnRect = btn.getBoundingClientRect();
-
-            const menuHeight = targetMenu.offsetHeight;
-
-            const spaceBelow = window.innerHeight - btnRect.bottom;
-
-            // Se o menu costuma abrir para baixo, mas não tem espaço físico suficiente na tela antes de encostar no rodapé...
-            if (targetMenu.classList.contains('top-full') || targetMenu.classList.contains('bottom-full')) {
-
-                if (spaceBelow < menuHeight + 20 && btnRect.top > menuHeight + 20) {
-
-                    // ... Inverte a direção e faz o menu abrir para cima
-                    targetMenu.classList.remove('top-full', 'mt-2');
-
-                    targetMenu.classList.add('bottom-full', 'mb-2');
-
-                } else {
-
-                    // Caso contrário, abre para baixo normalmente
-                    targetMenu.classList.remove('bottom-full', 'mb-2');
-
-                    targetMenu.classList.add('top-full', 'mt-2');
-
-                }
-
-            }
-
-            // Devolve a visibilidade para o usuário ver
-            targetMenu.style.visibility = '';
-
-          } else {
-
-            // Fecha o menu
-            targetMenu.classList.add('hidden');
-
-          }
-
+        // Close other open menus
+        document.querySelectorAll('.dropdown-menu:not(.hidden)').forEach(menu => {
+          if (menu.id !== targetId) menu.classList.add('hidden');
         });
 
+        if (targetMenu.classList.contains('hidden')) {
+          targetMenu.classList.remove('hidden');
+
+          // Position calculation logic
+          targetMenu.style.visibility = 'hidden';
+          const btnRect = btn.getBoundingClientRect();
+          const menuHeight = targetMenu.offsetHeight;
+          const spaceBelow = window.innerHeight - btnRect.bottom;
+
+          if (targetMenu.classList.contains('top-full') || targetMenu.classList.contains('bottom-full')) {
+            if (spaceBelow < menuHeight + 20 && btnRect.top > menuHeight + 20) {
+              targetMenu.classList.remove('top-full', 'mt-2');
+              targetMenu.classList.add('bottom-full', 'mb-2');
+            } else {
+              targetMenu.classList.remove('bottom-full', 'mb-2');
+              targetMenu.classList.add('top-full', 'mt-2');
+            }
+          }
+
+          targetMenu.style.visibility = '';
+        } else {
+          targetMenu.classList.add('hidden');
+        }
       }
-
     });
-
   },
 
   /**

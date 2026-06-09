@@ -39,7 +39,7 @@ function displayCheckoutStep(stepIndex) {
       if (i === stepIndex) {
 
         // Destaca a aba inteira, colocando-a em foco (fundo branco, adicionando sombra projetada, texto azul)
-        navigationButton.className = 'flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold tracking-heading transition-all flex items-center gap-2 text-accent-blue bg-white dark:bg-gray-750 shadow-sm';
+        navigationButton.className = 'flex-1 justify-center px-5 py-2 rounded-lg text-base font-bold tracking-heading transition-all flex items-center gap-2 text-accent-blue dark:text-accent-blue-light bg-white dark:bg-gray-700 shadow-sm';
 
         // Destaca o pequeno círculo dentro da aba (fundo azul claro com texto azul primário)
         if (spanElement) spanElement.className = 'w-5 h-5 rounded-full flex items-center justify-center text-xs bg-accent-blue/10 text-accent-blue';
