@@ -256,6 +256,13 @@ window.initializeFooter = function () {
 
         window.LanguageManager.setLanguage(selectedLanguage);
 
+        // Atualiza a interface diretamente, sem depender do evento para garantir que o label sempre muda
+        updateLanguageUserInterface(selectedLanguage);
+
+        // Fecha o dropdown após a seleção
+        const menu = document.getElementById('languageDropdownMenu');
+        if (menu) menu.classList.add('hidden');
+
       });
 
     });
